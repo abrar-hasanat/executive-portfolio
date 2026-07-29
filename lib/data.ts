@@ -125,6 +125,7 @@ export const caseStudies: CaseStudy[] = [
       "Deployed automated dashboard for weekly pipeline review cycles.",
     ],
     mockupPath: "/mockups/dashboard-mockup.svg",
+    liveDashboardUrl: "/dashboards/tender-pipeline",
     githubRepoUrl: "https://github.com/abrar-hasanat/tender-pipeline-analytics",
   },
   {
