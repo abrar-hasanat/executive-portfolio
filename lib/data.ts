@@ -90,6 +90,7 @@ export interface CaseStudy {
   strategicSolution?: string;
   metrics?: { label: string; value: string }[];
   impactMetrics?: { label: string; value: string }[];
+  techStack?: string[];
   outcomes?: string[];
   dashboardUrl?: string;
   liveDashboardUrl?: string;
