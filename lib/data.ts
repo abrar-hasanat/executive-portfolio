@@ -1,4 +1,4 @@
-import { LineChart, Workflow, Terminal, type LucideIcon } from "lucide-react";
+import { Award, LineChart, TerminalSquare, Workflow, Terminal, type LucideIcon } from "lucide-react";
 
 export interface CredentialCategory {
   id: string;
@@ -7,39 +7,63 @@ export interface CredentialCategory {
   items: string[];
 }
 
-export const credentialCategories: CredentialCategory[] = [
+export const credentialCategories = [
   {
-    id: "strategy",
-    title: "Strategy & Analytics",
+    id: "certifications",
+    title: "Earned & Target Certifications",
+    icon: Award,
+    items: [
+      { name: "Microsoft Power BI Data Analyst (PL-300)" },
+      { name: "Lean Six Sigma Green Belt (CSSC)" },
+      { name: "Professional Scrum Master I (PSM I)" },
+      { name: "Google Project Management Professional" },
+      { name: "IBM Business Analyst Professional" },
+      { name: "PMI CAPM Certification (In Progress)" },
+      { name: "AWS Certified AI Practitioner (In Progress)" },
+    ],
+  },
+  {
+    id: "strategy-operations",
+    title: "Strategy & Operations",
     icon: LineChart,
     items: [
-      "Business Intelligence",
-      "Financial Modeling (FMVA Track)",
-      "Go-to-Market Strategy",
-      "Data Visualization",
+      { name: "Financial Modeling & Valuation" },
+      { name: "Agile (Scrum) & DMAIC Frameworks" },
+      { name: "Enterprise Analysis & Business Cases" },
+      { name: "Pricing Optimization & Market Research" },
+      { name: "Project Lifecycle & Risk Management" },
+      { name: "UAT Testing & Change Management" },
     ],
   },
   {
-    id: "operations",
-    title: "Operations & Agile",
-    icon: Workflow,
+    id: "technical-stack",
+    title: "Data & Technical Stack",
+    icon: TerminalSquare,
     items: [
-      "Lean Six Sigma Green Belt (CSSC DMAIC)",
-      "Professional Scrum Master (PSM I)",
-      "Workday ERP — UAT",
-    ],
-  },
-  {
-    id: "technical",
-    title: "Technical Tools",
-    icon: Terminal,
-    items: [
-      "Microsoft Power BI",
-      "Advanced Excel (DAX / Power Query)",
-      "SQL",
-      "R",
-      "Python",
-      "AWS AI Practitioner (In Progress)",
+      { 
+        name: "Microsoft Power BI", 
+        badge: "https://img.shields.io/badge/Power_BI-112240?style=flat-square&logo=powerbi&logoColor=3B82F6" 
+      },
+      { 
+        name: "Advanced Excel", 
+        badge: "https://img.shields.io/badge/Excel-112240?style=flat-square&logo=microsoftexcel&logoColor=3B82F6" 
+      },
+      { 
+        name: "SQL & R", 
+        badge: "https://img.shields.io/badge/SQL_&_R-112240?style=flat-square&logo=sqlite&logoColor=3B82F6" 
+      },
+      { 
+        name: "AWS Cloud", 
+        badge: "https://img.shields.io/badge/AWS_Cloud-112240?style=flat-square&logo=amazonwebservices&logoColor=3B82F6" 
+      },
+      { 
+        name: "Workday ERP", 
+        badge: "https://img.shields.io/badge/Workday_ERP-112240?style=flat-square&logo=workday&logoColor=3B82F6" 
+      },
+      { 
+        name: "Next.js & Tailwind", 
+        badge: "https://img.shields.io/badge/Next.js-112240?style=flat-square&logo=nextdotjs&logoColor=3B82F6" 
+      },
     ],
   },
 ];
