@@ -124,6 +124,7 @@ export const caseStudies: CaseStudy[] = [
       "Accelerated proposal preparation turnaround time by 20% using Lean Six Sigma (DMAIC) workflow optimization.",
       "Deployed automated executive dashboard for weekly pipeline review cycles.",
     ],
+    liveDashboardUrl: "/dashboards/tender-pipeline",
     githubRepoUrl: "https://github.com/abrar-hasanat/tender-pipeline-analytics",
   },
   {
