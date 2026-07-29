@@ -1,0 +1,25 @@
+Total Pipeline Value =
+SUM(Tenders[Expected_Contract_Value_USD])
+
+Weighted Expected Revenue =
+SUMX(
+    Tenders,
+    Tenders[Expected_Contract_Value_USD] * (Tenders[Win_Probability_Pct] / 100)
+)
+
+Win Rate % =
+DIVIDE(
+    CALCULATE(
+        COUNT(Tenders[Tender_ID]),
+        Tenders[Stage] = "Won"
+    ),
+    COUNT(Tenders[Tender_ID]),
+    0
+)
+
+Avg Turnaround Reduction % =
+DIVIDE(
+    AVERAGE(Tenders[Baseline_Turnaround]) - AVERAGE(Tenders[Submission_Turnaround_Days]),
+    AVERAGE(Tenders[Baseline_Turnaround]),
+    0
+)
