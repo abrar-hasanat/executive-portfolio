@@ -213,7 +213,7 @@ export default function CaseStudies() {
                       className="inline-flex items-center gap-2 rounded-md bg-accent px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-accent-dim"
                     >
                       <ExternalLink size={15} />
-                      Interact with Live Dashboard
+                      {study.liveDashboardUrl ? "Interact with Live Dashboard" : "View Project"}
                     </a>
                   )}
                   {(study.githubRepoUrl || study.repoUrl) && (
