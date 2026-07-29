@@ -1,4 +1,4 @@
-"""Executive analytics for Bay Oceania C&T Ltd. tender pipeline data.
+"""Tender pipeline analytics for Bay Oceania C&T Ltd. data.
 
 Run after generating the dataset:
     python data_generator.py
@@ -77,12 +77,14 @@ def run_turnaround_t_test(data: pd.DataFrame) -> dict[str, float]:
 
 
 def format_currency(value: float) -> str:
-    """Format a numeric value as USD millions for executive reporting."""
-    return f"${value / 1_000_000:,.2f}M"
+    """Format a numeric value as USD thousands for student-friendly reporting."""
+    if value >= 1000:
+        return f"${value / 1_000:,.1f}K"
+    return f"${value:,.0f}"
 
 
 def main() -> None:
-    """Execute analytics and print executive summary logs."""
+    """Execute analytics and print summary logs."""
     data = load_data()
     risk_adjusted_revenue = (
         data["Expected_Contract_Value_USD"] * (data["Win_Probability_Pct"] / 100.0)
@@ -91,7 +93,7 @@ def main() -> None:
     t_test = run_turnaround_t_test(data)
 
     print("=" * 78)
-    print("Bay Oceania C&T Ltd. | Tender Pipeline Analytics Executive Summary")
+    print("Bay Oceania C&T Ltd. | Tender Pipeline Analytics Summary")
     print("=" * 78)
     print(f"Tender opportunities analyzed: {len(data):,}")
     print(f"Raw pipeline value: {format_currency(data['Expected_Contract_Value_USD'].sum())}")

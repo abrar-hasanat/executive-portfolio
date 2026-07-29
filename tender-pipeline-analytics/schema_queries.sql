@@ -41,7 +41,7 @@ SELECT
 FROM pivoted;
 
 -- 3. High-ROI Target Identification
--- Flags high-priority opportunities for executive focus.
+-- Flags high-priority opportunities for priority focus.
 SELECT
     Tender_ID,
     Client_Name,

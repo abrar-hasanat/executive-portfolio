@@ -1,0 +1,75 @@
+<svg width="1200" height="825" viewBox="0 0 1200 825" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="825" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0B1430" />
+      <stop offset="100%" stop-color="#0D1F3A" />
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1A2A47" />
+      <stop offset="100%" stop-color="#16223A" />
+    </linearGradient>
+    <linearGradient id="chartLine" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#0EA5E9" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="825" rx="32" fill="url(#bg)" />
+  <rect x="40" y="40" width="1120" height="54" rx="16" fill="#10213A" />
+  <circle cx="82" cy="67" r="10" fill="#56CCF2" />
+  <circle cx="112" cy="67" r="10" fill="#22C55E" />
+  <circle cx="142" cy="67" r="10" fill="#F59E0B" />
+  <rect x="200" y="52" width="220" height="24" rx="12" fill="#172A45" />
+  <rect x="448" y="52" width="440" height="24" rx="12" fill="#172A45" />
+  <rect x="916" y="52" width="120" height="24" rx="12" fill="#172A45" />
+
+  <rect x="40" y="118" width="760" height="300" rx="24" fill="url(#card)" />
+  <rect x="60" y="142" width="320" height="48" rx="14" fill="#0F2042" />
+  <rect x="60" y="206" width="80" height="16" rx="8" fill="#2C4A7F" />
+  <rect x="160" y="206" width="115" height="16" rx="8" fill="#314E8B" />
+  <rect x="60" y="236" width="84" height="24" rx="12" fill="#0F2042" />
+  <rect x="160" y="236" width="130" height="24" rx="12" fill="#0F2042" />
+  <rect x="60" y="280" width="660" height="20" rx="10" fill="#11213D" />
+  <rect x="60" y="312" width="660" height="20" rx="10" fill="#11213D" />
+  <rect x="60" y="344" width="660" height="20" rx="10" fill="#11213D" />
+
+  <path d="M84 402C148 342 226 386 286 374C346 362 422 244 486 262C550 280 616 452 684 432C752 412 820 340 906 374" stroke="url(#chartLine)" stroke-width="18" stroke-linecap="round" fill="none" />
+  <circle cx="84" cy="402" r="12" fill="#38BDF8" />
+  <circle cx="286" cy="374" r="12" fill="#38BDF8" />
+  <circle cx="486" cy="262" r="12" fill="#38BDF8" />
+  <circle cx="684" cy="432" r="12" fill="#38BDF8" />
+  <circle cx="906" cy="374" r="12" fill="#38BDF8" />
+
+  <rect x="40" y="446" width="540" height="320" rx="24" fill="#111D35" />
+  <rect x="64" y="478" width="132" height="18" rx="9" fill="#172A45" />
+  <rect x="64" y="506" width="180" height="18" rx="9" fill="#172A45" />
+  <rect x="64" y="538" width="220" height="18" rx="9" fill="#172A45" />
+  <rect x="64" y="570" width="260" height="18" rx="9" fill="#172A45" />
+  <rect x="64" y="602" width="300" height="18" rx="9" fill="#172A45" />
+  <rect x="64" y="634" width="340" height="18" rx="9" fill="#172A45" />
+
+  <rect x="608" y="446" width="552" height="152" rx="24" fill="#111D35" />
+  <rect x="632" y="476" width="180" height="16" rx="8" fill="#172A45" />
+  <rect x="632" y="504" width="240" height="16" rx="8" fill="#172A45" />
+  <rect x="632" y="532" width="200" height="16" rx="8" fill="#172A45" />
+  <rect x="632" y="560" width="380" height="24" rx="12" fill="#0F2042" />
+  <rect x="632" y="598" width="260" height="24" rx="12" fill="#0F2042" />
+
+  <rect x="608" y="614" width="552" height="152" rx="24" fill="#111D35" />
+  <rect x="632" y="646" width="120" height="16" rx="8" fill="#172A45" />
+  <rect x="632" y="674" width="420" height="18" rx="9" fill="#172A45" />
+  <rect x="632" y="702" width="480" height="18" rx="9" fill="#172A45" />
+  <rect x="632" y="730" width="200" height="18" rx="9" fill="#172A45" />
+
+  <rect x="784" y="220" width="312" height="152" rx="24" fill="#111D35" />
+  <rect x="820" y="254" width="120" height="18" rx="9" fill="#172A45" />
+  <rect x="820" y="284" width="172" height="18" rx="9" fill="#172A45" />
+  <circle cx="920" cy="358" r="28" fill="#0EA5E9" opacity="0.15" />
+  <circle cx="940" cy="338" r="18" fill="#38BDF8" />
+  <polyline points="840,348 888,320 924,342 968,298" stroke="#38BDF8" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+
+  <rect x="784" y="118" width="312" height="92" rx="18" fill="#111D35" />
+  <rect x="820" y="146" width="110" height="16" rx="8" fill="#172A45" />
+  <rect x="820" y="176" width="188" height="16" rx="8" fill="#172A45" />
+
+  <rect x="40" y="780" width="1120" height="6" rx="3" fill="#152541" />
+</svg>

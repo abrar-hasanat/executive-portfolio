@@ -107,12 +107,12 @@ export const caseStudies: CaseStudy[] = [
     role: "Business Development Summer Analyst",
     period: "Summer 2026",
     impactMetrics: [
-      { label: "Tender Value Captured", value: "$15M+" },
+      { label: "Tender Value Captured", value: "$150K+" },
       { label: "Turnaround Reduction", value: "20%" },
       { label: "Opportunities Secured", value: "15+" },
     ],
     summary:
-      "Spearheaded go-to-market strategy across the commercial construction and government procurement sectors by engineering automated Power BI pipeline trackers and financial models to capture 15+ high-value tender opportunities.",
+      "Spearheaded go-to-market strategy across the commercial construction and government procurement sectors by engineering automated Power BI pipeline trackers and financial models to capture 15+ tender opportunities.",
     methodologies: ["Lean Six Sigma (DMAIC)", "Agile (Scrum)", "Financial Modeling"],
     techStack: ["Power BI", "Excel / DAX", "SQL", "Python"],
     problemStatement:
@@ -120,10 +120,11 @@ export const caseStudies: CaseStudy[] = [
     strategicSolution:
       "Designed an automated Power BI pipeline tracker integrated with custom financial models to standardize cross-functional proposal workflows and provide real-time visibility for operational leadership.",
     outcomes: [
-      "Captured 15+ high-value tender opportunities valued at $15M+.",
+      "Captured 15+ tender opportunities valued at $150K+.",
       "Accelerated proposal preparation turnaround time by 20% using Lean Six Sigma (DMAIC) workflow optimization.",
-      "Deployed automated executive dashboard for weekly pipeline review cycles.",
+      "Deployed automated dashboard for weekly pipeline review cycles.",
     ],
+    mockupPath: "/mockups/dashboard-mockup.svg",
     githubRepoUrl: "https://github.com/abrar-hasanat/tender-pipeline-analytics",
   },
   {
