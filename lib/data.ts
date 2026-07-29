@@ -1,13 +1,18 @@
-import { Award, LineChart, TerminalSquare, Workflow, Terminal, type LucideIcon } from "lucide-react";
+import { Award, LineChart, TerminalSquare, type LucideIcon } from "lucide-react";
+
+export interface CredentialItem {
+  name: string;
+  badge?: string;
+}
 
 export interface CredentialCategory {
   id: string;
   title: string;
   icon: LucideIcon;
-  items: string[];
+  items: CredentialItem[];
 }
 
-export const credentialCategories = [
+export const credentialCategories: CredentialCategory[] = [
   {
     id: "certifications",
     title: "Earned & Target Certifications",

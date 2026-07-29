@@ -42,21 +42,18 @@ export default function Credentials() {
                       className="flex items-start gap-2.5 text-sm leading-relaxed text-ink-secondary"
                     >
                       <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent/60" />
-                      
-                      {/* Updated Map Logic to handle Text + Optional Badges */}
                       <div className="flex flex-col gap-1.5 items-start">
                         <span className={skill.name.includes("In Progress") ? "opacity-75" : ""}>
                           {skill.name}
                         </span>
                         {skill.badge && (
-                          <img 
-                            src={skill.badge} 
-                            alt={`${skill.name} badge`} 
+                          <img
+                            src={skill.badge}
+                            alt={`${skill.name} badge`}
                             className="h-5 rounded-sm opacity-90 transition-opacity hover:opacity-100"
                           />
                         )}
                       </div>
-
                     </li>
                   ))}
                 </ul>
