@@ -75,35 +75,57 @@ export const credentialCategories: CredentialCategory[] = [
 
 export interface CaseStudy {
   id: string;
-  eyebrow: string;
-  client: string;
   title: string;
-  problem: string;
-  methodology: string;
-  impact: string;
-  metrics: { label: string; value: string }[];
-  dashboardUrl: string;
-  repoUrl: string;
+  company?: string;
+  client?: string;
+  eyebrow?: string;
+  role?: string;
+  period?: string;
+  summary?: string;
+  problem?: string;
+  problemStatement?: string;
+  methodology?: string;
+  methodologies?: string[];
+  impact?: string;
+  strategicSolution?: string;
+  metrics?: { label: string; value: string }[];
+  impactMetrics?: { label: string; value: string }[];
+  outcomes?: string[];
+  dashboardUrl?: string;
+  liveDashboardUrl?: string;
+  repoUrl?: string;
+  githubRepoUrl?: string;
+  mockupPath?: string;
 }
 
 export const caseStudies: CaseStudy[] = [
   {
-    id: "bay-oceania",
-    eyebrow: "Commercial Strategy · Power BI",
-    client: "Bay Oceania C&T Ltd.",
-    title: "Commercial Tender Pipeline & Power BI Analytics",
-    problem:
-      "Tender opportunities were tracked across disconnected spreadsheets, making it difficult for the commercial team to prioritize high-value bids or spot bottlenecks before deadlines.",
-    methodology:
-      "Designed a centralized data model in Power BI, built DAX measures to score opportunities by value and win-probability, and automated a refreshed pipeline view for weekly leadership reviews.",
-    impact:
-      "The new pipeline surfaced high-value opportunities early and cut proposal turnaround time, giving the commercial team a single source of truth for prioritization.",
-    metrics: [
-      { label: "High-value opportunities captured", value: "$15M+" },
-      { label: "Turnaround time reduction", value: "20%" },
+    id: "bay-oceania-gtm",
+    title: "Commercial Construction & Tender Pipeline Analytics",
+    company: "Bay Oceania C&T Ltd.",
+    role: "Business Development Summer Analyst",
+    period: "Summer 2026",
+    impactMetrics: [
+      { label: "Tender Value Captured", value: "$15M+" },
+      { label: "Turnaround Reduction", value: "20%" },
+      { label: "Opportunities Secured", value: "15+" },
     ],
-    dashboardUrl: "https://novypro.com/",
-    repoUrl: "https://github.com/abrar-hasanat",
+    summary:
+      "Spearheaded go-to-market strategy across the commercial construction and government procurement sectors by engineering automated Power BI pipeline trackers and financial models to capture 15+ high-value tender opportunities.",
+    methodologies: ["Lean Six Sigma (DMAIC)", "Agile (Scrum)", "Financial Modeling"],
+    techStack: ["Power BI", "Excel / DAX", "SQL", "Python"],
+    problemStatement:
+      "Legacy tender tracking relied on fragmented spreadsheets, causing proposal bottlenecks, delayed leadership reporting, and missed high-value government procurement cycles.",
+    strategicSolution:
+      "Designed an automated Power BI pipeline tracker integrated with custom financial models to standardize cross-functional proposal workflows and provide real-time visibility for operational leadership.",
+    outcomes: [
+      "Captured 15+ high-value tender opportunities valued at $15M+.",
+      "Accelerated proposal preparation turnaround time by 20% using Lean Six Sigma (DMAIC) workflow optimization.",
+      "Deployed automated executive dashboard for weekly pipeline review cycles.",
+    ],
+    liveDashboardUrl: "https://www.novypro.com/",
+    githubRepoUrl: "https://github.com/abrar-hasanat/tender-pipeline-analytics",
+    mockupPath: "/mockups/bay-oceania-macbook.png",
   },
   {
     id: "taa-services",
