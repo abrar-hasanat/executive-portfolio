@@ -1,0 +1,61 @@
+Tender_ID,Client_Name,Sector,Expected_Contract_Value_USD,Win_Probability_Pct,Stage,Baseline_Turnaround,Submission_Turnaround_Days,DMAIC_Optimized,Profit_Margin_Pct,Risk_Rating
+TND-2026-001,Pacific Health Infrastructure,Infrastructure,980000,52,Technical Evaluation,33,26,True,17.6,Medium
+TND-2026-002,Atlas Industrial Holdings,Infrastructure,1650000,31,Technical Evaluation,26,17,True,20.6,Low
+TND-2026-003,Southern Ports Commission,Commercial Construction,1720000,44,Lost,18,19,False,24.0,Medium
+TND-2026-004,Harbourview Commercial Group,Commercial Construction,2070000,68,Won,18,14,True,16.5,Medium
+TND-2026-005,Capital Civic Works,Government Procurement,2030000,59,Technical Evaluation,18,13,True,19.4,High
+TND-2026-006,Waikato Utilities Board,Commercial Construction,2290000,38,Lead,20,20,False,18.1,Medium
+TND-2026-007,Harbourview Commercial Group,Commercial Construction,2110000,51,Won,17,17,False,26.4,Medium
+TND-2026-008,Greenline Rail Alliance,Government Procurement,2770000,54,Commercial Proposal,29,32,False,22.6,Low
+TND-2026-009,Te Moana Housing Authority,Commercial Construction,2100000,27,Final Negotiation,32,31,False,12.3,High
+TND-2026-010,Kauri Retail Developments,Infrastructure,2300000,68,Final Negotiation,25,16,True,14.4,Medium
+TND-2026-011,Seabright University Consortium,Government Procurement,1260000,26,Commercial Proposal,29,21,True,27.7,Medium
+TND-2026-012,Oceania Defence Estate,Government Procurement,1870000,39,Commercial Proposal,25,20,True,18.6,Low
+TND-2026-013,Kauri Retail Developments,Commercial Construction,3240000,75,Lead,19,19,False,20.6,High
+TND-2026-014,Auckland Transport Authority,Government Procurement,2890000,24,Lead,31,31,False,12.2,Low
+TND-2026-015,Te Moana Housing Authority,Commercial Construction,1180000,26,Commercial Proposal,17,20,False,26.7,Low
+TND-2026-016,Pacific Health Infrastructure,Infrastructure,1140000,30,Lost,27,30,False,23.6,Medium
+TND-2026-017,Pacific Health Infrastructure,Commercial Construction,2040000,33,Lead,31,30,False,20.7,Low
+TND-2026-018,National Procurement Office,Government Procurement,2460000,31,Lead,15,17,False,18.8,Low
+TND-2026-019,Capital Civic Works,Commercial Construction,2060000,40,Commercial Proposal,26,25,False,13.4,Low
+TND-2026-020,Capital Civic Works,Government Procurement,920000,48,Technical Evaluation,31,22,True,20.6,Medium
+TND-2026-021,Meridian Data Campus,Commercial Construction,2100000,42,Won,26,29,False,16.8,Medium
+TND-2026-022,Bluewater Airport Corporation,Infrastructure,2100000,47,Technical Evaluation,32,23,True,13.5,Medium
+TND-2026-023,Capital Civic Works,Infrastructure,1770000,67,Commercial Proposal,21,15,True,21.2,Medium
+TND-2026-024,Capital Civic Works,Government Procurement,1720000,43,Lost,25,17,True,26.4,Medium
+TND-2026-025,Harbourview Commercial Group,Commercial Construction,1970000,25,Lead,32,22,True,15.3,Low
+TND-2026-026,National Procurement Office,Government Procurement,1260000,49,Lead,31,32,False,16.4,Low
+TND-2026-027,Oceania Defence Estate,Government Procurement,2850000,50,Won,19,19,False,24.3,Low
+TND-2026-028,Seabright University Consortium,Infrastructure,2030000,74,Technical Evaluation,28,22,True,26.6,High
+TND-2026-029,Atlas Industrial Holdings,Infrastructure,1610000,59,Commercial Proposal,19,15,True,22.5,Medium
+TND-2026-030,Waikato Utilities Board,Commercial Construction,1720000,63,Lead,27,28,False,21.8,Medium
+TND-2026-031,Trans-Tasman Logistics Park,Government Procurement,960000,70,Lead,26,21,True,25.2,Medium
+TND-2026-032,Capital Civic Works,Commercial Construction,480000,70,Lead,21,16,True,27.6,Low
+TND-2026-033,Te Moana Housing Authority,Government Procurement,2120000,43,Technical Evaluation,18,18,False,17.4,Medium
+TND-2026-034,Bluewater Airport Corporation,Government Procurement,1180000,47,Won,16,17,False,24.0,High
+TND-2026-035,Seabright University Consortium,Government Procurement,800000,13,Commercial Proposal,19,19,False,23.2,Medium
+TND-2026-036,Atlas Industrial Holdings,Infrastructure,2760000,44,Lead,34,27,True,24.1,Medium
+TND-2026-037,Southern Ports Commission,Commercial Construction,900000,72,Won,15,10,True,26.7,Medium
+TND-2026-038,Seabright University Consortium,Infrastructure,1000000,56,Lost,33,21,True,26.9,Low
+TND-2026-039,Meridian Data Campus,Infrastructure,1940000,80,Lead,29,18,True,15.2,Low
+TND-2026-040,Harbourview Commercial Group,Government Procurement,850000,29,Commercial Proposal,18,16,False,16.3,Low
+TND-2026-041,Seabright University Consortium,Government Procurement,1280000,68,Commercial Proposal,23,25,False,17.1,Low
+TND-2026-042,National Procurement Office,Infrastructure,420000,28,Final Negotiation,35,23,True,22.4,Medium
+TND-2026-043,Waikato Utilities Board,Commercial Construction,1400000,38,Lead,32,24,True,25.9,High
+TND-2026-044,Auckland Transport Authority,Commercial Construction,1570000,53,Lead,30,30,False,19.6,High
+TND-2026-045,Bluewater Airport Corporation,Commercial Construction,1140000,61,Commercial Proposal,30,29,False,16.5,Low
+TND-2026-046,Harbourview Commercial Group,Commercial Construction,1950000,34,Commercial Proposal,23,26,False,19.3,Medium
+TND-2026-047,Pacific Health Infrastructure,Commercial Construction,1080000,68,Technical Evaluation,28,19,True,22.3,Medium
+TND-2026-048,Seabright University Consortium,Commercial Construction,2600000,48,Won,27,19,True,15.3,Medium
+TND-2026-049,National Procurement Office,Commercial Construction,1380000,65,Lost,27,21,True,22.1,Medium
+TND-2026-050,Regional Justice Precinct,Infrastructure,1620000,63,Technical Evaluation,17,18,False,15.2,Medium
+TND-2026-051,Capital Civic Works,Commercial Construction,390000,44,Lead,32,34,False,12.6,Medium
+TND-2026-052,Meridian Data Campus,Commercial Construction,1640000,46,Lead,23,26,False,27.3,Low
+TND-2026-053,Southern Ports Commission,Government Procurement,430000,38,Commercial Proposal,32,25,True,13.2,Medium
+TND-2026-054,Crown Facilities Directorate,Government Procurement,540000,29,Lead,19,18,False,21.8,Low
+TND-2026-055,Harbourview Commercial Group,Government Procurement,1750000,69,Final Negotiation,15,18,False,18.0,High
+TND-2026-056,Te Moana Housing Authority,Commercial Construction,1540000,67,Final Negotiation,19,13,True,22.1,Medium
+TND-2026-057,National Procurement Office,Government Procurement,1870000,66,Technical Evaluation,23,17,True,18.1,High
+TND-2026-058,Greenline Rail Alliance,Government Procurement,2400000,59,Final Negotiation,29,19,True,14.9,High
+TND-2026-059,Kauri Retail Developments,Infrastructure,1430000,64,Technical Evaluation,18,13,True,16.4,High
+TND-2026-060,Southern Ports Commission,Government Procurement,820000,57,Lost,19,17,False,17.5,Low
