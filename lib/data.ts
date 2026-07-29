@@ -86,6 +86,7 @@ export interface CaseStudy {
   problemStatement?: string;
   methodology?: string;
   methodologies?: string[];
+  techStack?: string[];
   impact?: string;
   strategicSolution?: string;
   metrics?: { label: string; value: string }[];
