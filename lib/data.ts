@@ -124,9 +124,7 @@ export const caseStudies: CaseStudy[] = [
       "Accelerated proposal preparation turnaround time by 20% using Lean Six Sigma (DMAIC) workflow optimization.",
       "Deployed automated executive dashboard for weekly pipeline review cycles.",
     ],
-    liveDashboardUrl: "https://www.novypro.com/",
     githubRepoUrl: "https://github.com/abrar-hasanat/tender-pipeline-analytics",
-    mockupPath: "/mockups/bay-oceania-macbook.png",
   },
   {
     id: "taa-services",
@@ -143,7 +141,6 @@ export const caseStudies: CaseStudy[] = [
       { label: "Methodology", value: "DMAIC" },
       { label: "ERP UAT cycles led", value: "Workday" },
     ],
-    dashboardUrl: "https://novypro.com/",
     repoUrl: "https://github.com/abrar-hasanat",
   },
   {
@@ -161,7 +158,6 @@ export const caseStudies: CaseStudy[] = [
       { label: "Scenarios modeled", value: "Multi-case" },
       { label: "Core method", value: "DCF + Sensitivity" },
     ],
-    dashboardUrl: "https://novypro.com/",
     repoUrl: "https://github.com/abrar-hasanat",
   },
 ];
