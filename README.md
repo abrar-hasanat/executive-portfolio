@@ -1,105 +1,39 @@
-# Abrar Hasanat — Portfolio
+# Executive Analytics & Product Strategy Portfolio
 
-Executive-grade personal portfolio built with Next.js 14 (App Router, TypeScript),
-Tailwind CSS, Framer Motion, and Lucide React. Targeted at Management Consulting
-and Technical Product Management recruiters.
+**Live Platform:** [abrarhasanat.com](https://abrarhasanat.com)  
+**Author:** Abrar Hasanat — Senior @ Carleton College (BA Economics | Minors: Public Policy, Statistics & Data Science)  
+**Target Roles:** Management Consulting (Strategy / Digital) & Technical Product Management (2027)
 
-## Stack
+---
 
-- **Framework:** Next.js 14 (App Router, TypeScript, static export–friendly)
-- **Styling:** Tailwind CSS with a custom design-token theme
-- **Motion:** Framer Motion (subtle, reduced-motion-aware)
-- **Icons:** Lucide React
-- **Fonts:** Inter (body/display) + IBM Plex Mono (labels, data, eyebrows) via `next/font/google`
-- **Deploy target:** Vercel → `abrarhasanat.com`
+## Executive Overview
 
-## Getting started
+This repository powers the codebase for **[abrarhasanat.com](https://abrarhasanat.com)**, an analytics and product strategy engine. Built to showcase dynamic business intelligence pipelines and operational process optimizations designed for recruiters and partners.
 
-```bash
-# 1. Install dependencies
-npm install
+---
 
-# 2. Run the dev server
-npm run dev
-# → http://localhost:3000
+## Technical Stack & Architecture
 
-# 3. Production build (also what Vercel runs)
-npm run build
-npm run start
-```
+- **Framework:** Next.js 14 (App Router, TypeScript)
+- **Styling:** Tailwind CSS with dark-mode executive tokens (`#0A192F` Deep Navy, `#112240` Slate)
+- **UI Components:** Lucide React, Framer Motion
+- **Deployment:** Vercel Continuous Deployment (`abrarhasanat.com`)
 
-Requires Node.js 18.17+ (Next.js 14 minimum).
+---
 
-## Project structure
+## Featured Case Studies
 
-```
-app/
-  layout.tsx        Root layout: fonts, metadata, global background
-  page.tsx           Assembles Navbar + Hero + Credentials + CaseStudies + Footer
-  globals.css         Tailwind directives, focus rings, reduced-motion, scrollbar
-components/
-  Navbar.tsx          Sticky header with section anchor links
-  Hero.tsx            Name, tagline, sub-headline, dual CTAs, signature trendline motif
-  Credentials.tsx      Categorized skills/certifications grid
-  CaseStudies.tsx       Problem → Methodology → Impact case study cards
-  Footer.tsx            Contact links (email, LinkedIn, GitHub)
-  SectionHeading.tsx    Reusable eyebrow + title pattern
-lib/
-  data.ts             All editable content: credentials, case studies, social links
-public/
-  mockups/             Drop case-study screenshots/mockups here (see below)
-```
+1. **Bay Oceania C&T Ltd. — Tender Pipeline & Power BI Analytics**
+   - *Impact:* Captured $15M+ in high-value opportunities; reduced proposal turnaround time by 20% using Lean Six Sigma (DMAIC).
+2. **TAA Services / Carleton ERP — Operational Backlog & Capacity Optimization**
+   - *Impact:* Overhauled team task distribution and executed Workday ERP User Acceptance Testing (UAT).
+3. **Quantitative Market Entry & Valuation Model**
+   - *Impact:* Multi-variable economic modeling for strategic market evaluation.
 
-## Content you'll want to edit before launch
+---
 
-All copy lives in **`lib/data.ts`** — you shouldn't need to touch component files
-to update content:
+## Contact & Professional Links
 
-1. **Case study links** — `dashboardUrl` and `repoUrl` in `lib/data.ts` currently
-   point to placeholders (`novypro.com`, your GitHub profile root). Replace with
-   the specific NovyPro dashboard link and GitHub repo link for each project.
-2. **Mockup images** — each case study card currently renders a dashed-border
-   placeholder frame labeled "Dashboard mockup." To swap in real Shots.so
-   MacBook mockups:
-   - Export your mockups from Shots.so as PNG/WebP
-   - Drop them in `public/mockups/`
-   - In `components/CaseStudies.tsx`, replace the placeholder `<div>` block
-     (marked with a `MOCKUP PLACEHOLDER` comment) with a Next.js `<Image />`
-     pointing at `/mockups/your-file.png`
-3. **Metrics** — the small stat chips (e.g. "$15M+", "20%") pull from the
-   `metrics` array per case study in `lib/data.ts`.
-
-## Design system
-
-Tokens live in `tailwind.config.ts` under `theme.extend.colors`:
-
-| Token | Hex | Use |
-|---|---|---|
-| `navy` | `#0A192F` | Primary background |
-| `navy-surface` | `#112240` | Elevated cards |
-| `ink-primary` | `#F8FAFC` | Headers |
-| `ink-secondary` | `#94A3B8` | Body copy |
-| `accent` | `#3B82F6` | CTAs, links, highlights |
-| `border` | `#1E293B` | Hairline borders (slate-800) |
-
-## Deploying to Vercel
-
-```bash
-npm i -g vercel
-vercel login
-vercel          # preview deploy
-vercel --prod   # production deploy
-```
-
-Then in the Vercel dashboard: **Project → Settings → Domains** → add
-`abrarhasanat.com` and follow the DNS instructions (A/CNAME records at your
-registrar).
-
-## Accessibility & performance notes baked in
-
-- Visible focus rings on all interactive elements (`globals.css`)
-- `prefers-reduced-motion` respected — Framer Motion animations and smooth
-  scroll are disabled for users who request it
-- Fonts are self-hosted at build time via `next/font` (no runtime layout shift,
-  no third-party font requests)
-- Fully responsive from mobile up (`sm:` / `lg:` breakpoints throughout)
+- **Website:** [abrarhasanat.com](https://abrarhasanat.com)
+- **LinkedIn:** [linkedin.com/in/ahasanat](https://linkedin.com/in/ahasanat)
+- **Email:** [abrar@abrarhasanat.com](mailto:abrar@abrarhasanat.com)
