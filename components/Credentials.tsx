@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { credentialCategories } from "@/lib/data";
 import SectionHeading from "./SectionHeading";
@@ -47,9 +48,11 @@ export default function Credentials() {
                           {skill.name}
                         </span>
                         {skill.badge && (
-                          <img
+                          <Image
                             src={skill.badge}
                             alt={`${skill.name} badge`}
+                            width={120}
+                            height={20}
                             className="h-5 rounded-sm opacity-90 transition-opacity hover:opacity-100"
                           />
                         )}
