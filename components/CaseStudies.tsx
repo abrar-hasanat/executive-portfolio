@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink, Github, Monitor } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 import { caseStudies } from "@/lib/data";
 import SectionHeading from "./SectionHeading";
 
@@ -23,29 +23,9 @@ export default function CaseStudies() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.55, delay: idx * 0.05 }}
-              className="grid gap-0 overflow-hidden rounded-lg border border-border bg-navy-surface lg:grid-cols-5"
+              className="overflow-hidden rounded-lg border border-border bg-navy-surface"
             >
-              <div className="relative flex items-center justify-center border-b border-border bg-[#0D1F3A] p-8 lg:col-span-2 lg:border-b-0 lg:border-r">
-                <div className="pointer-events-none absolute inset-0 bg-grid-pattern bg-grid opacity-20" />
-                <div className="relative aspect-[16/11] w-full max-w-sm overflow-hidden rounded-md border border-dashed border-border-light bg-[#081329] text-center">
-                  {study.mockupPath ? (
-                    <img
-                      src={study.mockupPath}
-                      alt={`Dashboard mockup — ${study.company ?? study.client}`}
-                      className="h-full w-full object-cover"
-                    />
-                  ) : (
-                    <div className="flex h-full flex-col items-center justify-center gap-3 px-6 text-center">
-                      <Monitor size={28} className="text-ink-secondary/50" />
-                      <span className="font-mono text-[11px] uppercase tracking-widest text-ink-secondary/60">
-                        Dashboard mockup — {study.company ?? study.client}
-                      </span>
-                    </div>
-                  )}
-                </div>
-              </div>
-
-              <div className="flex flex-col justify-between p-8 lg:col-span-3 lg:p-10">
+              <div className="p-8 lg:p-10">
                 <div>
                   <div className="flex flex-wrap gap-3">
                     {study.company ? (
