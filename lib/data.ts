@@ -182,7 +182,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     githubRepoUrl: "https://github.com/abrar-hasanat/economic-market-valuation",
     liveDashboardUrl: "/dashboards/economic-valuation",
-    mockupPath: "/mockups/economic-model-macbook.png",
+    mockupPath: "/mockups/dashboard-mockup.svg",
   },
 ];
 
