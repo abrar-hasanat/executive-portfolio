@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { ExternalLink, Github, Monitor } from "lucide-react";
 import { caseStudies } from "@/lib/data";
@@ -30,11 +29,10 @@ export default function CaseStudies() {
                 <div className="pointer-events-none absolute inset-0 bg-grid-pattern bg-grid opacity-20" />
                 <div className="relative aspect-[16/11] w-full max-w-sm overflow-hidden rounded-md border border-dashed border-border-light bg-[#081329] text-center">
                   {study.mockupPath ? (
-                    <Image
+                    <img
                       src={study.mockupPath}
                       alt={`Dashboard mockup — ${study.company ?? study.client}`}
-                      fill
-                      className="object-cover"
+                      className="h-full w-full object-cover"
                     />
                   ) : (
                     <div className="flex h-full flex-col items-center justify-center gap-3 px-6 text-center">
