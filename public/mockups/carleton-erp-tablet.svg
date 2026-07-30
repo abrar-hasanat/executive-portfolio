@@ -1,0 +1,20 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" rx="40" fill="#0d1f3a"/>
+  <rect x="80" y="80" width="1040" height="640" rx="32" fill="#112840" stroke="#3B82F6" stroke-width="6"/>
+  <rect x="120" y="140" width="420" height="30" rx="15" fill="#1F2F4D"/>
+  <rect x="120" y="200" width="880" height="42" rx="21" fill="#1F2F4D"/>
+  <rect x="120" y="270" width="540" height="320" rx="24" fill="#142439"/>
+  <rect x="700" y="270" width="300" height="140" rx="24" fill="#1F2F4D"/>
+  <rect x="700" y="440" width="300" height="150" rx="24" fill="#1F2F4D"/>
+  <rect x="160" y="310" width="180" height="28" rx="14" fill="#3B82F6"/>
+  <rect x="160" y="360" width="250" height="28" rx="14" fill="#60A5FA"/>
+  <rect x="160" y="410" width="200" height="28" rx="14" fill="#38BDF8"/>
+  <rect x="160" y="460" width="300" height="28" rx="14" fill="#7DD3FC"/>
+  <rect x="740" y="300" width="220" height="28" rx="14" fill="#3B82F6"/>
+  <rect x="740" y="350" width="200" height="28" rx="14" fill="#60A5FA"/>
+  <rect x="740" y="400" width="240" height="28" rx="14" fill="#38BDF8"/>
+  <rect x="740" y="450" width="160" height="28" rx="14" fill="#7DD3FC"/>
+  <rect x="120" y="620" width="880" height="18" rx="9" fill="#1F2F4D"/>
+  <text x="600" y="110" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="36" font-weight="700" text-anchor="middle">Carleton ERP / Workday Analytics</text>
+  <text x="600" y="720" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="24" text-anchor="middle">Operational Backlog & Capacity Dashboard</text>
+</svg>

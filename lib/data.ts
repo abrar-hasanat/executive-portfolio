@@ -154,7 +154,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     githubRepoUrl: "https://github.com/abrar-hasanat/operations-capacity-forecasting",
     liveDashboardUrl: "/dashboards/operations-capacity",
-    mockupPath: "/mockups/carleton-erp-tablet.png",
+    mockupPath: "/mockups/carleton-erp-tablet.svg",
   },
   {
     id: "market-entry",
