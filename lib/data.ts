@@ -129,21 +129,32 @@ export const caseStudies: CaseStudy[] = [
     githubRepoUrl: "https://github.com/abrar-hasanat/tender-pipeline-analytics",
   },
   {
-    id: "taa-services",
-    eyebrow: "Operations · Lean Six Sigma",
-    client: "TAA Services / Carleton ERP",
-    title: "Operational Team Capacity & Backlog Optimization",
-    problem:
-      "Ticket backlog and uneven team capacity were slowing service delivery, with no structured process for isolating root causes or validating fixes before rollout.",
-    methodology:
-      "Applied DMAIC methodology to map the intake-to-resolution process, identify capacity constraints, and lead structured Workday ERP user acceptance testing ahead of go-live.",
-    impact:
-      "Backlog volume and cycle time dropped as capacity was reallocated to verified bottlenecks, and UAT findings prevented several defects from reaching production.",
-    metrics: [
-      { label: "Methodology", value: "DMAIC" },
-      { label: "ERP UAT cycles led", value: "Workday" },
+    id: "carleton-erp-migration",
+    title: "Enterprise ERP Migration & Capacity Optimization",
+    company: "Carleton College / TAA Services",
+    role: "Operations & ERP Migration Analyst",
+    period: "Workday ERP Cutover",
+    impactMetrics: [
+      { label: "Processing Backlog", value: "-20%" },
+      { label: "UAT Pass Rate", value: "98%" },
+      { label: "Scaling Support", value: "3x Team" },
     ],
-    repoUrl: "https://github.com/abrar-hasanat",
+    summary:
+      "Led Workday ERP cutover readiness analytics, UAT validation, and Lean Six Sigma capacity modeling to reduce processing backlog while supporting a 3x team expansion strategy.",
+    methodologies: ["Lean Six Sigma (DMAIC)", "Agile (Scrum) UAT", "Capacity Modeling"],
+    techStack: ["Power BI", "DAX", "SQL", "Python", "Workday ERP"],
+    problemStatement:
+      "High administrative backlogs and registration bottlenecks created service-delivery risk during the migration from legacy Colleague ERP workflows to Workday ERP operations.",
+    strategicSolution:
+      "Mapped baseline cycle times, executed structured UAT scripts, standardized DMAIC improvements, and modeled FTE allocation required to sustain SLA coverage under 3x growth.",
+    outcomes: [
+      "Reduced peak-volume processing backlog by 20% through DMAIC cycle-time optimization.",
+      "Verified 150+ UAT scripts with a 98% pass rate before Workday ERP cutover.",
+      "Built capacity allocation logic to support 3x team expansion without SLA degradation.",
+    ],
+    githubRepoUrl: "https://github.com/abrar-hasanat/operations-capacity-forecasting",
+    liveDashboardUrl: "/dashboards/operations-capacity",
+    mockupPath: "/mockups/carleton-erp-tablet.png",
   },
   {
     id: "market-entry",

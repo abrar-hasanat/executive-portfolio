@@ -1,0 +1,7 @@
+UAT Pass Rate % = DIVIDE(CALCULATE(COUNT(UAT[Task_ID]), UAT[UAT_Script_Pass_Status] = "Passed"), COUNT(UAT[Task_ID]), 0)
+
+Avg Turnaround Hours = AVERAGE(UAT[DMAIC_Optimized_Hours])
+
+Capacity Processing Backlog Reduction % = DIVIDE(AVERAGE(UAT[Baseline_Processing_Hours]) - AVERAGE(UAT[DMAIC_Optimized_Hours]), AVERAGE(UAT[Baseline_Processing_Hours]), 0)
+
+Forecasted 3x Team Capacity FTE = SUM(UAT[Team_Member_FTE_Allocation]) * 3.0

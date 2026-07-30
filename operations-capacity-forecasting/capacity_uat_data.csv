@@ -1,0 +1,151 @@
+Task_ID,Department,System_Phase,UAT_Script_Pass_Status,Baseline_Processing_Hours,DMAIC_Optimized_Hours,Backlog_Reduction_Pct,Team_Member_FTE_Allocation,Weekly_Volume_Handled
+UAT-2026-001,Student Finance,Workday ERP Cutover,Passed,11.84,8.5,0.2821,1.05,190
+UAT-2026-002,Registrar,Workday ERP Cutover,Passed,11.49,8.5,0.2602,1.22,243
+UAT-2026-003,Student Finance,Legacy Colleague ERP,Passed,9.6,7.75,0.1927,0.97,281
+UAT-2026-004,Student Finance,Legacy Colleague ERP,Failed,5.08,4.1,0.1929,1.41,151
+UAT-2026-005,Registrar,Legacy Colleague ERP,Passed,9.96,8.06,0.1908,1.55,164
+UAT-2026-006,Registrar,Legacy Colleague ERP,Passed,5.77,4.71,0.1837,0.96,266
+UAT-2026-007,Academic Advising,Workday ERP Cutover,Passed,8.44,6.62,0.2156,1.83,62
+UAT-2026-008,Student Finance,Workday ERP Cutover,Passed,11.94,8.5,0.2881,0.94,189
+UAT-2026-009,Academic Advising,Workday ERP Cutover,Passed,7.2,5.67,0.2125,1.49,146
+UAT-2026-010,Student Finance,Workday ERP Cutover,Passed,5.09,4.04,0.2063,1.18,116
+UAT-2026-011,Academic Advising,Legacy Colleague ERP,Passed,9.39,7.49,0.2023,0.74,54
+UAT-2026-012,Admissions,Legacy Colleague ERP,Passed,4.54,3.57,0.2137,1.13,163
+UAT-2026-013,Admissions,Legacy Colleague ERP,Passed,9.09,7.1,0.2189,1.4,150
+UAT-2026-014,Academic Advising,Legacy Colleague ERP,Passed,7.67,6.0,0.2177,0.61,110
+UAT-2026-015,Registrar,Legacy Colleague ERP,Passed,5.28,4.27,0.1913,1.23,189
+UAT-2026-016,Registrar,Workday ERP Cutover,Passed,7.27,5.94,0.1829,0.76,264
+UAT-2026-017,Registrar,Workday ERP Cutover,Passed,11.88,8.5,0.2845,1.45,140
+UAT-2026-018,Registrar,Legacy Colleague ERP,Passed,7.36,5.8,0.212,1.84,280
+UAT-2026-019,Admissions,Legacy Colleague ERP,Passed,7.18,5.69,0.2075,0.74,76
+UAT-2026-020,Academic Advising,Legacy Colleague ERP,Passed,10.29,8.08,0.2148,1.08,117
+UAT-2026-021,Academic Advising,Legacy Colleague ERP,Passed,5.85,4.73,0.1915,1.94,65
+UAT-2026-022,Admissions,Legacy Colleague ERP,Passed,6.73,5.4,0.1976,1.78,258
+UAT-2026-023,Student Finance,Workday ERP Cutover,Passed,5.65,4.47,0.2088,1.4,153
+UAT-2026-024,Registrar,Legacy Colleague ERP,Passed,5.01,3.93,0.2156,1.85,268
+UAT-2026-025,Student Finance,Workday ERP Cutover,Passed,4.94,3.99,0.1923,1.8,107
+UAT-2026-026,Academic Advising,Workday ERP Cutover,Passed,10.35,8.14,0.2135,1.7,174
+UAT-2026-027,Registrar,Workday ERP Cutover,Flagged,7.37,5.94,0.194,1.91,79
+UAT-2026-028,Admissions,Legacy Colleague ERP,Passed,7.54,6.06,0.1963,1.06,212
+UAT-2026-029,Student Finance,Workday ERP Cutover,Passed,6.23,5.01,0.1958,1.67,242
+UAT-2026-030,Academic Advising,Legacy Colleague ERP,Passed,10.75,8.5,0.2093,1.94,217
+UAT-2026-031,Admissions,Legacy Colleague ERP,Passed,10.76,8.5,0.21,1.67,97
+UAT-2026-032,Academic Advising,Legacy Colleague ERP,Passed,7.1,5.82,0.1803,1.62,269
+UAT-2026-033,Admissions,Workday ERP Cutover,Passed,10.93,8.5,0.2223,0.6,193
+UAT-2026-034,Academic Advising,Legacy Colleague ERP,Passed,11.94,8.5,0.2881,1.62,292
+UAT-2026-035,Student Finance,Workday ERP Cutover,Passed,8.09,6.41,0.2077,0.75,75
+UAT-2026-036,Admissions,Workday ERP Cutover,Passed,9.71,7.62,0.2152,1.01,119
+UAT-2026-037,Admissions,Legacy Colleague ERP,Passed,11.19,8.5,0.2404,1.25,183
+UAT-2026-038,Registrar,Legacy Colleague ERP,Passed,6.09,4.95,0.1872,0.57,109
+UAT-2026-039,Student Finance,Workday ERP Cutover,Passed,5.11,4.07,0.2035,0.77,181
+UAT-2026-040,Academic Advising,Legacy Colleague ERP,Passed,6.83,5.5,0.1947,0.92,269
+UAT-2026-041,Admissions,Workday ERP Cutover,Passed,7.59,6.06,0.2016,1.38,89
+UAT-2026-042,Student Finance,Legacy Colleague ERP,Passed,11.74,8.5,0.276,1.12,156
+UAT-2026-043,Academic Advising,Legacy Colleague ERP,Passed,9.62,7.89,0.1798,1.63,172
+UAT-2026-044,Student Finance,Workday ERP Cutover,Passed,11.76,8.5,0.2772,1.21,276
+UAT-2026-045,Student Finance,Workday ERP Cutover,Passed,11.22,8.5,0.2424,1.92,226
+UAT-2026-046,Student Finance,Workday ERP Cutover,Passed,6.72,5.27,0.2158,1.63,145
+UAT-2026-047,Student Finance,Workday ERP Cutover,Passed,11.11,8.5,0.2349,0.86,76
+UAT-2026-048,Admissions,Legacy Colleague ERP,Passed,7.7,6.25,0.1883,1.66,158
+UAT-2026-049,Student Finance,Workday ERP Cutover,Passed,8.95,7.21,0.1944,1.69,296
+UAT-2026-050,Registrar,Legacy Colleague ERP,Passed,5.04,4.06,0.1944,1.32,286
+UAT-2026-051,Academic Advising,Legacy Colleague ERP,Passed,5.16,4.05,0.2151,1.04,210
+UAT-2026-052,Student Finance,Legacy Colleague ERP,Passed,7.89,6.28,0.2041,0.98,212
+UAT-2026-053,Academic Advising,Workday ERP Cutover,Passed,6.15,4.86,0.2098,1.67,194
+UAT-2026-054,Admissions,Legacy Colleague ERP,Passed,9.24,7.41,0.1981,0.6,181
+UAT-2026-055,Admissions,Legacy Colleague ERP,Passed,11.95,8.5,0.2887,0.74,259
+UAT-2026-056,Student Finance,Legacy Colleague ERP,Passed,11.67,8.5,0.2716,1.73,213
+UAT-2026-057,Student Finance,Workday ERP Cutover,Passed,9.63,7.78,0.1921,0.94,65
+UAT-2026-058,Academic Advising,Workday ERP Cutover,Passed,6.0,4.87,0.1883,1.29,298
+UAT-2026-059,Student Finance,Workday ERP Cutover,Passed,4.84,3.83,0.2087,1.24,189
+UAT-2026-060,Admissions,Legacy Colleague ERP,Passed,10.44,8.48,0.1877,1.42,61
+UAT-2026-061,Admissions,Workday ERP Cutover,Passed,7.54,6.11,0.1897,1.51,180
+UAT-2026-062,Registrar,Legacy Colleague ERP,Passed,7.65,6.2,0.1895,0.72,299
+UAT-2026-063,Registrar,Legacy Colleague ERP,Passed,9.61,7.88,0.18,1.79,92
+UAT-2026-064,Registrar,Workday ERP Cutover,Passed,8.63,6.79,0.2132,1.09,185
+UAT-2026-065,Academic Advising,Legacy Colleague ERP,Passed,7.13,5.58,0.2174,0.5,153
+UAT-2026-066,Registrar,Legacy Colleague ERP,Passed,10.0,7.94,0.206,0.71,176
+UAT-2026-067,Registrar,Legacy Colleague ERP,Passed,7.77,6.15,0.2085,1.85,59
+UAT-2026-068,Registrar,Workday ERP Cutover,Passed,4.95,3.98,0.196,1.51,244
+UAT-2026-069,Student Finance,Workday ERP Cutover,Passed,6.92,5.43,0.2153,1.97,296
+UAT-2026-070,Registrar,Legacy Colleague ERP,Passed,10.45,8.26,0.2096,1.81,267
+UAT-2026-071,Admissions,Legacy Colleague ERP,Passed,10.01,8.09,0.1918,1.02,162
+UAT-2026-072,Registrar,Workday ERP Cutover,Passed,11.91,8.5,0.2863,1.54,223
+UAT-2026-073,Academic Advising,Workday ERP Cutover,Passed,7.29,5.81,0.203,0.73,161
+UAT-2026-074,Admissions,Workday ERP Cutover,Passed,5.0,4.05,0.19,1.09,200
+UAT-2026-075,Academic Advising,Legacy Colleague ERP,Passed,9.62,7.57,0.2131,0.52,192
+UAT-2026-076,Registrar,Legacy Colleague ERP,Passed,9.24,7.25,0.2154,1.8,185
+UAT-2026-077,Admissions,Legacy Colleague ERP,Flagged,6.73,5.41,0.1961,1.2,294
+UAT-2026-078,Registrar,Workday ERP Cutover,Passed,5.16,4.12,0.2016,0.93,268
+UAT-2026-079,Academic Advising,Legacy Colleague ERP,Passed,11.7,8.5,0.2735,1.01,146
+UAT-2026-080,Registrar,Workday ERP Cutover,Passed,5.56,4.34,0.2194,1.25,237
+UAT-2026-081,Student Finance,Workday ERP Cutover,Passed,9.96,8.07,0.1898,1.64,65
+UAT-2026-082,Academic Advising,Workday ERP Cutover,Passed,6.52,5.22,0.1994,1.61,123
+UAT-2026-083,Registrar,Workday ERP Cutover,Passed,5.53,4.53,0.1808,0.51,295
+UAT-2026-084,Admissions,Legacy Colleague ERP,Passed,9.04,7.06,0.219,0.68,249
+UAT-2026-085,Academic Advising,Workday ERP Cutover,Passed,10.67,8.5,0.2034,1.97,167
+UAT-2026-086,Academic Advising,Workday ERP Cutover,Passed,11.84,8.5,0.2821,1.28,226
+UAT-2026-087,Academic Advising,Workday ERP Cutover,Passed,6.43,5.14,0.2006,0.68,75
+UAT-2026-088,Student Finance,Legacy Colleague ERP,Passed,9.8,8.02,0.1816,1.19,231
+UAT-2026-089,Registrar,Workday ERP Cutover,Passed,8.92,7.04,0.2108,1.87,277
+UAT-2026-090,Academic Advising,Workday ERP Cutover,Passed,11.33,8.5,0.2498,0.6,104
+UAT-2026-091,Academic Advising,Workday ERP Cutover,Passed,10.28,8.21,0.2014,1.4,293
+UAT-2026-092,Registrar,Workday ERP Cutover,Passed,8.79,6.87,0.2184,1.11,168
+UAT-2026-093,Registrar,Legacy Colleague ERP,Passed,5.62,4.61,0.1797,1.95,127
+UAT-2026-094,Registrar,Workday ERP Cutover,Passed,5.14,4.01,0.2198,1.66,57
+UAT-2026-095,Registrar,Workday ERP Cutover,Passed,10.94,8.5,0.223,0.62,294
+UAT-2026-096,Admissions,Legacy Colleague ERP,Passed,10.05,7.93,0.2109,1.31,178
+UAT-2026-097,Admissions,Workday ERP Cutover,Passed,6.9,5.56,0.1942,1.07,152
+UAT-2026-098,Admissions,Legacy Colleague ERP,Passed,5.48,4.36,0.2044,0.9,272
+UAT-2026-099,Admissions,Workday ERP Cutover,Passed,10.29,8.08,0.2148,0.88,61
+UAT-2026-100,Admissions,Legacy Colleague ERP,Passed,7.79,6.3,0.1913,0.57,69
+UAT-2026-101,Student Finance,Workday ERP Cutover,Passed,10.38,8.41,0.1898,1.86,196
+UAT-2026-102,Academic Advising,Legacy Colleague ERP,Passed,6.9,5.6,0.1884,0.54,118
+UAT-2026-103,Student Finance,Legacy Colleague ERP,Passed,11.42,8.5,0.2557,1.42,51
+UAT-2026-104,Student Finance,Workday ERP Cutover,Passed,8.93,7.17,0.1971,1.01,71
+UAT-2026-105,Student Finance,Workday ERP Cutover,Passed,5.74,4.67,0.1864,1.32,228
+UAT-2026-106,Student Finance,Workday ERP Cutover,Passed,9.16,7.2,0.214,1.57,184
+UAT-2026-107,Registrar,Workday ERP Cutover,Passed,9.85,8.06,0.1817,1.82,135
+UAT-2026-108,Student Finance,Workday ERP Cutover,Passed,5.08,4.16,0.1811,1.89,262
+UAT-2026-109,Student Finance,Workday ERP Cutover,Passed,9.8,8.0,0.1837,1.6,184
+UAT-2026-110,Admissions,Legacy Colleague ERP,Passed,4.55,3.59,0.211,1.59,211
+UAT-2026-111,Registrar,Workday ERP Cutover,Passed,4.85,3.95,0.1856,1.09,209
+UAT-2026-112,Admissions,Legacy Colleague ERP,Passed,6.22,4.87,0.217,0.91,98
+UAT-2026-113,Admissions,Legacy Colleague ERP,Passed,7.92,6.4,0.1919,0.74,90
+UAT-2026-114,Academic Advising,Workday ERP Cutover,Passed,10.66,8.5,0.2026,1.81,295
+UAT-2026-115,Admissions,Legacy Colleague ERP,Passed,7.05,5.5,0.2199,1.44,51
+UAT-2026-116,Student Finance,Workday ERP Cutover,Passed,7.93,6.45,0.1866,1.3,146
+UAT-2026-117,Registrar,Legacy Colleague ERP,Passed,9.32,7.45,0.2006,1.08,238
+UAT-2026-118,Admissions,Legacy Colleague ERP,Passed,9.7,7.66,0.2103,1.95,212
+UAT-2026-119,Student Finance,Workday ERP Cutover,Passed,8.21,6.46,0.2132,1.73,296
+UAT-2026-120,Student Finance,Workday ERP Cutover,Passed,10.22,8.36,0.182,1.76,185
+UAT-2026-121,Academic Advising,Workday ERP Cutover,Passed,7.87,6.3,0.1995,1.06,282
+UAT-2026-122,Registrar,Legacy Colleague ERP,Passed,8.37,6.83,0.184,1.98,169
+UAT-2026-123,Registrar,Legacy Colleague ERP,Passed,6.09,4.95,0.1872,1.15,132
+UAT-2026-124,Admissions,Workday ERP Cutover,Passed,4.89,4.0,0.182,1.69,278
+UAT-2026-125,Student Finance,Legacy Colleague ERP,Passed,7.98,6.3,0.2105,0.71,253
+UAT-2026-126,Academic Advising,Legacy Colleague ERP,Passed,10.74,8.5,0.2086,1.89,54
+UAT-2026-127,Registrar,Legacy Colleague ERP,Passed,11.93,8.5,0.2875,1.96,169
+UAT-2026-128,Admissions,Workday ERP Cutover,Passed,7.52,6.15,0.1822,1.92,261
+UAT-2026-129,Student Finance,Workday ERP Cutover,Passed,6.89,5.42,0.2134,1.72,181
+UAT-2026-130,Admissions,Workday ERP Cutover,Passed,10.88,8.5,0.2188,1.1,202
+UAT-2026-131,Student Finance,Workday ERP Cutover,Passed,6.48,5.19,0.1991,0.74,130
+UAT-2026-132,Registrar,Workday ERP Cutover,Passed,4.62,3.72,0.1948,0.68,225
+UAT-2026-133,Academic Advising,Legacy Colleague ERP,Passed,10.32,8.36,0.1899,0.65,237
+UAT-2026-134,Registrar,Workday ERP Cutover,Passed,11.88,8.5,0.2845,1.07,106
+UAT-2026-135,Student Finance,Legacy Colleague ERP,Passed,5.07,4.06,0.1992,1.76,117
+UAT-2026-136,Admissions,Workday ERP Cutover,Passed,6.15,4.81,0.2179,1.91,290
+UAT-2026-137,Admissions,Legacy Colleague ERP,Passed,11.15,8.5,0.2377,1.63,120
+UAT-2026-138,Academic Advising,Workday ERP Cutover,Passed,7.66,6.1,0.2037,1.14,88
+UAT-2026-139,Registrar,Workday ERP Cutover,Passed,10.14,8.17,0.1943,0.77,234
+UAT-2026-140,Academic Advising,Workday ERP Cutover,Passed,10.89,8.5,0.2195,1.1,177
+UAT-2026-141,Registrar,Legacy Colleague ERP,Passed,9.22,7.47,0.1898,1.29,55
+UAT-2026-142,Academic Advising,Workday ERP Cutover,Passed,5.94,4.68,0.2121,1.02,139
+UAT-2026-143,Admissions,Workday ERP Cutover,Passed,5.25,4.27,0.1867,1.24,85
+UAT-2026-144,Academic Advising,Workday ERP Cutover,Passed,5.68,4.62,0.1866,1.76,78
+UAT-2026-145,Academic Advising,Workday ERP Cutover,Passed,5.74,4.61,0.1969,0.65,110
+UAT-2026-146,Admissions,Legacy Colleague ERP,Passed,10.6,8.5,0.1981,1.51,295
+UAT-2026-147,Student Finance,Legacy Colleague ERP,Passed,6.04,4.72,0.2185,1.07,161
+UAT-2026-148,Registrar,Legacy Colleague ERP,Passed,7.92,6.39,0.1932,1.15,261
+UAT-2026-149,Admissions,Legacy Colleague ERP,Passed,8.25,6.65,0.1939,0.95,119
+UAT-2026-150,Registrar,Workday ERP Cutover,Passed,9.9,8.08,0.1838,1.26,133
