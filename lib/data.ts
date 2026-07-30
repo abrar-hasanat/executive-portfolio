@@ -157,21 +157,32 @@ export const caseStudies: CaseStudy[] = [
     mockupPath: "/mockups/carleton-erp-tablet.svg",
   },
   {
-    id: "market-entry",
-    eyebrow: "Valuation · Quantitative Modeling",
-    client: "Independent Research",
-    title: "Economic Strategy & Valuation: Quantitative Market Entry Model",
-    problem:
-      "Entering a new market requires weighing demand signals, competitive positioning, and capital requirements together, but most public models treat these in isolation.",
-    methodology:
-      "Built a quantitative valuation model combining market-sizing, discounted cash flow, and sensitivity analysis to stress-test entry scenarios under different demand and pricing assumptions.",
-    impact:
-      "Produced a defensible, scenario-tested recommendation framework for market entry timing and investment sizing, grounded in transparent, auditable assumptions.",
-    metrics: [
-      { label: "Scenarios modeled", value: "Multi-case" },
-      { label: "Core method", value: "DCF + Sensitivity" },
+    id: "economic-valuation-model",
+    title: "Quantitative Market Entry & Multi-Variable Valuation Model",
+    company: "Carleton Economics Department",
+    role: "Econometrics & Market Strategy Researcher",
+    period: "Case Study #3",
+    impactMetrics: [
+      { label: "Variance Explained (R²)", value: "0.89" },
+      { label: "Sample Evaluated", value: "50K+" },
+      { label: "Confidence Interval", value: "95%" },
     ],
-    repoUrl: "https://github.com/abrar-hasanat",
+    summary:
+      "Built an econometric valuation system connecting multivariate OLS regression, synthetic emerging-market enterprise observations, and Monte Carlo policy-shock simulations for cross-border market entry decisions.",
+    methodologies: ["Multivariate OLS", "Monte Carlo Simulation", "Policy Stress Testing"],
+    techStack: ["Python", "R", "SQL", "Next.js", "Tailwind CSS"],
+    problemStatement:
+      "C-suite market-entry decisions require defensible links between macro risk, sector fixed effects, policy uncertainty, and valuation multiples, yet most diligence artifacts are static and scenario-light.",
+    strategicSolution:
+      "Generated a 50,000+ observation macro-valuation dataset, estimated valuation-multiple sensitivities with OLS, and embedded a real-time dashboard to stress-test interest-rate and regulatory shocks.",
+    outcomes: [
+      "Explained 89% of valuation-multiple variance through macroeconomic and sector covariates.",
+      "Simulated 10,000 policy-shock paths to compare baseline and high-risk valuation confidence intervals.",
+      "Translated econometric coefficients into an executive dashboard for investment timing and risk-adjusted entry prioritization.",
+    ],
+    githubRepoUrl: "https://github.com/abrar-hasanat/economic-market-valuation",
+    liveDashboardUrl: "/dashboards/economic-valuation",
+    mockupPath: "/mockups/economic-model-macbook.png",
   },
 ];
 
