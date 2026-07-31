@@ -184,6 +184,21 @@ export const caseStudies: CaseStudy[] = [
     liveDashboardUrl: "/dashboards/economic-valuation",
     mockupPath: "/mockups/dashboard-mockup.svg",
   },
+  {
+    id: "wishing-star-demand-forecast",
+    title: "Wishing Star: Q4 Demand Forecasting & Inventory Optimization",
+    role: "Data Scientist",
+    period: "Q4 2026",
+    summary:
+      "Built a predictive time-series model (Python/Prophet) and enterprise data pipeline (SQL) to forecast peak-season demand and visualize actuals vs. forecast in IBM Cognos, identifying stockout risks 4 weeks in advance.",
+    techStack: ["Python", "SQL", "IBM Cognos Analytics", "Prophet", "Time-Series Forecasting"],
+    githubRepoUrl: "https://github.com/abrar-hasanat/wishing-star-demand-forecast",
+    outcomes: [
+      "Predicted peak-season demand with a 12-week horizon",
+      "Identified inventory shortfall risks four weeks ahead",
+      "Integrated forecasts into Cognos dashboards for operations planning",
+    ],
+  },
 ];
 
 export const socials = {
