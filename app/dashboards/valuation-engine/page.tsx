@@ -1,11 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { ChangeEvent, DragEvent, FormEvent, ReactNode, useMemo, useState } from "react";
+import { ChangeEvent, DragEvent, ReactNode, useMemo, useState } from "react";
 import Papa from "papaparse";
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
-import { Download, FileSpreadsheet, Loader2, Search, ShieldCheck, TrendingUp } from "lucide-react";
+import { Download, FileSpreadsheet, Search, ShieldCheck, TrendingUp } from "lucide-react";
 import { Bar, BarChart, CartesianGrid, Cell, ComposedChart, Legend, Line, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 
 type FinancialYear = { year: string; revenue: number; ebit: number; operatingCashFlow: number; capex: number; totalDebt: number; cash: number; sharesOutstanding: number; netIncome: number; equity: number; ebitda: number; interestExpense: number; investedCapital: number; marketPrice: number };
@@ -14,8 +14,6 @@ type Projection = { year: string; revenue: number; ebit: number; fcff: number; d
 type Health = "STRONG" | "MODERATE" | "WATCHLIST";
 
 type CsvRow = Partial<Record<"year" | "revenue" | "ebit" | "operating_cash_flow" | "capex" | "total_debt" | "cash" | "shares_outstanding" | "net_income" | "equity" | "ebitda" | "interest_expense" | "invested_capital" | "market_price", string | number>>;
-type TickerApiResponse = { success: true; ticker: string; name: string; currentPrice: number; financials: FinancialYear[] } | { success: false; error: string };
-const quickTickers = ["MSFT", "NVDA", "AAPL", "TSLA", "AMZN"];
 
 const presets: Record<string, Company> = {
   MSFT: { ticker: "MSFT", name: "Microsoft Corporation", currency: "USD", marketPrice: 426, catalysts: ["Azure AI workloads expanding enterprise wallet share", "Copilot monetization lifts Office ARPU", "Durable balance sheet supports buybacks and M&A"], sentiment: ["Mega-cap software quality premium remains intact", "AI capex intensity is the core investor debate", "Commercial cloud bookings point to resilient demand"], financials: [
@@ -52,8 +50,6 @@ export default function ValuationEnginePage() {
   const [growth, setGrowth] = useState(0.025);
   const [taxRate, setTaxRate] = useState(0.21);
   const [uploadMessage, setUploadMessage] = useState("Drop a CSV to replace preset financials.");
-  const [lookupError, setLookupError] = useState<string | null>(null);
-  const [isLookupLoading, setIsLookupLoading] = useState(false);
 
   const model = useMemo(() => {
     const f = company.financials;
@@ -86,56 +82,7 @@ export default function ValuationEnginePage() {
     return { latest, revenueCagr, projections, terminalValue, enterpriseValue, netDebt, equityValue, targetPrice, upside, ratios, health, rating, sensitivity };
   }, [company, growth, taxRate, wacc]);
 
-  const fetchTicker = async (ticker: string) => {
-    const key = ticker.trim().toUpperCase();
-    if (!key) return;
-    setTickerInput(key);
-    setLookupError(null);
-
-    if (presets[key]) {
-      setCompany(presets[key]);
-      setUploadMessage("Preset company loaded with institutional historical financials.");
-      return;
-    }
-
-    setIsLookupLoading(true);
-    try {
-      const response = await fetch(`/api/ticker?symbol=${encodeURIComponent(key)}`);
-      const payload = (await response.json()) as TickerApiResponse;
-      if (!response.ok || !payload.success) {
-        throw new Error(payload.success ? `Unable to load ${key}.` : payload.error);
-      }
-      setCompany({
-        ticker: payload.ticker,
-        name: payload.name,
-        currency: "USD",
-        marketPrice: payload.currentPrice,
-        financials: payload.financials,
-        catalysts: [
-          `${payload.ticker} fundamentals normalized from Yahoo Finance server-side data`,
-          "DCF engine recalculated with live quote and statement metrics",
-          "Sensitivity grid and PDF memo are now tied to the active ticker",
-        ],
-        sentiment: [
-          "Server-side lookup avoids browser CORS restrictions",
-          "Fallback history protects the model when reported statements are incomplete",
-          "Investment readout should be validated against primary filings before capital allocation",
-        ],
-      });
-      setUploadMessage(`Live fundamentals loaded for ${payload.ticker}.`);
-    } catch (error) {
-      setLookupError(error instanceof Error ? error.message : `Unable to load ${key}.`);
-    } finally {
-      setIsLookupLoading(false);
-    }
-  };
-
-  const handleTickerSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    void fetchTicker(tickerInput);
-  };
-
-  const loadTicker = (ticker: string) => { void fetchTicker(ticker); };
+  const loadTicker = (ticker: string) => { const key = ticker.toUpperCase(); if (presets[key]) { setCompany(presets[key]); setTickerInput(key); setUploadMessage("Preset company loaded with institutional historical financials."); } };
   const parseCsv = (file: File) => Papa.parse<CsvRow>(file, { header: true, dynamicTyping: true, skipEmptyLines: true, complete: ({ data }) => {
     const rows = data.filter((r) => r.revenue && r.ebit).map((r, i) => ({ year: String(r.year ?? 2020 + i), revenue: Number(r.revenue), ebit: Number(r.ebit), operatingCashFlow: Number(r.operating_cash_flow ?? Number(r.ebit) * 1.05), capex: Number(r.capex ?? Number(r.revenue) * 0.06), totalDebt: Number(r.total_debt ?? 0), cash: Number(r.cash ?? 0), sharesOutstanding: Number(r.shares_outstanding ?? 1000), netIncome: Number(r.net_income ?? Number(r.ebit) * 0.78), equity: Number(r.equity ?? Number(r.revenue) * 0.45), ebitda: Number(r.ebitda ?? Number(r.ebit) * 1.15), interestExpense: Number(r.interest_expense ?? Math.max(Number(r.ebit) * 0.025, 1)), investedCapital: Number(r.invested_capital ?? Number(r.revenue) * 0.55), marketPrice: Number(r.market_price ?? 100) }));
     if (rows.length) { setCompany({ ticker: "CUSTOM", name: file.name.replace(/\.csv$/i, ""), currency: "USD", marketPrice: rows[rows.length - 1].marketPrice, financials: rows, catalysts: ["Custom management case imported from CSV", "Valuation flexes dynamically with capital assumptions", "Operational leverage and reinvestment intensity drive upside"], sentiment: ["Client-supplied statements normalized in-browser", "No server upload required for sensitive data", "Scenario outputs should be diligence-tested before investment use"] }); setTickerInput("CUSTOM"); setUploadMessage(`${rows.length} historical periods imported from ${file.name}.`); }
@@ -163,7 +110,7 @@ export default function ValuationEnginePage() {
 
   return <main className="min-h-screen bg-gradient-to-br from-[#020C1B] via-[#0A192F] to-[#020C1B] px-4 py-6 text-[#F8FAFC] sm:px-6 lg:px-10"><section className="mx-auto max-w-7xl space-y-6">
     <header className="rounded-3xl border border-[#1E293B] bg-[#112240]/95 p-6 shadow-2xl shadow-black/30"><div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between"><div><Link href="/" className="text-sm font-semibold text-[#94A3B8] hover:text-[#3B82F6]">← abrarhasanat.com / dashboards / valuation-engine</Link><p className="mt-5 text-xs font-bold uppercase tracking-[0.35em] text-[#3B82F6]">Interactive Enterprise Valuation Engine</p><h1 className="mt-3 text-3xl font-black tracking-tight md:text-5xl">{company.name} <span className="text-[#3B82F6]">({company.ticker})</span></h1><p className="mt-3 text-[#94A3B8]">Live DCF target price {money(model.targetPrice)} versus market reference {money(company.marketPrice)}.</p></div><button onClick={downloadPdf} className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#3B82F6] px-5 py-3 font-bold text-white shadow-lg shadow-blue-950/50 transition hover:bg-blue-500"><Download size={18} /> Download Research Report (PDF)</button></div></header>
-    <section className="grid gap-4 lg:grid-cols-[0.95fr_1.05fr]"><article className="rounded-3xl border border-[#1E293B] bg-[#112240] p-5"><h2 className="flex items-center gap-2 text-xl font-bold"><Search size={20}/> Input Layer</h2><form onSubmit={handleTickerSubmit} className="mt-5 flex flex-col gap-3 sm:flex-row"><input value={tickerInput} onChange={(e) => setTickerInput(e.target.value.toUpperCase())} placeholder="Search any ticker, e.g. TSLA" className="min-w-0 flex-1 rounded-2xl border border-[#1E293B] bg-[#0F172A] px-4 py-3 text-white outline-none focus:border-[#3B82F6]"/><button type="submit" disabled={isLookupLoading} className="inline-flex items-center justify-center gap-2 rounded-2xl border border-[#3B82F6] px-5 py-3 font-bold text-[#93C5FD] disabled:cursor-not-allowed disabled:opacity-60">{isLookupLoading ? <Loader2 className="animate-spin" size={18} /> : null} Load</button></form>{lookupError ? <div className="mt-3 rounded-2xl border border-[#EF4444]/40 bg-[#EF4444]/10 px-4 py-3 text-sm text-red-200">{lookupError}</div> : null}<div className="mt-3 flex flex-wrap gap-2">{quickTickers.map((t) => <button key={t} onClick={() => loadTicker(t)} className="rounded-full bg-[#0F172A] px-4 py-2 text-sm font-bold text-[#94A3B8] hover:text-white">{t}</button>)}</div><label onDragOver={(e) => e.preventDefault()} onDrop={onDrop} className="mt-5 flex cursor-pointer flex-col items-center rounded-3xl border border-dashed border-[#3B82F6]/60 bg-[#0F172A] p-6 text-center"><FileSpreadsheet className="text-[#3B82F6]"/><span className="mt-2 font-bold">Drag-and-drop custom financial statement CSV</span><span className="mt-1 text-sm text-[#94A3B8]">{uploadMessage}</span><input type="file" accept=".csv" onChange={onFile} className="hidden"/></label><div className="mt-5 grid gap-4"><Slider label="WACC" value={wacc} min={0.06} max={0.15} step={0.001} onChange={setWacc}/><Slider label="Perpetual Growth Rate" value={growth} min={0.01} max={0.04} step={0.001} onChange={setGrowth}/><Slider label="Tax Rate" value={taxRate} min={0.15} max={0.30} step={0.001} onChange={setTaxRate}/></div></article>
+    <section className="grid gap-4 lg:grid-cols-[0.95fr_1.05fr]"><article className="rounded-3xl border border-[#1E293B] bg-[#112240] p-5"><h2 className="flex items-center gap-2 text-xl font-bold"><Search size={20}/> Input Layer</h2><div className="mt-5 flex flex-col gap-3 sm:flex-row"><input value={tickerInput} onChange={(e) => setTickerInput(e.target.value.toUpperCase())} placeholder="Search ticker" className="min-w-0 flex-1 rounded-2xl border border-[#1E293B] bg-[#0F172A] px-4 py-3 text-white outline-none focus:border-[#3B82F6]"/><button onClick={() => loadTicker(tickerInput)} className="rounded-2xl border border-[#3B82F6] px-5 py-3 font-bold text-[#93C5FD]">Load</button></div><div className="mt-3 flex gap-2">{Object.keys(presets).map((t) => <button key={t} onClick={() => loadTicker(t)} className="rounded-full bg-[#0F172A] px-4 py-2 text-sm font-bold text-[#94A3B8] hover:text-white">{t}</button>)}</div><label onDragOver={(e) => e.preventDefault()} onDrop={onDrop} className="mt-5 flex cursor-pointer flex-col items-center rounded-3xl border border-dashed border-[#3B82F6]/60 bg-[#0F172A] p-6 text-center"><FileSpreadsheet className="text-[#3B82F6]"/><span className="mt-2 font-bold">Drag-and-drop custom financial statement CSV</span><span className="mt-1 text-sm text-[#94A3B8]">{uploadMessage}</span><input type="file" accept=".csv" onChange={onFile} className="hidden"/></label><div className="mt-5 grid gap-4"><Slider label="WACC" value={wacc} min={0.06} max={0.15} step={0.001} onChange={setWacc}/><Slider label="Perpetual Growth Rate" value={growth} min={0.01} max={0.04} step={0.001} onChange={setGrowth}/><Slider label="Tax Rate" value={taxRate} min={0.15} max={0.30} step={0.001} onChange={setTaxRate}/></div></article>
     <section className="grid gap-4 sm:grid-cols-2">{kpis.map((k) => <article key={k.label} className="rounded-3xl border border-[#1E293B] bg-[#112240] p-5"><p className="text-sm text-[#94A3B8]">{k.label}</p><p className={`mt-3 text-3xl font-black ${k.tone}`}>{k.value}</p><p className="mt-2 text-sm text-[#3B82F6]">{company.currency} millions except per-share data</p></article>)}</section></section>
     <section className="grid gap-6 xl:grid-cols-2"><Card title="5-Year Forward FCFF & EBIT Growth Projection"><ResponsiveContainer width="100%" height={330}><ComposedChart data={model.projections}><CartesianGrid stroke="#1E293B"/><XAxis dataKey="year" stroke="#94A3B8"/><YAxis stroke="#94A3B8"/><Tooltip contentStyle={{ background: "#0F172A", border: "1px solid #1E293B", color: "#F8FAFC" }}/><Legend/><Bar dataKey="fcff" name="FCFF" fill="#3B82F6" radius={[8,8,0,0]}/><Line dataKey="ebit" name="EBIT" stroke="#10B981" strokeWidth={3}/></ComposedChart></ResponsiveContainer></Card><Card title="Profitability Margin Trajectory"><ResponsiveContainer width="100%" height={330}><BarChart data={model.ratios}><CartesianGrid stroke="#1E293B"/><XAxis dataKey="year" stroke="#94A3B8"/><YAxis tickFormatter={(v) => `${Math.round(v * 100)}%`} stroke="#94A3B8"/><Tooltip formatter={(v) => pct(Number(v))} contentStyle={{ background: "#0F172A", border: "1px solid #1E293B" }}/><Legend/><Bar dataKey="operatingMargin" name="Operating Margin"><Cell fill="#3B82F6"/></Bar><Bar dataKey="netMargin" name="Net Margin" fill="#10B981"/></BarChart></ResponsiveContainer></Card></section>
     <section className="grid gap-6 xl:grid-cols-[1.1fr_0.9fr]"><Card title="5x5 WACC vs. Perpetual Growth Sensitivity Matrix"><div className="overflow-x-auto"><table className="w-full min-w-[620px] text-sm"><tbody>{model.sensitivity.map((row, i) => <tr key={i}>{i === 0 && <th className="p-3 text-left text-[#94A3B8]">WACC / g</th>}{i > 0 && <th className="p-3 text-left text-[#94A3B8]">{pct(row[0].wacc)}</th>}{row.map((cell, j) => i === 0 ? <th key={j} className="p-3 text-[#94A3B8]">{pct(cell.growth)}</th> : <td key={j} className={`border border-[#1E293B] p-3 text-center font-bold ${i === 2 && j === 2 ? "bg-[#3B82F6] text-white" : "bg-[#0F172A]"}`}>{money(cell.price)}</td>)}</tr>)}</tbody></table></div></Card><Card title="Financial Health & Ratio Diagnostics"><div className="overflow-x-auto"><table className="w-full text-sm"><thead><tr className="text-left text-[#94A3B8]"><th className="p-3">Year</th><th>ROE</th><th>ROIC</th><th>ND/EBITDA</th><th>Interest Coverage</th></tr></thead><tbody>{model.ratios.map((r) => <tr key={r.year} className="border-t border-[#1E293B]"><td className="p-3 font-bold">{r.year}</td><td>{pct(r.roe)}</td><td>{pct(r.roic)}</td><td>{r.netDebtEbitda.toFixed(1)}x</td><td>{r.interestCoverage.toFixed(1)}x</td></tr>)}</tbody></table></div><div className="mt-5 rounded-2xl border border-[#1E293B] bg-[#0F172A] p-4"><p className="flex items-center gap-2 font-bold"><ShieldCheck className="text-[#10B981]"/> Diagnostic Scorecard: <span className={model.health === "STRONG" ? "text-[#10B981]" : "text-[#EF4444]"}>{model.health}</span></p><p className="mt-2 text-sm text-[#94A3B8]">Automated flag: {model.upside >= 0 ? "upside opportunity" : "downside risk"} of {Math.abs(model.upside * 100).toFixed(1)}%.</p></div></Card></section>
