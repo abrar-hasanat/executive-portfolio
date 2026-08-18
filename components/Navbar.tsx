@@ -6,6 +6,7 @@ import { socials } from "@/lib/data";
 const links = [
   { href: "#credentials", label: "Credentials" },
   { href: "#case-studies", label: "Case Studies" },
+  { href: "/dashboards", label: "Dashboards" },
   { href: "#contact", label: "Contact" },
 ];
 
