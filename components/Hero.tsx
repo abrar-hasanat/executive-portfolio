@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Github } from "lucide-react";
+import { ArrowRight, Github, LayoutDashboard } from "lucide-react";
 import { socials } from "@/lib/data";
 
 const container = {
@@ -99,13 +99,20 @@ export default function Hero() {
             />
           </a>
           <a
+            href="/dashboards"
+            className="inline-flex items-center justify-center gap-2 rounded-md border border-border px-6 py-3 text-sm font-medium text-ink-primary transition-colors hover:border-accent hover:text-accent"
+          >
+            <LayoutDashboard size={16} />
+            Launch Live Dashboards
+          </a>
+          <a
             href={socials.github}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 rounded-md border border-border px-6 py-3 text-sm font-medium text-ink-primary transition-colors hover:border-accent hover:text-accent"
           >
             <Github size={16} />
-            View GitHub Engine Room
+            GitHub
           </a>
         </motion.div>
       </motion.div>
