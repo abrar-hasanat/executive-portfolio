@@ -96,10 +96,44 @@ export interface CaseStudy {
   liveDashboardUrl?: string;
   repoUrl?: string;
   githubRepoUrl?: string;
+  githubUrl?: string;
   mockupPath?: string;
+  subtitle?: string;
+  category?: string;
 }
 
 export const caseStudies: CaseStudy[] = [
+
+  {
+    id: "valuation-engine",
+    title: "Enterprise Financial Intelligence & Valuation Engine",
+    subtitle: "Automated Multi-Year Statement Ingestion, DCF Modeling, Health Scorecarding & Morningstar-Style PDF Memo Generation",
+    category: "Corporate Finance & Quant",
+    company: "StratOS Intelligence Engine",
+    role: "Principal Full-Stack Engineer & Quantitative Financial Designer",
+    period: "Flagship Live Decision Engine",
+    impactMetrics: [
+      { label: "Valuation Tested", value: "$23B+" },
+      { label: "WACC Sensitivity", value: "5x5" },
+      { label: "Research Memo", value: "1-Click PDF" },
+    ],
+    summary:
+      "Created a client-side enterprise valuation cockpit that ingests multi-year statements, flexes core DCF assumptions, scores financial health, and exports an institutional equity research memo in-browser.",
+    methodologies: ["Discounted Cash Flow", "Sensitivity Analysis", "Financial Statement Normalization"],
+    techStack: ["Next.js", "TypeScript", "Recharts", "jsPDF", "PapaParse"],
+    problemStatement:
+      "Recruiters and hiring managers need to see finance, analytics, and product judgment in one live artifact rather than a static spreadsheet or slide deck.",
+    strategicSolution:
+      "Built a responsive valuation engine with ticker presets, custom CSV upload, 5-year FCFF projections, ratio diagnostics, and Morningstar-style PDF memo generation entirely in the browser.",
+    outcomes: [
+      "Modeled $23B+ enterprise valuation scenarios with configurable WACC, perpetual growth, and tax assumptions.",
+      "Rendered a 5x5 WACC/g sensitivity matrix and automated STRONG/MODERATE/WATCHLIST financial health scorecard.",
+      "Generated a two-page client-side PDF research memo with valuation, risk, catalysts, and diagnostic tables.",
+    ],
+    liveDashboardUrl: "/dashboards/valuation-engine",
+    githubUrl: "https://github.com/abrar-hasanat/enterprise-valuation-engine",
+    githubRepoUrl: "https://github.com/abrar-hasanat/enterprise-valuation-engine",
+  },
   {
     id: "bay-oceania-gtm",
     title: "Commercial Construction & Tender Pipeline Analytics",
@@ -198,6 +232,61 @@ export const caseStudies: CaseStudy[] = [
       "Identified inventory shortfall risks four weeks ahead",
       "Integrated forecasts into Cognos dashboards for operations planning",
     ],
+  },
+];
+
+
+export interface InteractiveDashboard {
+  id: string;
+  title: string;
+  subtitle: string;
+  tag: string;
+  category: "Finance" | "Operations" | "Macro";
+  href: string;
+  githubUrl: string;
+  features: string[];
+}
+
+export const interactiveDashboards: InteractiveDashboard[] = [
+  {
+    id: "valuation-engine",
+    title: "Enterprise AI Valuation Engine",
+    subtitle: "Automated multi-year statement ingestion, DCF modeling, health scorecarding, and Morningstar-style PDF generation.",
+    tag: "Quant Finance & GenAI",
+    category: "Finance",
+    href: "/dashboards/valuation-engine",
+    githubUrl: "https://github.com/abrar-hasanat/enterprise-valuation-engine",
+    features: ["Universal CSV Ingestion", "DCF & Sensitivity Matrix", "Morningstar PDF Export"],
+  },
+  {
+    id: "tender-pipeline",
+    title: "Commercial Construction Tender Analytics",
+    subtitle: "Executive pipeline intelligence for commercial construction pursuits, stage conversion, and agile proposal turnaround.",
+    tag: "Supply Chain & Operations",
+    category: "Operations",
+    href: "/dashboards/tender-pipeline",
+    githubUrl: "https://github.com/abrar-hasanat/executive-portfolio",
+    features: ["$15M+ Tender Pipeline", "Agile Turnaround Tracker", "Deal Stage Forecasting"],
+  },
+  {
+    id: "operations-capacity",
+    title: "Operational Capacity & DMAIC Simulator",
+    subtitle: "Capacity planning, Workday cutover readiness, backlog reduction, and vendor SLA diagnostics for operating teams.",
+    tag: "Process Optimization & ERP",
+    category: "Operations",
+    href: "/dashboards/operations-capacity",
+    githubUrl: "https://github.com/abrar-hasanat/executive-portfolio",
+    features: ["3x Expansion Modeling", "Workday UAT Tracker", "Vendor SLA Scoring"],
+  },
+  {
+    id: "economic-valuation",
+    title: "Trade Policy & Econometric Model",
+    subtitle: "Macro valuation simulator connecting tariff shocks, policy volatility, and cross-border market-entry economics.",
+    tag: "Macro Strategy & Trade",
+    category: "Macro",
+    href: "/dashboards/economic-valuation",
+    githubUrl: "https://github.com/abrar-hasanat/executive-portfolio",
+    features: ["Tariff Shock Simulation", "UN Comtrade ETL", "Price Elasticity"],
   },
 ];
 
