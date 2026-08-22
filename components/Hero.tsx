@@ -22,7 +22,7 @@ export default function Hero() {
       id="top"
       className="relative overflow-hidden border-b border-border"
     >
-      {/* Ambient grid — the analyst's canvas, not decoration */}
+      {/* Ambient grid: the analyst's canvas, not decoration */}
       <div className="pointer-events-none absolute inset-0 bg-grid-pattern bg-grid opacity-40 [mask-image:radial-gradient(ellipse_60%_60%_at_50%_0%,black,transparent)]" />
 
       {/* Signature element: a quiet, drawn-in trendline referencing BI work */}
@@ -56,7 +56,7 @@ export default function Hero() {
           className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-navy-surface px-4 py-1.5 font-mono text-xs uppercase tracking-[0.15em] text-ink-secondary"
         >
           <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-          Senior @ Carleton College — BA Economics, Minors in Data Science
+          Senior @ Carleton College: BA Economics, Minors in Data Science
           &amp; Public Policy
         </motion.span>
 
@@ -71,17 +71,14 @@ export default function Hero() {
           variants={item}
           className="mt-3 font-mono text-sm uppercase tracking-[0.25em] text-accent"
         >
-          Strategy · Analytics · Operations
+          Strategy, Analytics, Operations
         </motion.p>
 
         <motion.p
           variants={item}
           className="mt-8 max-w-2xl text-lg leading-relaxed text-ink-secondary sm:text-xl"
         >
-          I build dynamic BI pipelines, engineer quantitative supply chain
-          models, and optimize cross-functional operations. Seeking
-          full-time roles in Management Consulting and Product Management
-          for 2027.
+          I build analytics tools, financial models, and operational workflows. Seeking full-time consulting and product management roles for 2027.
         </motion.p>
 
         <motion.div
@@ -103,7 +100,7 @@ export default function Hero() {
             className="inline-flex items-center justify-center gap-2 rounded-md border border-border px-6 py-3 text-sm font-medium text-ink-primary transition-colors hover:border-accent hover:text-accent"
           >
             <LayoutDashboard size={16} />
-            Launch Live Dashboards
+            Launch Dashboard
           </a>
           <a
             href={socials.github}

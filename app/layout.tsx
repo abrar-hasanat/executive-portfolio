@@ -17,11 +17,11 @@ const plexMono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://abrarhasanat.com"),
-  title: "Abrar Hasanat — Strategy, Analytics & Operations",
+  title: "Abrar Hasanat: Strategy, Analytics & Operations",
   description:
     "Portfolio of Abrar Hasanat: BI pipelines, quantitative supply chain models, and cross-functional operations work. Seeking full-time Management Consulting and Product Management roles for 2027.",
   openGraph: {
-    title: "Abrar Hasanat — Strategy, Analytics & Operations",
+    title: "Abrar Hasanat: Strategy, Analytics & Operations",
     description:
       "BI pipelines, quantitative supply chain models, and cross-functional operations. Seeking full-time Consulting and Product Management roles for 2027.",
     url: "https://abrarhasanat.com",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Abrar Hasanat — Strategy, Analytics & Operations",
+    title: "Abrar Hasanat: Strategy, Analytics & Operations",
     description:
       "BI pipelines, quantitative supply chain models, and cross-functional operations.",
   },

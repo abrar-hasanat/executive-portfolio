@@ -7,7 +7,7 @@ import { interactiveDashboards, type InteractiveDashboard } from "@/lib/data";
 
 type Filter = "All" | InteractiveDashboard["category"];
 
-const filters: Filter[] = ["All", "Finance", "Operations", "Macro"];
+const filters: Filter[] = ["All", "Finance", "Operations"];
 
 export default function DashboardsHubPage() {
   const [activeFilter, setActiveFilter] = useState<Filter>("All");
@@ -25,17 +25,16 @@ export default function DashboardsHubPage() {
           </Link>
           <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_0.75fr] lg:items-end">
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#3B82F6]">Live Interactive Systems</p>
               <h1 className="mt-4 max-w-4xl text-4xl font-black tracking-tight md:text-6xl">
                 Executive Dashboards & Decision Engines
               </h1>
               <p className="mt-5 max-w-3xl text-lg leading-8 text-[#94A3B8]">
-                A production-grade gallery of finance, operations, and macro strategy systems designed to turn messy business inputs into decision-ready executive outputs.
+                Interactive finance and operations tools.
               </p>
             </div>
             <div className="rounded-2xl border border-[#1E293B] bg-[#0A192F] p-5">
               <div className="flex items-center gap-3 text-[#10B981]"><Layers3 size={22} /><span className="text-3xl font-black">4</span></div>
-              <p className="mt-2 text-sm text-[#94A3B8]">Live decision engines connected to the portfolio experience with direct dashboard and source-code access.</p>
+              <p className="mt-2 text-sm text-[#94A3B8]">Dashboard and source-code access.</p>
             </div>
           </div>
         </header>
@@ -57,7 +56,7 @@ export default function DashboardsHubPage() {
             <article key={dashboard.id} className="flex min-h-[360px] flex-col rounded-3xl border border-[#1E293B] bg-[#112240] p-6 shadow-xl shadow-black/20 transition hover:-translate-y-1 hover:border-[#3B82F6]/60">
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <span className="rounded-full bg-[#3B82F6]/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-[#93C5FD]">{dashboard.tag}</span>
-                <span className="inline-flex items-center gap-2 rounded-full bg-[#10B981]/10 px-3 py-1 text-xs font-bold text-[#A7F3D0]"><span className="h-2 w-2 animate-pulse rounded-full bg-[#10B981]" /> Live Production</span>
+                <span className="inline-flex items-center gap-2 rounded-full bg-[#10B981]/10 px-3 py-1 text-xs font-bold text-[#A7F3D0]"><span className="h-2 w-2 animate-pulse rounded-full bg-[#10B981]" /> Available</span>
               </div>
               <BarChart3 className="mt-8 text-[#3B82F6]" size={34} />
               <h2 className="mt-5 text-2xl font-black tracking-tight">{dashboard.title}</h2>
@@ -67,7 +66,7 @@ export default function DashboardsHubPage() {
               </div>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link href={dashboard.href} className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#3B82F6] px-5 py-3 text-sm font-bold text-white transition hover:bg-blue-500">Launch Dashboard <ArrowRight size={16} /></Link>
-                <a href={dashboard.githubUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#1E293B] px-5 py-3 text-sm font-bold text-white transition hover:border-[#3B82F6] hover:text-[#93C5FD]"><Github size={16} /> View Code</a>
+                <a href={dashboard.githubUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#1E293B] px-5 py-3 text-sm font-bold text-white transition hover:border-[#3B82F6] hover:text-[#93C5FD]"><Github size={16} /> View Code on GitHub</a>
               </div>
             </article>
           ))}
