@@ -11,11 +11,7 @@ export default function Credentials() {
       className="border-b border-border bg-navy py-24 sm:py-32"
     >
       <div className="mx-auto max-w-content px-6 sm:px-8">
-        <SectionHeading
-          eyebrow="Core Credentials"
-          title="What I bring to the table"
-          description="A working toolkit across strategy, operations, and the technical layer that connects them — built through applied coursework, certifications, and real engagements."
-        />
+        <SectionHeading title="Credentials" />
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {credentialCategories.map((category, idx) => {

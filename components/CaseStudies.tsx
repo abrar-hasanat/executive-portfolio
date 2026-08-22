@@ -9,11 +9,7 @@ export default function CaseStudies() {
   return (
     <section id="case-studies" className="bg-navy py-24 sm:py-32">
       <div className="mx-auto max-w-content px-6 sm:px-8">
-        <SectionHeading
-          eyebrow="Featured Case Studies"
-          title="Selected engagements"
-          description="Each project below moves from the operating problem, to the method used to solve it, to the measurable result — the same structure a case team would use in a client debrief."
-        />
+        <SectionHeading title="Work and projects" />
 
         <div className="flex flex-col gap-8">
           {caseStudies.map((study, idx) => (
@@ -191,7 +187,7 @@ export default function CaseStudies() {
                       className="inline-flex items-center gap-2 rounded-md bg-accent px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-accent-dim"
                     >
                       <ExternalLink size={15} />
-                      {study.liveDashboardUrl ? "Interact with Live Dashboard" : "View Project"}
+                      {study.liveDashboardUrl ? "Launch Dashboard" : "View Project"}
                     </a>
                   )}
                   {(study.githubRepoUrl || study.repoUrl) && (
@@ -202,7 +198,7 @@ export default function CaseStudies() {
                       className="inline-flex items-center gap-2 rounded-md border border-border px-4 py-2.5 text-sm font-medium text-ink-primary transition-colors hover:border-accent hover:text-accent"
                     >
                       <Github size={15} />
-                      View Raw Code on GitHub
+                      View Code on GitHub
                     </a>
                   )}
                 </div>

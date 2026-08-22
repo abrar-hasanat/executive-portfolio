@@ -4,10 +4,10 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 
 const kpis = [
-  { label: "Model Variance Explained (R²)", value: "0.89", helper: "High Predictive Power" },
-  { label: "Dataset Sample Evaluated", value: "50,000+", helper: "Historical Observations" },
-  { label: "Simulation Runs", value: "10,000 Iterations", helper: "Monte Carlo Stress Testing" },
-  { label: "Valuation Yield Accuracy", value: "95% CI", helper: "Risk-Adjusted Return Framework" },
+  { label: "Model", value: "Scenario", helper: "Demonstration" },
+  { label: "Inputs", value: "Policy", helper: "User-controlled" },
+  { label: "Output", value: "Multiple", helper: "Scenario estimate" },
+  { label: "Output", value: "Risk", helper: "Scenario estimate" },
 ];
 
 const impacts = [
@@ -44,10 +44,10 @@ export default function EconomicValuationDashboardPage() {
               OLS + Monte Carlo Executive Simulator
             </div>
           </div>
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.35em] text-[#3B82F6]">Case Study #3</p>
-          <h1 className="max-w-4xl text-4xl font-bold tracking-tight md:text-6xl">Quantitative Market Entry & Econometric Valuation Model</h1>
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.35em] text-[#3B82F6]">Demonstration</p>
+          <h1 className="max-w-4xl text-4xl font-bold tracking-tight md:text-6xl">Economic Valuation Demonstration</h1>
           <p className="mt-5 max-w-3xl text-lg leading-8 text-[#94A3B8]">
-            Multivariate OLS regression, 50,000+ observation dataset, and Monte Carlo policy shock simulations.
+            Adjust policy inputs to explore a valuation scenario.
           </p>
         </header>
 
@@ -65,8 +65,8 @@ export default function EconomicValuationDashboardPage() {
           <article className="rounded-3xl border border-[#1E293B] bg-[#112240] p-6 md:p-8">
             <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#3B82F6]">Interactive Macro Policy Sensitivity Simulator</p>
-                <h2 className="mt-3 text-2xl font-bold">Live risk-adjusted valuation engine</h2>
+                <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#3B82F6]">Policy sensitivity</p>
+                <h2 className="mt-3 text-2xl font-bold">Valuation scenario</h2>
               </div>
               <select value={sector} onChange={(event) => setSector(event.target.value)} className="rounded-2xl border border-[#1E293B] bg-[#0A192F] px-4 py-3 text-sm font-semibold text-[#F8FAFC]">
                 {sectors.map((item) => <option key={item}>{item}</option>)}
@@ -103,7 +103,7 @@ export default function EconomicValuationDashboardPage() {
               ))}
             </div>
             <div className="mt-8 rounded-2xl border border-[#1E293B] bg-[#0A192F]/70 p-5 text-sm leading-7 text-[#94A3B8]">
-              Executive readout: preserve optionality in high-growth sectors when the lower-bound 95% interval remains above the board-approved acquisition hurdle multiple.
+              Use this demonstration to compare the effect of policy inputs on the scenario.
             </div>
           </article>
         </section>
