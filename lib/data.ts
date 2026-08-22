@@ -249,6 +249,16 @@ export interface InteractiveDashboard {
 
 export const interactiveDashboards: InteractiveDashboard[] = [
   {
+    id: "agile-velocity",
+    title: "Agile Velocity & Capacity Forecaster",
+    subtitle: "Monte Carlo delivery forecasting, RICE backlog prioritization, and a one-click executive PRD with DMAIC risk controls.",
+    tag: "Agile Delivery & Quant Ops",
+    category: "Operations",
+    href: "/dashboards/agile-velocity",
+    githubUrl: "https://github.com/abrar-hasanat/executive-portfolio",
+    features: ["10,000-Trial Forecast", "RICE Prioritizer", "Markdown Executive PRD"],
+  },
+  {
     id: "valuation-engine",
     title: "Enterprise AI Valuation Engine",
     subtitle: "Automated multi-year statement ingestion, DCF modeling, health scorecarding, and Morningstar-style PDF generation.",
