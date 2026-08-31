@@ -48,25 +48,25 @@ export const caseStudies: CaseStudy[] = [
     liveDashboardUrl: "/dashboards/agile-velocity", githubRepoUrl: "https://github.com/abrar-hasanat/executive-portfolio",
   },
   {
-    id: "demand-forecast", title: "Demand Forecasting Model", period: "January 2026",
-    summary: "Analyzed order history to forecast demand and identify inventory risks.",
+    id: "demand-forecast", title: "Synthetic Demand Forecasting Model", period: "January 2026",
+    summary: "Built a synthetic-data forecasting demonstration inspired by earlier e-commerce operations. It does not use or reproduce proprietary business records; any resemblance to real entities or transactions is coincidental.",
     techStack: ["Python", "PostgreSQL", "IBM Cognos"],
-    impactMetrics: [{ label: "Order history", value: "42 months" }, { label: "Stockout warning", value: "3 weeks" }],
-    outcomes: ["Trained the forecast on 42 months of order history.", "Flagged stockout risk 3 weeks before peak Q4 demand."],
+    impactMetrics: [{ label: "Synthetic order history", value: "42 months" }, { label: "Simulated warning", value: "3 weeks" }],
+    outcomes: ["Generated and analyzed 42 months of synthetic order history.", "Demonstrated a 3-week stockout-risk warning in a simulated peak-Q4 scenario."],
     githubRepoUrl: "https://github.com/abrar-hasanat/wishing-star-demand-forecast",
   },
   {
     id: "bay-oceania", title: "Tender Pipeline", company: "Bay Oceania C&T Ltd.", role: "Business Development Analyst", period: "June 2026 to August 2026",
-    summary: "Tracked tender opportunities and prospective enterprise clients.", techStack: ["Power BI", "Excel"],
-    impactMetrics: [{ label: "Tender opportunities", value: "15+" }, { label: "Enterprise clients", value: "50+" }, { label: "Turnaround reduction", value: "20%" }],
-    outcomes: ["Added 15+ priority tender opportunities after screening for bid feasibility.", "Created pipeline visibility across 50+ enterprise prospects.", "Reduced proposal turnaround time by 20%."],
+    summary: "Completed an unpaid, supervised remote internship in tender qualification, pipeline analysis, and market-risk assessment, supported by Carleton College Career Center funding.", techStack: ["Power BI", "Excel"],
+    impactMetrics: [{ label: "Tender opportunities reviewed", value: "15+" }, { label: "Enterprise prospects organized", value: "50+" }, { label: "Turnaround reduction", value: "20%" }],
+    outcomes: ["Reviewed 15+ commercial construction and public-procurement opportunities using contract value, expected margin, and bid-feasibility criteria.", "Built an Excel and Power BI tracker to organize 50+ enterprise prospects and support pipeline review.", "Mapped the tender workflow and presented recommendations associated with a 20% shorter proposal turnaround."],
     liveDashboardUrl: "/dashboards/tender-pipeline", githubRepoUrl: "https://github.com/abrar-hasanat/executive-portfolio",
   },
   {
     id: "taa-services", title: "Research Team Planning", company: "TAA Services", role: "Consulting Analyst Extern", period: "October 2025 to December 2025",
-    summary: "Developed a phased research team hiring plan and vendor evaluation tools.", techStack: ["Excel", "Vendor SLA scoring"],
-    impactMetrics: [{ label: "Research team expansion", value: "3x" }],
-    outcomes: ["Converted a planned 3x expansion into a phased staffing roadmap.", "Modeled annual cost and time-to-fill for internal hiring and agency support.", "Used an SLA scoring framework to shortlist 3 agency partners."],
+    summary: "Completed an unpaid Carleton Career Center externship focused on supervised training in workforce planning, cost analysis, and vendor evaluation.", techStack: ["Excel", "Vendor SLA scoring"],
+    impactMetrics: [{ label: "Planned research team expansion", value: "3x" }],
+    outcomes: ["Translated a planned 3x research-team expansion into phased staffing scenarios.", "Modeled annual cost and time-to-fill across internal-hiring and agency-support options.", "Applied an SLA scoring framework to compare agencies and identify 3 potential partners."],
   },
   {
     id: "carleton", title: "Workday ERP Migration Support", company: "Carleton College Registrar’s and Provost’s Office", period: "September 2023 to Present",
@@ -76,10 +76,10 @@ export const caseStudies: CaseStudy[] = [
     liveDashboardUrl: "/dashboards/operations-capacity", githubRepoUrl: "https://github.com/abrar-hasanat/executive-portfolio",
   },
   {
-    id: "wishing-star", title: "Cross-Border E-Commerce Operations", company: "Wishing Star by Shantu", role: "Founder", period: "June 2021 to Present",
-    summary: "Built supplier partnerships and managed procurement and fulfillment from order receipt through delivery.", techStack: ["Demand Forecasting", "DMAIC"],
+    id: "wishing-star", title: "Cross-Border E-Commerce Operations", company: "Wishing Star by Shantu", role: "Founder", period: "June 2021 to August 2023",
+    summary: "Founded a cross-border e-commerce business and managed supplier, procurement, and fulfillment operations through August 2023.", techStack: ["Demand Forecasting", "DMAIC"],
     impactMetrics: [{ label: "Year-over-year revenue growth", value: "45%" }, { label: "Revenue increase", value: "+$18.9k" }, { label: "Stockout warning", value: "3 weeks" }],
-    outcomes: ["Increased year-over-year revenue by 45% (+$18.9k).", "Flagged stockout risk 3 weeks before peak Q4 demand.", "Analyzed 42 months of order history to adjust replenishment controls."],
+    outcomes: ["Increased year-over-year revenue by 45% (+$18.9k).", "Flagged stockout risk 3 weeks before peak Q4 demand.", "Analyzed 42 months of order history to adjust replenishment controls.", "Retain passive ownership; day-to-day operations are independently managed by the local team."],
   },
   {
     id: "stargate", title: "Executive Reporting", company: "Stargate TechMax LTD.", role: "Executive Assistant to the CEO", period: "May 2021 to June 2023",
@@ -93,7 +93,7 @@ export interface InteractiveDashboard { id: string; title: string; subtitle: str
 export const interactiveDashboards: InteractiveDashboard[] = [
   { id: "valuation-engine", kind: "Interactive tool", title: "Enterprise Financial Valuation Engine", subtitle: "DCF modeling with 5x5 WACC and growth sensitivity grids and memo export.", tag: "Finance", category: "Finance", href: "/dashboards/valuation-engine", githubUrl: "https://github.com/abrar-hasanat/enterprise-valuation-engine", features: ["25-cell sensitivity grid", "1-click memo export", "$23B+ test cases"] },
   { id: "agile-velocity", kind: "Interactive tool", title: "Agile Velocity and Capacity Forecaster", subtitle: "Monte Carlo release forecasts with RICE prioritization.", tag: "Operations", category: "Operations", href: "/dashboards/agile-velocity", githubUrl: "https://github.com/abrar-hasanat/executive-portfolio", features: ["10,000 trials", "P50, P80, P90", "RICE scoring"] },
-  { id: "tender-pipeline", kind: "Case study", title: "Tender Pipeline", subtitle: "Tender opportunity and client tracking.", tag: "Operations", category: "Operations", href: "/dashboards/tender-pipeline", githubUrl: "https://github.com/abrar-hasanat/executive-portfolio", features: ["15+ opportunities", "50+ clients", "20% reduction"] },
+  { id: "tender-pipeline", kind: "Case study", title: "Tender Pipeline", subtitle: "Unpaid, supervised remote internship project in tender qualification and pipeline analysis.", tag: "Operations", category: "Operations", href: "/dashboards/tender-pipeline", githubUrl: "https://github.com/abrar-hasanat/executive-portfolio", features: ["15+ opportunities reviewed", "50+ prospects organized", "20% shorter turnaround"] },
   { id: "operations-capacity", kind: "Case study", title: "Workday Migration Support", subtitle: "UAT and backend data validation for the Colleague to Workday migration.", tag: "Operations", category: "Operations", href: "/dashboards/operations-capacity", githubUrl: "https://github.com/abrar-hasanat/executive-portfolio", features: ["15% backlog reduction", "UAT", "Data validation"] },
 ];
 
