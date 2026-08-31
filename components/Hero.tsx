@@ -56,8 +56,8 @@ export default function Hero() {
           className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-navy-surface px-4 py-1.5 font-mono text-xs uppercase tracking-[0.15em] text-ink-secondary"
         >
           <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-          Senior @ Carleton College: BA Economics, Minors in Data Science
-          &amp; Public Policy
+          Senior @ Carleton College: BA Economics, Minors in Public Policy,
+          Statistics &amp; Data Science
         </motion.span>
 
         <motion.h1
