@@ -9,7 +9,7 @@ export default function Dashboards() {
   return (
     <section id="dashboards" className="border-y border-[#1E293B] bg-[#0A192F] py-24 sm:py-32">
       <div className="mx-auto max-w-content px-6 sm:px-8">
-        <SectionHeading title="Executive Dashboards" />
+        <SectionHeading title="Dashboards and case studies" />
 
         <div className="grid gap-6 lg:grid-cols-2">
           {interactiveDashboards.map((dashboard, index) => (
@@ -27,7 +27,7 @@ export default function Dashboards() {
                 </span>
                 <span className="inline-flex items-center gap-2 rounded-full border border-[#10B981]/30 bg-[#10B981]/10 px-3 py-1 text-xs font-semibold text-[#A7F3D0]">
                   <span className="h-2 w-2 animate-pulse rounded-full bg-[#10B981]" />
-                  Available
+                  {dashboard.kind}
                 </span>
               </div>
 
@@ -50,7 +50,7 @@ export default function Dashboards() {
 
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                   <a href={dashboard.href} className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#3B82F6] px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-500">
-                    Launch Dashboard <ArrowRight size={16} />
+                    {dashboard.kind === "Interactive tool" ? "Launch Dashboard" : "View Case Study"} <ArrowRight size={16} />
                   </a>
                   <a href={dashboard.githubUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-lg border border-[#1E293B] px-5 py-3 text-sm font-semibold text-[#F8FAFC] transition hover:border-[#3B82F6] hover:text-[#93C5FD]">
                     <Github size={16} /> View Code on GitHub
