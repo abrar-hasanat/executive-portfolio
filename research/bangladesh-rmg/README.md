@@ -30,7 +30,7 @@ python3 -m venv .venv
 
 The 120-record source snapshot is included. Acquisition reuses it without network access. To acquire a new vintage, copy the project, remove only the ten raw JSON responses and their metadata from that copy, and rerun acquisition. This changes the snapshot and may revise results. Never overwrite the release snapshot while claiming an exact replication. The public endpoint needs no key; acquisition stops on errors and does not evade service limits.
 
-`analyze.py` writes the panel, annual summary, four planned contrasts, dashboard JSON, and validation report. Figures and the website both consume `outputs/dashboard.json`. No stochastic estimation is used, so no seed applies. Plot bytes can vary by platform and PDF creation time; numerical outputs are deterministic for the frozen inputs. Export copies validated outputs into the existing portfolio, checking their source hash first.
+`analyze.py` writes the panel, annual summary, four planned contrasts, dashboard JSON, and validation report. Figures and the website both consume `outputs/dashboard.json`. No stochastic estimation is used, so no seed applies. Figure timestamps are suppressed; plot bytes can still vary by platform and font environment. Numerical outputs are deterministic for the frozen inputs. Export copies validated outputs into the existing portfolio, checking their source hash first.
 
 ## Files
 

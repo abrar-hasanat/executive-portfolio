@@ -27,7 +27,7 @@ export interface CaseStudy {
   id: string; title: string; company?: string; client?: string; role?: string; period?: string; summary?: string;
   problem?: string; problemStatement?: string; methodology?: string; methodologies?: string[]; techStack?: string[];
   strategicSolution?: string; metrics?: { label: string; value: string }[]; impactMetrics?: { label: string; value: string }[];
-  outcomes?: string[]; dashboardUrl?: string; liveDashboardUrl?: string; repoUrl?: string; githubRepoUrl?: string;
+  outcomes?: string[]; dashboardUrl?: string; liveDashboardUrl?: string; repoUrl?: string; githubRepoUrl?: string; metricsLabel?: string;
 }
 
 export const caseStudies: CaseStudy[] = [
@@ -35,9 +35,10 @@ export const caseStudies: CaseStudy[] = [
     id: "bangladesh-rmg", title: "Bangladesh Apparel Trade and Worker Protection", period: "September 2026",
     summary: "Independent research on US apparel sourcing after Rana Plaza, with a historical GSP exposure audit and a reproducible descriptive analysis.",
     techStack: ["Python", "UN Comtrade", "Policy Research", "Recharts"],
+    metricsLabel: "Research scope",
     impactMetrics: [{ label: "Official trade records", value: "120" }, { label: "Calendar years", value: "2010-2019" }, { label: "Apparel chapters", value: "HS 61 + 62" }],
     outcomes: ["Validated real US-reported import data and documented historical preference exposure.", "Decomposed the change in Bangladesh's US apparel market share.", "Separated sourcing patterns from causal and worker welfare claims."],
-    liveDashboardUrl: "/projects/bangladesh-rmg", githubRepoUrl: "https://github.com/abrar-hasanat/executive-portfolio/tree/main/research/bangladesh-rmg",
+    dashboardUrl: "/projects/bangladesh-rmg", githubRepoUrl: "https://github.com/abrar-hasanat/executive-portfolio/tree/main/research/bangladesh-rmg",
   },
   {
     id: "valuation-engine", title: "Enterprise Financial Valuation Engine", period: "June 2026",
