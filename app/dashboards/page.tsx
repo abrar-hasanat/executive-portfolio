@@ -7,7 +7,7 @@ import { interactiveDashboards, type InteractiveDashboard } from "@/lib/data";
 
 type Filter = "All" | InteractiveDashboard["category"];
 
-const filters: Filter[] = ["All", "Finance", "Operations"];
+const filters: Filter[] = ["All", "Finance", "Operations", "Research"];
 
 export default function DashboardsHubPage() {
   const [activeFilter, setActiveFilter] = useState<Filter>("All");
@@ -33,7 +33,7 @@ export default function DashboardsHubPage() {
               </p>
             </div>
             <div className="rounded-2xl border border-[#1E293B] bg-[#0A192F] p-5">
-              <div className="flex items-center gap-3 text-[#10B981]"><Layers3 size={22} /><span className="text-3xl font-black">4</span></div>
+              <div className="flex items-center gap-3 text-[#10B981]"><Layers3 size={22} /><span className="text-3xl font-black">{interactiveDashboards.length}</span></div>
               <p className="mt-2 text-sm text-[#94A3B8]">Tools and case studies with source-code access.</p>
             </div>
           </div>
@@ -44,6 +44,7 @@ export default function DashboardsHubPage() {
             <button
               key={filter}
               onClick={() => setActiveFilter(filter)}
+              aria-pressed={activeFilter === filter}
               className={`rounded-full border px-4 py-2 text-sm font-semibold transition ${activeFilter === filter ? "border-[#3B82F6] bg-[#3B82F6] text-white" : "border-[#1E293B] bg-[#112240] text-[#94A3B8] hover:border-[#3B82F6] hover:text-white"}`}
             >
               {filter}

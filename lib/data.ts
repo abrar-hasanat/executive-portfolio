@@ -32,6 +32,14 @@ export interface CaseStudy {
 
 export const caseStudies: CaseStudy[] = [
   {
+    id: "bangladesh-rmg", title: "Bangladesh Apparel Trade and Worker Protection", period: "September 2026",
+    summary: "Independent research on US apparel sourcing after Rana Plaza, with a historical GSP exposure audit and a reproducible descriptive analysis.",
+    techStack: ["Python", "UN Comtrade", "Policy Research", "Recharts"],
+    impactMetrics: [{ label: "Official trade records", value: "120" }, { label: "Calendar years", value: "2010-2019" }, { label: "Apparel chapters", value: "HS 61 + 62" }],
+    outcomes: ["Validated real US-reported import data and documented historical preference exposure.", "Decomposed the change in Bangladesh's US apparel market share.", "Separated sourcing patterns from causal and worker welfare claims."],
+    liveDashboardUrl: "/projects/bangladesh-rmg", githubRepoUrl: "https://github.com/abrar-hasanat/executive-portfolio/tree/main/research/bangladesh-rmg",
+  },
+  {
     id: "valuation-engine", title: "Enterprise Financial Valuation Engine", period: "June 2026",
     summary: "Built a valuation tool with sensitivity analysis and equity research memo export.",
     techStack: ["Next.js", "TypeScript", "Python", "DCF Modeling"],
@@ -89,8 +97,9 @@ export const caseStudies: CaseStudy[] = [
   },
 ];
 
-export interface InteractiveDashboard { id: string; title: string; subtitle: string; tag: string; category: "Finance" | "Operations"; kind: "Interactive tool" | "Case study"; href: string; githubUrl: string; features: string[]; }
+export interface InteractiveDashboard { id: string; title: string; subtitle: string; tag: string; category: "Finance" | "Operations" | "Research"; kind: "Interactive tool" | "Case study"; href: string; githubUrl: string; features: string[]; }
 export const interactiveDashboards: InteractiveDashboard[] = [
+  { id: "bangladesh-rmg", kind: "Interactive tool", title: "Bangladesh Apparel Sourcing", subtitle: "Observed US import trends, supplier comparisons and chapter composition after Rana Plaza. Descriptive evidence with documented limits.", tag: "Research", category: "Research", href: "/dashboards/bangladesh-rmg", githubUrl: "https://github.com/abrar-hasanat/executive-portfolio/tree/main/research/bangladesh-rmg", features: ["120 official records", "2010-2019", "Reproducible analysis"] },
   { id: "valuation-engine", kind: "Interactive tool", title: "Enterprise Financial Valuation Engine", subtitle: "DCF modeling with 5x5 WACC and growth sensitivity grids and memo export.", tag: "Finance", category: "Finance", href: "/dashboards/valuation-engine", githubUrl: "https://github.com/abrar-hasanat/enterprise-valuation-engine", features: ["25-cell sensitivity grid", "1-click memo export", "$23B+ test cases"] },
   { id: "agile-velocity", kind: "Interactive tool", title: "Agile Velocity and Capacity Forecaster", subtitle: "Monte Carlo release forecasts with RICE prioritization.", tag: "Operations", category: "Operations", href: "/dashboards/agile-velocity", githubUrl: "https://github.com/abrar-hasanat/executive-portfolio", features: ["10,000 trials", "P50, P80, P90", "RICE scoring"] },
   { id: "tender-pipeline", kind: "Case study", title: "Tender Pipeline", subtitle: "Unpaid, supervised remote internship project in tender qualification and pipeline analysis.", tag: "Operations", category: "Operations", href: "/dashboards/tender-pipeline", githubUrl: "https://github.com/abrar-hasanat/executive-portfolio", features: ["15+ opportunities reviewed", "50+ prospects organized", "20% shorter turnaround"] },

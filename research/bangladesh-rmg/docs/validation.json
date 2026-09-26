@@ -1,0 +1,54 @@
+{
+  "status": "passed",
+  "records": 120,
+  "missing_keys": 0,
+  "duplicate_keys": 0,
+  "negative_values": 0,
+  "reported_records": 72,
+  "aggregate_records": 48,
+  "original_classification_records": 120,
+  "legacy_estimation_flags": {
+    "0": 104,
+    "4": 16
+  },
+  "hs_revisions": {
+    "2010": [
+      "H3"
+    ],
+    "2011": [
+      "H3"
+    ],
+    "2012": [
+      "H4"
+    ],
+    "2013": [
+      "H4"
+    ],
+    "2014": [
+      "H4"
+    ],
+    "2015": [
+      "H4"
+    ],
+    "2016": [
+      "H4"
+    ],
+    "2017": [
+      "H5"
+    ],
+    "2018": [
+      "H5"
+    ],
+    "2019": [
+      "H5"
+    ]
+  },
+  "snapshot_sha256": "df213feefd54664fd2fbd0875d6bcbe187b8d7104c1b646d44e93dd016c25f57",
+  "decomposition_residual_tolerance": 1e-10,
+  "notes": [
+    "Source primaryValue equals cifvalue in all 120 records. No claim that it equals Census customs value.",
+    "No quantities/weights, imputation, conversion, deflation, or synthetic observations used.",
+    "World totals used once as denominators, never added to individual countries.",
+    "No sample-based confidence intervals: uncertainty is about measurement and interpretation."
+  ]
+}

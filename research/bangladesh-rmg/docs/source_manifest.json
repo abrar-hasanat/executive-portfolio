@@ -1,0 +1,222 @@
+[
+  {
+    "file": "data/raw/us_imports_2010.json",
+    "retrieved_at": "2026-09-26T17:53:03.704593+00:00",
+    "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=842&period=2010&cmdCode=61%2C62&flowCode=M&partnerCode=0%2C50%2C116%2C156%2C699%2C704&partner2Code=0&customsCode=C00&motCode=0&maxRecords=500",
+    "parameters": {
+      "reporterCode": "842",
+      "period": "2010",
+      "cmdCode": "61,62",
+      "flowCode": "M",
+      "partnerCode": "0,50,116,156,699,704",
+      "partner2Code": "0",
+      "customsCode": "C00",
+      "motCode": "0",
+      "maxRecords": "500"
+    },
+    "sha256": "49d7c18c6caab472d4b393b429a7202386d623e369e7a2965afe8de42458f518",
+    "records": 12,
+    "source": "UN Comtrade",
+    "flow": "US-reported imports",
+    "units": "current US dollars",
+    "terms": "https://uncomtrade.org/docs/policy-on-use-and-re-dissemination/"
+  },
+  {
+    "file": "data/raw/us_imports_2011.json",
+    "retrieved_at": "2026-09-26T17:53:07.787389+00:00",
+    "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=842&period=2011&cmdCode=61%2C62&flowCode=M&partnerCode=0%2C50%2C116%2C156%2C699%2C704&partner2Code=0&customsCode=C00&motCode=0&maxRecords=500",
+    "parameters": {
+      "reporterCode": "842",
+      "period": "2011",
+      "cmdCode": "61,62",
+      "flowCode": "M",
+      "partnerCode": "0,50,116,156,699,704",
+      "partner2Code": "0",
+      "customsCode": "C00",
+      "motCode": "0",
+      "maxRecords": "500"
+    },
+    "sha256": "8f02979a4fe2ad308ccc9a092d474dfef67bdfb9066c39bc20baaaf76d5d5a61",
+    "records": 12,
+    "source": "UN Comtrade",
+    "flow": "US-reported imports",
+    "units": "current US dollars",
+    "terms": "https://uncomtrade.org/docs/policy-on-use-and-re-dissemination/"
+  },
+  {
+    "file": "data/raw/us_imports_2012.json",
+    "retrieved_at": "2026-09-26T17:53:11.762215+00:00",
+    "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=842&period=2012&cmdCode=61%2C62&flowCode=M&partnerCode=0%2C50%2C116%2C156%2C699%2C704&partner2Code=0&customsCode=C00&motCode=0&maxRecords=500",
+    "parameters": {
+      "reporterCode": "842",
+      "period": "2012",
+      "cmdCode": "61,62",
+      "flowCode": "M",
+      "partnerCode": "0,50,116,156,699,704",
+      "partner2Code": "0",
+      "customsCode": "C00",
+      "motCode": "0",
+      "maxRecords": "500"
+    },
+    "sha256": "da6bd876698e6be46d4f8bf93dda1fd7ad9fbad080e5a6cbb5aba1fea5e3e43e",
+    "records": 12,
+    "source": "UN Comtrade",
+    "flow": "US-reported imports",
+    "units": "current US dollars",
+    "terms": "https://uncomtrade.org/docs/policy-on-use-and-re-dissemination/"
+  },
+  {
+    "file": "data/raw/us_imports_2013.json",
+    "retrieved_at": "2026-09-26T17:53:15.775391+00:00",
+    "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=842&period=2013&cmdCode=61%2C62&flowCode=M&partnerCode=0%2C50%2C116%2C156%2C699%2C704&partner2Code=0&customsCode=C00&motCode=0&maxRecords=500",
+    "parameters": {
+      "reporterCode": "842",
+      "period": "2013",
+      "cmdCode": "61,62",
+      "flowCode": "M",
+      "partnerCode": "0,50,116,156,699,704",
+      "partner2Code": "0",
+      "customsCode": "C00",
+      "motCode": "0",
+      "maxRecords": "500"
+    },
+    "sha256": "6be44de148cb87f2b4ae7de2f29a5bcf71a9ed65b6fde9baf76d7b062ea43427",
+    "records": 12,
+    "source": "UN Comtrade",
+    "flow": "US-reported imports",
+    "units": "current US dollars",
+    "terms": "https://uncomtrade.org/docs/policy-on-use-and-re-dissemination/"
+  },
+  {
+    "file": "data/raw/us_imports_2014.json",
+    "retrieved_at": "2026-09-26T17:53:19.929159+00:00",
+    "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=842&period=2014&cmdCode=61%2C62&flowCode=M&partnerCode=0%2C50%2C116%2C156%2C699%2C704&partner2Code=0&customsCode=C00&motCode=0&maxRecords=500",
+    "parameters": {
+      "reporterCode": "842",
+      "period": "2014",
+      "cmdCode": "61,62",
+      "flowCode": "M",
+      "partnerCode": "0,50,116,156,699,704",
+      "partner2Code": "0",
+      "customsCode": "C00",
+      "motCode": "0",
+      "maxRecords": "500"
+    },
+    "sha256": "d9b6b1798368c583ef629393c2a7fdaaf9799c213c5714a374bdbdb059b47ef8",
+    "records": 12,
+    "source": "UN Comtrade",
+    "flow": "US-reported imports",
+    "units": "current US dollars",
+    "terms": "https://uncomtrade.org/docs/policy-on-use-and-re-dissemination/"
+  },
+  {
+    "file": "data/raw/us_imports_2015.json",
+    "retrieved_at": "2026-09-26T17:53:25.112804+00:00",
+    "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=842&period=2015&cmdCode=61%2C62&flowCode=M&partnerCode=0%2C50%2C116%2C156%2C699%2C704&partner2Code=0&customsCode=C00&motCode=0&maxRecords=500",
+    "parameters": {
+      "reporterCode": "842",
+      "period": "2015",
+      "cmdCode": "61,62",
+      "flowCode": "M",
+      "partnerCode": "0,50,116,156,699,704",
+      "partner2Code": "0",
+      "customsCode": "C00",
+      "motCode": "0",
+      "maxRecords": "500"
+    },
+    "sha256": "081a315d797195e5686fcd68ab1e59b7ace83d844da2b634f0dc24c4dcc99d27",
+    "records": 12,
+    "source": "UN Comtrade",
+    "flow": "US-reported imports",
+    "units": "current US dollars",
+    "terms": "https://uncomtrade.org/docs/policy-on-use-and-re-dissemination/"
+  },
+  {
+    "file": "data/raw/us_imports_2016.json",
+    "retrieved_at": "2026-09-26T17:53:29.544286+00:00",
+    "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=842&period=2016&cmdCode=61%2C62&flowCode=M&partnerCode=0%2C50%2C116%2C156%2C699%2C704&partner2Code=0&customsCode=C00&motCode=0&maxRecords=500",
+    "parameters": {
+      "reporterCode": "842",
+      "period": "2016",
+      "cmdCode": "61,62",
+      "flowCode": "M",
+      "partnerCode": "0,50,116,156,699,704",
+      "partner2Code": "0",
+      "customsCode": "C00",
+      "motCode": "0",
+      "maxRecords": "500"
+    },
+    "sha256": "3f69939d93df997d7879e87e897d6c0f5827ee9bf9736a0b41a7dcb278cda2d8",
+    "records": 12,
+    "source": "UN Comtrade",
+    "flow": "US-reported imports",
+    "units": "current US dollars",
+    "terms": "https://uncomtrade.org/docs/policy-on-use-and-re-dissemination/"
+  },
+  {
+    "file": "data/raw/us_imports_2017.json",
+    "retrieved_at": "2026-09-26T17:53:33.790162+00:00",
+    "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=842&period=2017&cmdCode=61%2C62&flowCode=M&partnerCode=0%2C50%2C116%2C156%2C699%2C704&partner2Code=0&customsCode=C00&motCode=0&maxRecords=500",
+    "parameters": {
+      "reporterCode": "842",
+      "period": "2017",
+      "cmdCode": "61,62",
+      "flowCode": "M",
+      "partnerCode": "0,50,116,156,699,704",
+      "partner2Code": "0",
+      "customsCode": "C00",
+      "motCode": "0",
+      "maxRecords": "500"
+    },
+    "sha256": "2d4f882d880a785e122fbda5e453cbbccccd64a41236d4eed508f7515571ca35",
+    "records": 12,
+    "source": "UN Comtrade",
+    "flow": "US-reported imports",
+    "units": "current US dollars",
+    "terms": "https://uncomtrade.org/docs/policy-on-use-and-re-dissemination/"
+  },
+  {
+    "file": "data/raw/us_imports_2018.json",
+    "retrieved_at": "2026-09-26T17:53:37.466673+00:00",
+    "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=842&period=2018&cmdCode=61%2C62&flowCode=M&partnerCode=0%2C50%2C116%2C156%2C699%2C704&partner2Code=0&customsCode=C00&motCode=0&maxRecords=500",
+    "parameters": {
+      "reporterCode": "842",
+      "period": "2018",
+      "cmdCode": "61,62",
+      "flowCode": "M",
+      "partnerCode": "0,50,116,156,699,704",
+      "partner2Code": "0",
+      "customsCode": "C00",
+      "motCode": "0",
+      "maxRecords": "500"
+    },
+    "sha256": "1f0ad41c400667c6adddb3c3eeef7626828556532b0230e73487f99f8505f962",
+    "records": 12,
+    "source": "UN Comtrade",
+    "flow": "US-reported imports",
+    "units": "current US dollars",
+    "terms": "https://uncomtrade.org/docs/policy-on-use-and-re-dissemination/"
+  },
+  {
+    "file": "data/raw/us_imports_2019.json",
+    "retrieved_at": "2026-09-26T17:53:41.091895+00:00",
+    "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=842&period=2019&cmdCode=61%2C62&flowCode=M&partnerCode=0%2C50%2C116%2C156%2C699%2C704&partner2Code=0&customsCode=C00&motCode=0&maxRecords=500",
+    "parameters": {
+      "reporterCode": "842",
+      "period": "2019",
+      "cmdCode": "61,62",
+      "flowCode": "M",
+      "partnerCode": "0,50,116,156,699,704",
+      "partner2Code": "0",
+      "customsCode": "C00",
+      "motCode": "0",
+      "maxRecords": "500"
+    },
+    "sha256": "669f08c931e03289fe168d7d0b6527df41ff98979a0dcd5e9cb4a31cee21ebe3",
+    "records": 12,
+    "source": "UN Comtrade",
+    "flow": "US-reported imports",
+    "units": "current US dollars",
+    "terms": "https://uncomtrade.org/docs/policy-on-use-and-re-dissemination/"
+  }
+]
