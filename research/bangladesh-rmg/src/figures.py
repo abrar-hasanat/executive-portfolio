@@ -17,11 +17,13 @@ def main():
     for c in ["Bangladesh","Vietnam","Cambodia","India"]:
         r=[x for x in data['annual'] if x['country']==c]
         ax.plot([x['year'] for x in r],[x['share_pct'] for x in r],label=c,color=colors[c],marker='o',markersize=3,lw=2)
-    ax.axvline(2013,color='#94a3b8',ls=':',lw=1)
+    ax.axvline(2013,ymax=.76,color='#94a3b8',ls=':',lw=1)
     ax.text(2013.12,1.2,'Rana Plaza and\nmultiple policy responses',fontsize=8,color='#475569')
     ax.set(ylabel='Share of US apparel import value (%)',xlabel='Calendar year',ylim=(0,20),xticks=list(range(2010,2020,2)))
     ax.grid(axis='y',alpha=.18);ax.legend(frameon=False,ncol=2,loc='upper left')
-    for ext in ['png','svg','pdf']:fig.savefig(out/f'figure1_market_shares.{ext}',dpi=250)
+    for ext in ['png','svg','pdf']:
+        meta={'Date':None} if ext=='svg' else ({'CreationDate':None,'ModDate':None} if ext=='pdf' else {})
+        fig.savefig(out/f'figure1_market_shares.{ext}',dpi=250,metadata=meta)
     plt.close(fig)
     svg = out / 'figure1_market_shares.svg'
     svg.write_text('\n'.join(line.rstrip() for line in svg.read_text().splitlines()) + '\n')
@@ -33,7 +35,9 @@ def main():
     axes[1].plot(years,[x['nonknit_market_share_pct'] for x in r],color='#334155',label='Non-knit (HS 62)',lw=2)
     axes[1].set(ylabel='Bangladesh share of chapter imports (%)',ylim=(0,14),xlabel='Calendar year');axes[1].legend(frameon=False,fontsize=8,loc='upper left')
     for ax in axes:ax.set_xticks([2010,2013,2016,2019]);ax.grid(axis='y',alpha=.15)
-    for ext in ['png','svg','pdf']:fig.savefig(out/f'figure2_composition.{ext}',dpi=250)
+    for ext in ['png','svg','pdf']:
+        meta={'Date':None} if ext=='svg' else ({'CreationDate':None,'ModDate':None} if ext=='pdf' else {})
+        fig.savefig(out/f'figure2_composition.{ext}',dpi=250,metadata=meta)
     plt.close(fig)
     svg = out / 'figure2_composition.svg'
     svg.write_text('\n'.join(line.rstrip() for line in svg.read_text().splitlines()) + '\n')
