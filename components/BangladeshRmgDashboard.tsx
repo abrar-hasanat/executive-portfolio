@@ -46,16 +46,10 @@ export default function BangladeshRmgDashboard() {
     setSelected(["Bangladesh", "Vietnam", "India", "Cambodia"]);
     setMetric("share"); setChapter("all"); setEndYear(2018); setDownloadStatus("");
   }
-  function downloadView() {
-    const csv = [
+  const selectedCsv = useMemo(() => [
       ["year", "country", "chapter", "metric", "unit", "value", "snapshot_sha256"].join(","),
       ...points.flatMap(point => selected.filter(country => Number.isFinite(point[country])).map(country => [point.year, country, chapter, metric, metric === "share" ? "percent" : metric === "value" ? "current_USD_billions" : "2012_equals_100", point[country], evidence.snapshot_sha256].join(","))),
-    ].join("\r\n");
-    const url = URL.createObjectURL(new Blob([csv], { type: "text/csv;charset=utf-8;" }));
-    const anchor = document.createElement("a"); anchor.href = url; anchor.download = `bangladesh-rmg-${chapter}-${metric}-2010-${endYear}.csv`; anchor.click();
-    window.setTimeout(() => URL.revokeObjectURL(url), 1000);
-    setDownloadStatus(`Downloaded ${filtered.length} observations for the selected view.`);
-  }
+    ].join("\r\n"), [points, selected, chapter, metric]);
 
   return (
     <main className="min-h-screen bg-[#020C1B] px-4 py-8 text-[#F8FAFC] sm:px-8">
@@ -124,7 +118,7 @@ export default function BangladeshRmgDashboard() {
           <p className="mt-4 max-w-4xl text-xs leading-6 text-slate-300">2013 marks Rana Plaza and several distinct responses. The line is a date reference, not an estimated treatment break. All vertical axes start at zero; their upper bounds adjust to the selected data. Market shares use world imports in the selected chapter. Index values use each supplier&apos;s own 2012 value in that chapter.</p>
           {endYear === 2019 && <p className="mt-3 rounded-lg border border-amber-300/30 bg-amber-300/5 p-3 text-sm text-amber-100">The 2019 extension overlaps US-China trade measures. It cannot isolate Bangladesh&apos;s reforms from changes in global sourcing.</p>}
           <div className="mt-6 flex flex-wrap items-center gap-5">
-            <button onClick={downloadView} disabled={selected.length === 0} className={`inline-flex items-center gap-2 rounded-lg bg-teal-200 px-4 py-3 text-sm font-bold text-slate-950 hover:bg-teal-100 disabled:cursor-not-allowed disabled:opacity-40 ${focus}`}><ArrowDownToLine size={16} /> Download selected data</button>
+            <a href={selected.length ? `data:text/csv;charset=utf-8,${encodeURIComponent(selectedCsv)}` : undefined} download={`bangladesh-rmg-${chapter}-${metric}-2010-${endYear}.csv`} aria-disabled={selected.length === 0} tabIndex={selected.length ? 0 : -1} onClick={event => { if (!selected.length) event.preventDefault(); else setDownloadStatus(`Prepared ${filtered.length} observations for download.`); }} className={`inline-flex items-center gap-2 rounded-lg bg-teal-200 px-4 py-3 text-sm font-bold text-slate-950 hover:bg-teal-100 aria-disabled:cursor-not-allowed aria-disabled:opacity-40 ${focus}`}><ArrowDownToLine size={16} /> Download selected data</a>
             <a className={`text-sm text-teal-200 underline underline-offset-4 ${focus}`} href="/data/bangladesh-rmg/us_apparel_panel.csv" download>Download full source panel</a>
           </div>
           <p role="status" className="mt-3 text-sm text-teal-100">{downloadStatus}</p>

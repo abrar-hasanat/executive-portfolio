@@ -81,7 +81,7 @@ export default function CaseStudies() {
                     {study.impactMetrics?.length ? (
                       <div>
                         <dt className="mb-1.5 font-mono text-[11px] uppercase tracking-widest text-ink-secondary/70">
-                          Impact Metrics
+                          {study.metricsLabel ?? "Impact Metrics"}
                         </dt>
                         <div className="mt-3 grid gap-3 sm:grid-cols-3">
                           {study.impactMetrics.map((metric) => (
@@ -102,7 +102,7 @@ export default function CaseStudies() {
                     ) : study.metrics?.length ? (
                       <div>
                         <dt className="mb-1.5 font-mono text-[11px] uppercase tracking-widest text-ink-secondary/70">
-                          Impact Metrics
+                          {study.metricsLabel ?? "Impact Metrics"}
                         </dt>
                         <div className="mt-3 flex flex-wrap gap-3">
                           {study.metrics.map((metric) => (

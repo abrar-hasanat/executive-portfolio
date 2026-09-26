@@ -20,7 +20,7 @@ Command sequence is in the project README. Numerical checks can run without inst
 
 Work uses the branch `research/bangladesh-rmg-2026-09` in the existing portfolio repository. The baseline main commit is `8274a6798431df440f224e7a05ceef3ea3bcc530`. Review the branch diff before merge. Existing Vercel deployment is triggered through GitHub; no hosting migration is needed. A commit, a successful build, a deployment and a live interaction check are distinct milestones.
 
-Local browser preview access was blocked by the browser environment. Branch deployment is used for browser testing. Deployment and final interaction results will be recorded in the release verification note after checking the actual hosted URLs. Do not infer live status solely from this build record.
+The production project and dashboard were verified at their public URLs after PR 14 merged. Branch preview required Vercel authentication, so browser testing used the authorized production release. See [release verification](release_verification.md) for commits, deployment milestones, byte-level live-data checks, interaction checks, mobile-testing limits and the follow-up interface fixes.
 
 Rollback preserves history: revert the eventual merge commit (using `git revert -m 1 <merge_sha>` for a two-parent merge) and let the existing deployment rebuild. Do not force-reset the shared main branch. The profile update is a separate reversible commit.
 
