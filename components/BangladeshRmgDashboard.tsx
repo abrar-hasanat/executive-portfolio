@@ -160,7 +160,7 @@ export default function BangladeshRmgDashboard() {
         <footer className="rounded-2xl border border-slate-700 p-6 text-xs leading-6 text-slate-300">
           <p>Source: <a className="text-teal-200 underline" href="https://comtradeplus.un.org/" target="_blank" rel="noopener noreferrer">UN Comtrade</a>, US reporter 842, import flow M, HS 61 and 62, calendar years 2010-2019. Values use the source&apos;s CIF-type field and differ from Census customs-value series. Retrieved {evidence.retrieved_at.slice(0, 10)}. Analysis version {evidence.analysis_version}.</p>
           <p className="mt-2 break-all">Data snapshot SHA-256: {evidence.snapshot_sha256}</p>
-          <p className="mt-3"><a className="text-teal-200 underline" href={codeUrl} target="_blank" rel="noopener noreferrer">Reproduce the analysis and inspect sources</a>. Independent research with AI assistance. No causal or institutional endorsement claims.</p>
+          <p className="mt-3"><a className="text-teal-200 underline" href={codeUrl} target="_blank" rel="noopener noreferrer">Reproduce the analysis and inspect sources</a>. Independent descriptive research on apparel sourcing and worker protection.</p>
         </footer>
       </div>
     </main>
