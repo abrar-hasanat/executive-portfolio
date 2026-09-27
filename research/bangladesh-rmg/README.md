@@ -1,6 +1,6 @@
 # Bangladesh apparel trade and worker protection
 
-Independent descriptive research by Abrar Mohammad Hasanat, completed 26 September 2026 with AI assistance. This is a new reconstruction: the previously described `bangladesh-trade-policy-model` could not be recovered. No original code or historical estimates are claimed.
+Independent descriptive research by Abrar Mohammad Hasanat on apparel sourcing, trade preferences and worker protection.
 
 **Question:** How did Bangladesh's position in US apparel sourcing change after Rana Plaza, and what can that evidence contribute to policy on worker protection?
 
@@ -43,7 +43,7 @@ The 120-record source snapshot is included. Acquisition reuses it without networ
 | `docs/` | Audit, dated plan, methods, data dictionary, sources, literature, validation |
 | `tests/` | Arithmetic, coverage, corruption, and website consistency checks |
 
-The full private paper, application sample, author guide, and downloaded research papers are deliberately outside this public repository. The public project is housed in the existing portfolio repository because the connected GitHub interface did not expose repository creation. It can be extracted as a standalone repository without changing its relative-path Python pipeline.
+The full private paper, application sample, author guide, and downloaded research papers are deliberately outside this public repository. The research pipeline is organized under `research/bangladesh-rmg/` in the portfolio repository. Its relative paths allow it to run independently of the website.
 
 ## Data and rights
 

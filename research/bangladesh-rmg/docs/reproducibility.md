@@ -1,6 +1,6 @@
 # Reproducibility and release record
 
-Analysis version: 1.0.0. Completed research snapshot: 26 September 2026.
+Analysis version: 1.0.0. Data retrieval: 26 September 2026.
 
 Data snapshot SHA-256: `df213feefd54664fd2fbd0875d6bcbe187b8d7104c1b646d44e93dd016c25f57`. This is SHA-256 over the ordered concatenation of the ten raw-file hashes in `source_manifest.json`. Each individual response is independently hashed there.
 

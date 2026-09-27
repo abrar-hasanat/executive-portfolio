@@ -1,17 +1,14 @@
-# Recovery audit
+# Research design audit
 
-Audit date: 26 September 2026.
+This audit checks whether the policy mechanism, data and method support the project's claims.
 
-| Category | Evidence and conclusion |
+| Issue | Evidence and design choice |
 | --- | --- |
-| Verified | The connected account exposes the profile, executive-portfolio, and three other public project repositories, plus one unrelated private repository. The unrelated private project was not inspected. |
-| Verified | `abrar-hasanat/bangladesh-trade-policy-model` returned 404. This establishes inaccessibility through the current connection, not deletion. |
-| Verified | Full available website and profile git histories and branch references were fetched. Searches of paths and changes containing Bangladesh/RMG did not recover the old project. Available repository and PR searches did not supply recoverable source. |
-| Historical claim | The prior project was described as Python ingestion, PostgreSQL, and R difference-in-differences. No accessible code, data, or output verifies those descriptions. |
-| Unresolved | The old repository may have been renamed, deleted, made inaccessible, or never completed. The available evidence cannot distinguish these possibilities. |
-| Required correction | Most apparel was not GSP-eligible before suspension. Do not reconstruct the historical description as a garment-wide tariff experiment. |
-| Action | Build a new, explicitly descriptive project using a dated analysis plan and real official data. No original code could be run; all runnable code here is new. |
+| GSP exposure | Historical USTR guidance excludes most apparel. The analysis does not assign a garment-wide tariff increase to the 2013 suspension. Illustrative tariff lines and actual aggregate preference use are documented in the policy notes. |
+| Unit of observation | US-reported annual imports by origin and apparel chapter, with HS 61 and 62 over 2010-2019. World totals are denominators, not additional supplier observations. |
+| Data provenance | The frozen UN Comtrade responses contain 120 records. Query parameters, actual retrieval times, source flags and hashes are preserved. |
+| Method | Descriptive trends, four endpoint contrasts and an exact symmetric market-share decomposition. Comparator suppliers provide context without being treated as validated counterfactuals. |
+| Worker outcomes | Wages, employment and safety are assessed through published research. The trade panel contains no worker-level outcomes. |
+| Reproduction | Python performs acquisition, validation and accounting. Paper figures and website charts use the same JSON. No database or regression infrastructure is required. |
 
-Website baseline: `8274a6798431df440f224e7a05ceef3ea3bcc530`. Profile baseline: `9ff6f409c2f94e23ceee2ad1596dd01d73ab414b`.
-
-The existing stack was verified as Next.js App Router, React, TypeScript, Tailwind CSS and Recharts. Installed Next.js documentation was read as required by AGENTS.md. No database or R regression was added because neither improves this descriptive analysis. Private writing is outside public version control.
+See the [analysis plan](analysis_plan.md), [methods](methods.md), [policy timeline](policy_timeline.md) and [validation report](validation.json). Private writing remains outside public version control.

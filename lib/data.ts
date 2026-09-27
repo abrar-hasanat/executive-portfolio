@@ -32,8 +32,8 @@ export interface CaseStudy {
 
 export const caseStudies: CaseStudy[] = [
   {
-    id: "bangladesh-rmg", title: "Bangladesh Apparel Trade and Worker Protection", period: "September 2026",
-    summary: "Independent research on US apparel sourcing after Rana Plaza, with a historical GSP exposure audit and a reproducible descriptive analysis.",
+    id: "bangladesh-rmg", title: "Bangladesh Apparel Trade and Worker Protection", period: "May 2026 - Present",
+    summary: "Examines US apparel sourcing after Rana Plaza using 120 UN Comtrade records, market-share decomposition and research on worker protection.",
     techStack: ["Python", "UN Comtrade", "Policy Research", "Recharts"],
     metricsLabel: "Research scope",
     impactMetrics: [{ label: "Official trade records", value: "120" }, { label: "Calendar years", value: "2010-2019" }, { label: "Apparel chapters", value: "HS 61 + 62" }],
