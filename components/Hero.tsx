@@ -71,14 +71,14 @@ export default function Hero() {
           variants={item}
           className="mt-3 font-mono text-sm uppercase tracking-[0.25em] text-accent"
         >
-          Strategy, Analytics, Operations
+          Business Analysis &amp; Operations
         </motion.p>
 
         <motion.p
           variants={item}
           className="mt-8 max-w-2xl text-lg leading-relaxed text-ink-secondary sm:text-xl"
         >
-          I build analytics tools, financial models, and operational workflows. Seeking full-time consulting and product management roles for 2027.
+          I study economics at Carleton and build tools for business decisions. My projects range from apparel trade research to demand forecasting. Seeking full-time consulting and product management roles starting in 2027.
         </motion.p>
 
         <motion.div

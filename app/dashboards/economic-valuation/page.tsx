@@ -41,19 +41,19 @@ export default function EconomicValuationDashboardPage() {
               ← Back to Portfolio
             </Link>
             <div className="rounded-full border border-[#3B82F6]/30 bg-[#3B82F6]/10 px-4 py-2 text-sm font-semibold text-[#93C5FD]">
-              OLS + Monte Carlo Executive Simulator
+              Illustrative policy scenario
             </div>
           </div>
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.35em] text-[#3B82F6]">Demonstration</p>
           <h1 className="max-w-4xl text-4xl font-bold tracking-tight md:text-6xl">Economic Valuation Demonstration</h1>
           <p className="mt-5 max-w-3xl text-lg leading-8 text-[#94A3B8]">
-            Adjust policy inputs to explore a valuation scenario.
+            Adjust assumed policy inputs to explore a valuation scenario. The formulas and chart weights are illustrative; the scores are not estimated probabilities or fitted regression results.
           </p>
         </header>
 
         <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {kpis.map((kpi) => (
-            <article key={kpi.label} className="rounded-3xl border border-[#1E293B] bg-[#112240] p-6">
+            <article key={`${kpi.label}-${kpi.value}`} className="rounded-3xl border border-[#1E293B] bg-[#112240] p-6">
               <p className="text-sm text-[#94A3B8]">{kpi.label}</p>
               <p className="mt-3 text-3xl font-bold text-[#F8FAFC]">{kpi.value}</p>
               <p className="mt-2 text-sm font-semibold text-[#3B82F6]">{kpi.helper}</p>
@@ -85,15 +85,15 @@ export default function EconomicValuationDashboardPage() {
             </div>
 
             <div className="mt-8 grid gap-4 md:grid-cols-3">
-              <div className="rounded-2xl bg-[#0A192F] p-5"><p className="text-sm text-[#94A3B8]">Predicted Valuation Multiple</p><p className="mt-2 text-4xl font-bold">{simulation.predictedMultiple.toFixed(1)}x</p><p className="text-sm text-[#3B82F6]">EBITDA</p></div>
-              <div className="rounded-2xl bg-[#0A192F] p-5"><p className="text-sm text-[#94A3B8]">Market Entry Success Probability</p><p className="mt-2 text-4xl font-bold">{simulation.successProbability.toFixed(0)}%</p><p className="text-sm text-[#3B82F6]">3-year ROI hurdle</p></div>
-              <div className="rounded-2xl bg-[#0A192F] p-5"><p className="text-sm text-[#94A3B8]">Downside Resilience Buffer</p><p className="mt-2 text-4xl font-bold">{simulation.downsideBuffer.toFixed(0)}%</p><p className="text-sm text-[#3B82F6]">policy stress capacity</p></div>
+              <div className="rounded-2xl bg-[#0A192F] p-5"><p className="text-sm text-[#94A3B8]">Illustrative Valuation Multiple</p><p className="mt-2 text-4xl font-bold">{simulation.predictedMultiple.toFixed(1)}x</p><p className="text-sm text-[#3B82F6]">EBITDA</p></div>
+              <div className="rounded-2xl bg-[#0A192F] p-5"><p className="text-sm text-[#94A3B8]">Illustrative Entry Score</p><p className="mt-2 text-4xl font-bold">{simulation.successProbability.toFixed(0)}/100</p><p className="text-sm text-[#3B82F6]">Assumed scoring formula</p></div>
+              <div className="rounded-2xl bg-[#0A192F] p-5"><p className="text-sm text-[#94A3B8]">Illustrative Stress Score</p><p className="mt-2 text-4xl font-bold">{simulation.downsideBuffer.toFixed(0)}/100</p><p className="text-sm text-[#3B82F6]">Assumed scoring formula</p></div>
             </div>
           </article>
 
           <article className="rounded-3xl border border-[#1E293B] bg-[#112240] p-6 md:p-8">
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#3B82F6]">Econometric Variable Impact Breakdown</p>
-            <h2 className="mt-3 text-2xl font-bold">Feature weights and directional elasticity</h2>
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#3B82F6]">Illustrative display weights</p>
+            <h2 className="mt-3 text-2xl font-bold">Assigned direction and relative weight</h2>
             <div className="mt-8 space-y-6">
               {impacts.map((impact) => (
                 <div key={impact.label}>
@@ -103,7 +103,7 @@ export default function EconomicValuationDashboardPage() {
               ))}
             </div>
             <div className="mt-8 rounded-2xl border border-[#1E293B] bg-[#0A192F]/70 p-5 text-sm leading-7 text-[#94A3B8]">
-              Use this demonstration to compare the effect of policy inputs on the scenario.
+              The fixed bars show illustrative weights. This page does not execute the separate R regression or Python simulation.
             </div>
           </article>
         </section>

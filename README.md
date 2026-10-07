@@ -29,3 +29,9 @@ Open `http://localhost:3000`.
 npm run lint
 npm run build
 ```
+
+## Valuation data
+
+Ticker lookup combines a market-price response with preset demonstration financials through 2024. Those presets include estimates and are not verified current statements. If the quote request fails, the response explicitly identifies its static reference price. Unsupported symbols return an error; the route does not invent financial statements. Upload a CSV with verified financials to supply a different scenario.
+
+The browser DCF is a separate implementation from the Python valuation repository. Its assumptions appear beside the inputs and in the scenario memo.

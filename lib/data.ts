@@ -11,7 +11,7 @@ export const credentialCategories: CredentialCategory[] = [
     { name: "IBM Business Analyst Professional Certificate" },
     { name: "Microsoft Power BI Data Analyst Professional Certificate" },
     { name: "PMI Certified Associate in Project Management (CAPM) (In Progress)" },
-    { name: "AWS Certified AI Practitioner (In Progress)" },
+    { name: "AWS Certified AI Practitioner" },
   ] },
   { id: "operations", title: "Operations", icon: LineChart, items: [
     { name: "Financial modeling and valuation" }, { name: "UAT and data validation" },
@@ -33,7 +33,7 @@ export interface CaseStudy {
 export const caseStudies: CaseStudy[] = [
   {
     id: "bangladesh-rmg", title: "Bangladesh Apparel Trade and Worker Protection", period: "May 2026 - Present",
-    summary: "Examines US apparel sourcing after Rana Plaza using 120 UN Comtrade records, market-share decomposition and research on worker protection.",
+    summary: "Examines US apparel sourcing after Rana Plaza using 120 UN Comtrade records. Connects the trade results to published research on worker protection.",
     techStack: ["Python", "UN Comtrade", "Policy Research", "Recharts"],
     metricsLabel: "Research scope",
     impactMetrics: [{ label: "Official trade records", value: "120" }, { label: "Calendar years", value: "2010-2019" }, { label: "Apparel chapters", value: "HS 61 + 62" }],
@@ -44,24 +44,24 @@ export const caseStudies: CaseStudy[] = [
     id: "valuation-engine", title: "Enterprise Financial Valuation Engine", period: "June 2026",
     summary: "Built a valuation tool with sensitivity analysis and equity research memo export.",
     techStack: ["Next.js", "TypeScript", "Python", "DCF Modeling"],
-    impactMetrics: [{ label: "Valuation test cases", value: "$23B+" }, { label: "Sensitivity grid", value: "25 cells" }, { label: "Equity memo export", value: "1-click" }],
-    outcomes: ["Scoped $23B+ across valuation test cases.", "Automated 25-cell WACC and growth sensitivity grids.", "Added 1-click equity memo export."],
+    impactMetrics: [{ label: "Sensitivity grid", value: "25 cells" }, { label: "Equity memo export", value: "PDF" }],
+    outcomes: ["Calculated a 25-cell sensitivity grid for discount rates and terminal growth.", "Added a downloadable memo with the scenario inputs and valuation results."],
     liveDashboardUrl: "/dashboards/valuation-engine", githubRepoUrl: "https://github.com/abrar-hasanat/enterprise-valuation-engine",
   },
   {
     id: "agile-velocity", title: "Agile Velocity and Probabilistic Capacity Forecaster", period: "August 2026",
-    summary: "Built a delivery forecaster using Monte Carlo trials and RICE scoring.",
+    summary: "Built a release-planning demonstration with synthetic sprint history and RICE feature scoring.",
     techStack: ["Python", "Monte Carlo", "RICE Framework"],
     impactMetrics: [{ label: "Monte Carlo trials", value: "10,000" }, { label: "Forecasts", value: "P50, P80, P90" }],
-    outcomes: ["Ran 10,000 Monte Carlo trials.", "Forecasted P50, P80, and P90 release milestones.", "Applied RICE feature prioritization scoring."],
+    outcomes: ["Ran 10,000 Monte Carlo trials to estimate release milestones from synthetic sprint data.", "Ranked candidate features using RICE scores."],
     liveDashboardUrl: "/dashboards/agile-velocity", githubRepoUrl: "https://github.com/abrar-hasanat/executive-portfolio",
   },
   {
     id: "demand-forecast", title: "Synthetic Demand Forecasting Model", period: "January 2026",
-    summary: "Built a synthetic-data forecasting demonstration inspired by earlier e-commerce operations. It does not use or reproduce proprietary business records; any resemblance to real entities or transactions is coincidental.",
+    summary: "Built a weekday demand baseline using synthetic e-commerce orders. Tested each forecast against later observations and compared expected demand with a reorder threshold.",
     techStack: ["Python", "PostgreSQL", "IBM Cognos"],
-    impactMetrics: [{ label: "Synthetic order history", value: "42 months" }, { label: "Simulated warning", value: "3 weeks" }],
-    outcomes: ["Generated and analyzed 42 months of synthetic order history.", "Demonstrated a 3-week stockout-risk warning in a simulated peak-Q4 scenario."],
+    impactMetrics: [{ label: "Synthetic order history", value: "42 months" }, { label: "Supplier lead time", value: "21 days" }],
+    outcomes: ["Analyzed 42 months of synthetic order history.", "Calculated forecasts using only earlier observations, with measured error and a 21-day reorder-threshold check."],
     githubRepoUrl: "https://github.com/abrar-hasanat/wishing-star-demand-forecast",
   },
   {
@@ -86,9 +86,9 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: "wishing-star", title: "Cross-Border E-Commerce Operations", company: "Wishing Star by Shantu", role: "Founder", period: "June 2021 to August 2023",
-    summary: "Founded a cross-border e-commerce business and managed supplier, procurement, and fulfillment operations through August 2023.", techStack: ["Demand Forecasting", "DMAIC"],
-    impactMetrics: [{ label: "Year-over-year revenue growth", value: "45%" }, { label: "Revenue increase", value: "+$18.9k" }, { label: "Stockout warning", value: "3 weeks" }],
-    outcomes: ["Increased year-over-year revenue by 45% (+$18.9k).", "Flagged stockout risk 3 weeks before peak Q4 demand.", "Analyzed 42 months of order history to adjust replenishment controls.", "Retain passive ownership; day-to-day operations are independently managed by the local team."],
+    summary: "Founded a cross-border e-commerce business and managed procurement and fulfillment through August 2023.", techStack: ["Supplier Management", "Order Fulfillment"],
+    impactMetrics: [{ label: "Year-over-year revenue growth", value: "45%" }, { label: "Revenue increase", value: "+$18.9k" }],
+    outcomes: ["Increased year-over-year revenue by 45% (+$18.9k).", "Retain passive ownership; day-to-day operations are independently managed by the local team."],
   },
   {
     id: "stargate", title: "Executive Reporting", company: "Stargate TechMax LTD.", role: "Executive Assistant to the CEO", period: "May 2021 to June 2023",
@@ -101,7 +101,7 @@ export const caseStudies: CaseStudy[] = [
 export interface InteractiveDashboard { id: string; title: string; subtitle: string; tag: string; category: "Finance" | "Operations" | "Research"; kind: "Interactive tool" | "Case study"; href: string; githubUrl: string; features: string[]; }
 export const interactiveDashboards: InteractiveDashboard[] = [
   { id: "bangladesh-rmg", kind: "Interactive tool", title: "Bangladesh Apparel Sourcing", subtitle: "Observed US import trends, supplier comparisons and chapter composition after Rana Plaza. Descriptive evidence with documented limits.", tag: "Research", category: "Research", href: "/dashboards/bangladesh-rmg", githubUrl: "https://github.com/abrar-hasanat/executive-portfolio/tree/main/research/bangladesh-rmg", features: ["120 official records", "2010-2019", "Reproducible analysis"] },
-  { id: "valuation-engine", kind: "Interactive tool", title: "Enterprise Financial Valuation Engine", subtitle: "DCF modeling with 5x5 WACC and growth sensitivity grids and memo export.", tag: "Finance", category: "Finance", href: "/dashboards/valuation-engine", githubUrl: "https://github.com/abrar-hasanat/enterprise-valuation-engine", features: ["25-cell sensitivity grid", "1-click memo export", "$23B+ test cases"] },
+  { id: "valuation-engine", kind: "Interactive tool", title: "Enterprise Financial Valuation Engine", subtitle: "DCF modeling with 5x5 WACC and growth sensitivity grids and memo export.", tag: "Finance", category: "Finance", href: "/dashboards/valuation-engine", githubUrl: "https://github.com/abrar-hasanat/enterprise-valuation-engine", features: ["25-cell sensitivity grid", "PDF memo export"] },
   { id: "agile-velocity", kind: "Interactive tool", title: "Agile Velocity and Capacity Forecaster", subtitle: "Monte Carlo release forecasts with RICE prioritization.", tag: "Operations", category: "Operations", href: "/dashboards/agile-velocity", githubUrl: "https://github.com/abrar-hasanat/executive-portfolio", features: ["10,000 trials", "P50, P80, P90", "RICE scoring"] },
   { id: "tender-pipeline", kind: "Case study", title: "Tender Pipeline", subtitle: "Unpaid, supervised remote internship project in tender qualification and pipeline analysis.", tag: "Operations", category: "Operations", href: "/dashboards/tender-pipeline", githubUrl: "https://github.com/abrar-hasanat/executive-portfolio", features: ["15+ opportunities reviewed", "50+ prospects organized", "20% shorter turnaround"] },
   { id: "operations-capacity", kind: "Case study", title: "Workday Migration Support", subtitle: "UAT and backend data validation for the Colleague to Workday migration.", tag: "Operations", category: "Operations", href: "/dashboards/operations-capacity", githubUrl: "https://github.com/abrar-hasanat/executive-portfolio", features: ["15% backlog reduction", "UAT", "Data validation"] },

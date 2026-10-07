@@ -1,4 +1,4 @@
-"""Tender pipeline analytics for Bay Oceania C&T Ltd. data.
+"""Tender pipeline analytics for synthetic demonstration data.
 
 Run after generating the dataset:
     python data_generator.py
@@ -93,7 +93,7 @@ def main() -> None:
     t_test = run_turnaround_t_test(data)
 
     print("=" * 78)
-    print("Bay Oceania C&T Ltd. | Tender Pipeline Analytics Summary")
+    print("Synthetic Tender Pipeline | Scenario Summary")
     print("=" * 78)
     print(f"Tender opportunities analyzed: {len(data):,}")
     print(f"Raw pipeline value: {format_currency(data['Expected_Contract_Value_USD'].sum())}")
@@ -103,7 +103,7 @@ def main() -> None:
     print(f"Mean captured revenue: {format_currency(monte_carlo['mean_revenue'])}")
     print(f"Median captured revenue: {format_currency(monte_carlo['median_revenue'])}")
     print(
-        "90% confidence interval: "
+        "90% simulated outcome interval: "
         f"{format_currency(monte_carlo['ci_90_lower'])} to {format_currency(monte_carlo['ci_90_upper'])}"
     )
     print(
@@ -114,15 +114,15 @@ def main() -> None:
     print("DMAIC Proposal Turnaround Hypothesis Test: Welch two-sample t-test")
     print(f"Pre-DMAIC average turnaround: {t_test['baseline_avg']:.1f} days")
     print(f"Post-DMAIC average turnaround: {t_test['optimized_avg']:.1f} days")
-    print(f"Observed efficiency gain: {t_test['reduction_pct']:.1f}%")
+    print(f"Synthetic group difference: {t_test['reduction_pct']:.1f}%")
     print(f"t-statistic: {t_test['t_statistic']:.3f}")
     print(f"p-value: {t_test['p_value']:.6f}")
     print(
         "Statistical conclusion: "
         + (
-            "DMAIC turnaround improvement is statistically significant (p < 0.05)."
+            "The generated groups differ (p < 0.05); their difference was built into the inputs."
             if t_test["p_value"] < 0.05
-            else "DMAIC turnaround improvement is not statistically significant at p < 0.05."
+            else "The generated-group comparison does not reject equality at p < 0.05."
         )
     )
     print("=" * 78)

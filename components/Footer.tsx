@@ -13,7 +13,7 @@ export default function Footer() {
               Let&rsquo;s connect
             </span>
             <h2 className="mt-3 max-w-md text-2xl font-semibold tracking-tight text-ink-primary sm:text-3xl">
-              Open to Consulting &amp; Product Management conversations for
+              Open to Consulting &amp; Product Management opportunities for
               2027.
             </h2>
             <a

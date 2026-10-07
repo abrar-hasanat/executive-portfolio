@@ -8,7 +8,7 @@ import pandas as pd
 
 DATA_PATH = Path(__file__).with_name("capacity_uat_data.csv")
 TARGET_PASS_RATE = 0.98
-TARGET_BACKLOG_REDUCTION = 0.20
+TARGET_PROCESSING_TIME_REDUCTION = 0.20
 BASELINE_SLA_HOURS = 10.0
 
 
@@ -26,7 +26,7 @@ def analyze_cycle_time(data: pd.DataFrame) -> dict[str, float]:
         "baseline_mean": baseline_mean,
         "optimized_mean": optimized_mean,
         "reduction": reduction,
-        "target_delta": reduction - TARGET_BACKLOG_REDUCTION,
+        "target_delta": reduction - TARGET_PROCESSING_TIME_REDUCTION,
     }
 
 
@@ -63,11 +63,11 @@ def print_executive_summary(data: pd.DataFrame) -> None:
     print("\n=== Executive DMAIC Capacity Summary ===")
     print(f"Baseline mean processing hours: {cycle['baseline_mean']:.2f}")
     print(f"DMAIC optimized mean hours: {cycle['optimized_mean']:.2f}")
-    print(f"Peak-volume backlog reduction: {cycle['reduction']:.1%}")
-    print(f"Target proof point vs. 20% benchmark: {cycle['target_delta']:+.1%}")
+    print(f"Synthetic processing-time reduction: {cycle['reduction']:.1%}")
+    print(f"Difference from the 20% scenario assumption: {cycle['target_delta']:+.1%}")
     print("\n=== UAT Script Integrity ===")
-    print(f"Scripts verified: {uat['total_scripts']:,}")
-    print(f"Scripts passed: {uat['passed_scripts']:,}")
+    print(f"Synthetic records: {uat['total_scripts']:,}")
+    print(f"Synthetic passing records: {uat['passed_scripts']:,}")
     print(f"UAT pass rate: {uat['pass_rate']:.1%} (target: {TARGET_PASS_RATE:.0%})")
     print("\n=== 3x Team Growth Capacity Forecast ===")
     for row in scaling.itertuples(index=False):

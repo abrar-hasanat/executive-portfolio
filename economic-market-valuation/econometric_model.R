@@ -22,7 +22,7 @@ model <- lm(
 model_summary <- summary(model)
 cat("\n=== Multivariate OLS Regression Summary ===\n")
 print(model_summary)
-cat(sprintf("\nTarget validation: R-squared = %.3f (target: 0.890)\n", model_summary$r.squared))
+cat(sprintf("\nFit to synthetic data: R-squared = %.3f\n", model_summary$r.squared))
 
 cat("\n=== Coefficients, Standard Errors, t-statistics, p-values ===\n")
 print(tidy(model))

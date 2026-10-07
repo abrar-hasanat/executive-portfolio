@@ -45,7 +45,6 @@ const browserHeaders = {
 
 const million = 1_000_000;
 const billion = 1_000_000_000;
-const clamp = (value: number, min: number, max: number) => Math.max(min, Math.min(max, value));
 const round = (value: number) => Math.round(value);
 const normalizeSymbol = (symbol: string) => symbol.trim().toUpperCase().replace(/\s+/g, "");
 
@@ -104,45 +103,27 @@ async function fetchChart(symbol: string): Promise<{ currentPrice: number; curre
   return { currentPrice, currency: meta.currency ?? "USD", name: meta.longName ?? meta.shortName, exchangeName: meta.exchangeName, instrumentType: meta.instrumentType };
 }
 
-function synthesizeFinancials(symbol: string, price: number): FundamentalProfile {
-  const seed = [...symbol].reduce((sum, char) => sum + char.charCodeAt(0), 0);
-  const sharesOutstanding = (clamp(0.18 + (seed % 80) / 10, 0.18, 8.2) * billion);
-  const marketCap = price * sharesOutstanding;
-  const salesMultiple = clamp(2.2 + (seed % 55) / 10, 1.2, 8.5);
-  const latestRevenue = Math.max(marketCap / salesMultiple, 120 * million);
-  const growth = clamp(0.045 + (seed % 20) / 100, 0.04, 0.24);
-  const ebitMargin = clamp(0.09 + (seed % 22) / 100, 0.08, 0.31);
-  const netMargin = clamp(ebitMargin * 0.72, 0.04, 0.24);
-  const beta = Number(clamp(0.75 + (seed % 95) / 100, 0.75, 1.7).toFixed(2));
-  const financials = Array.from({ length: 4 }, (_, index) => {
-    const back = 3 - index;
-    const revenue = latestRevenue / Math.pow(1 + growth, back);
-    const ebit = revenue * ebitMargin * (0.94 + index * 0.02);
-    const netIncome = revenue * netMargin * (0.94 + index * 0.02);
-    const operatingCashFlow = netIncome + revenue * 0.055;
-    const capex = revenue * clamp(0.035 + (seed % 9) / 200, 0.035, 0.08);
-    const totalDebt = revenue * clamp(0.18 + (seed % 20) / 100, 0.18, 0.38);
-    const cash = revenue * clamp(0.10 + (seed % 15) / 100, 0.10, 0.25);
-    return { year: String(new Date().getUTCFullYear() - 4 + index), revenue: round(revenue), ebit: round(ebit), net_income: round(netIncome), operating_cash_flow: round(operatingCashFlow), capex: round(capex), total_debt: round(totalDebt), cash: round(cash) };
-  });
-  return { name: `${symbol} Corporation`, beta, sharesOutstanding: round(sharesOutstanding), fallbackPrice: price, financials };
-}
-
 export async function GET(request: NextRequest) {
   const symbol = normalizeSymbol(request.nextUrl.searchParams.get("symbol") ?? "");
   if (!symbol || !/^[A-Z0-9.\-]{1,12}$/.test(symbol)) {
     return NextResponse.json({ success: false, error: "Enter a valid ticker symbol." }, { status: 400 });
   }
 
+  const profile = fundamentals[symbol];
+  if (!profile) {
+    return NextResponse.json({ success: false, error: "No financial-statement preset is available for this ticker. Upload a CSV to model it." }, { status: 422 });
+  }
+
   try {
     const chart = await fetchChart(symbol);
-    const profile = fundamentals[symbol] ?? synthesizeFinancials(symbol, chart.currentPrice);
     return NextResponse.json({
       success: true,
       symbol,
       ticker: symbol,
       name: chart.name ?? profile.name,
       currentPrice: chart.currentPrice,
+      priceSource: "Market-price response from Yahoo Finance",
+      financialsSource: "Preset demonstration inputs through 2024, including estimates. These are not verified current financial statements.",
       currency: chart.currency,
       exchangeName: chart.exchangeName,
       instrumentType: chart.instrumentType,
@@ -159,11 +140,13 @@ export async function GET(request: NextRequest) {
         ticker: symbol,
         name: profile.name,
         currentPrice: profile.fallbackPrice,
+        priceSource: "Static reference price; live quote unavailable",
+        financialsSource: "Preset demonstration inputs through 2024, including estimates. These are not verified current financial statements.",
         currency: "USD",
         beta: profile.beta,
         sharesOutstanding: profile.sharesOutstanding,
         financials: profile.financials,
-        warning: error instanceof Error ? error.message : "Live chart lookup unavailable; returned curated fundamentals.",
+        warning: error instanceof Error ? error.message : "Live quote unavailable; returned demonstration inputs.",
       });
     }
     const message = error instanceof Error ? error.message : "Unexpected ticker lookup failure.";

@@ -1,4 +1,4 @@
-Task_ID,Department,System_Phase,UAT_Script_Pass_Status,Baseline_Processing_Hours,DMAIC_Optimized_Hours,Backlog_Reduction_Pct,Team_Member_FTE_Allocation,Weekly_Volume_Handled
+Task_ID,Department,System_Phase,UAT_Script_Pass_Status,Baseline_Processing_Hours,DMAIC_Optimized_Hours,Processing_Time_Reduction_Pct,Team_Member_FTE_Allocation,Weekly_Volume_Handled
 UAT-2026-001,Student Finance,Workday ERP Cutover,Passed,11.84,8.5,0.2821,1.05,190
 UAT-2026-002,Registrar,Workday ERP Cutover,Passed,11.49,8.5,0.2602,1.22,243
 UAT-2026-003,Student Finance,Legacy Colleague ERP,Passed,9.6,7.75,0.1927,0.97,281

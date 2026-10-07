@@ -32,7 +32,7 @@ def build_dataset(row_count: int = ROW_COUNT) -> pd.DataFrame:
             "UAT_Script_Pass_Status": statuses,
             "Baseline_Processing_Hours": baseline_hours,
             "DMAIC_Optimized_Hours": optimized_hours,
-            "Backlog_Reduction_Pct": (1 - optimized_hours / baseline_hours).round(4),
+            "Processing_Time_Reduction_Pct": (1 - optimized_hours / baseline_hours).round(4),
             "Team_Member_FTE_Allocation": rng.uniform(0.5, 2.0, row_count).round(2),
             "Weekly_Volume_Handled": rng.integers(50, 301, row_count),
         }
@@ -45,7 +45,7 @@ def main() -> None:
     dataset.to_csv(OUTPUT_PATH, index=False)
     print(f"Generated {len(dataset):,} operational and UAT records at {OUTPUT_PATH}")
     print(f"UAT pass rate: {(dataset['UAT_Script_Pass_Status'].eq('Passed').mean() * 100):.1f}%")
-    print(f"Average backlog reduction: {(dataset['Backlog_Reduction_Pct'].mean() * 100):.1f}%")
+    print(f"Synthetic average processing-time reduction: {(dataset['Processing_Time_Reduction_Pct'].mean() * 100):.1f}%")
 
 
 if __name__ == "__main__":

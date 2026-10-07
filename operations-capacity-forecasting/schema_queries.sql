@@ -1,12 +1,12 @@
--- 1. Backlog & SLA Latency Query
+-- 1. Processing Time & SLA Query
 SELECT
     department,
     AVG(CASE WHEN system_phase = 'Legacy Colleague ERP' THEN baseline_processing_hours END) AS legacy_avg_turnaround_hours,
     AVG(CASE WHEN system_phase = 'Workday ERP Cutover' THEN dmaic_optimized_hours END) AS workday_avg_turnaround_hours,
-    (AVG(baseline_processing_hours) - AVG(dmaic_optimized_hours)) / NULLIF(AVG(baseline_processing_hours), 0) AS backlog_reduction_rate
+    (AVG(baseline_processing_hours) - AVG(dmaic_optimized_hours)) / NULLIF(AVG(baseline_processing_hours), 0) AS processing_time_reduction_rate
 FROM capacity_uat_data
 GROUP BY department
-ORDER BY backlog_reduction_rate DESC;
+ORDER BY processing_time_reduction_rate DESC;
 
 -- 2. UAT Script Integrity Check
 SELECT
