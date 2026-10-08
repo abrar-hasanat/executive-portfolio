@@ -12,6 +12,7 @@ export const credentialCategories: CredentialCategory[] = [
     { name: "Microsoft Power BI Data Analyst Professional Certificate" },
     { name: "PMI Certified Associate in Project Management (CAPM) (In Progress)" },
     { name: "AWS Certified AI Practitioner" },
+    { name: "CFA Program Level I Candidate (May 2027)" },
   ] },
   { id: "operations", title: "Operations", icon: LineChart, items: [
     { name: "Financial modeling and valuation" }, { name: "UAT and data validation" },
@@ -93,8 +94,8 @@ export const caseStudies: CaseStudy[] = [
   {
     id: "stargate", title: "Executive Reporting", company: "Stargate TechMax LTD.", role: "Executive Assistant to the CEO", period: "May 2021 to June 2023",
     summary: "Mapped reporting workflows across finance and administration departments.", techStack: ["Process Mapping"],
-    impactMetrics: [{ label: "Previous reporting cycle", value: "3.5 weeks" }, { label: "Updated reporting cycle", value: "11 days" }],
-    outcomes: ["Reduced the reporting cycle from 3.5 weeks to 11 days.", "Trimmed product processing times by 15% by standardizing workflows and handoffs."],
+    impactMetrics: [{ label: "Previous reporting cycle", value: "3.5 working weeks" }, { label: "Updated reporting cycle", value: "11 working days" }],
+    outcomes: ["Reduced the reporting cycle from 3.5 working weeks to 11 working days.", "Trimmed product processing times by 15% by standardizing workflows and handoffs."],
   },
 ];
 
