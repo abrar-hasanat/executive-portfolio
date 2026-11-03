@@ -58,7 +58,7 @@ This is one customer with one region and a fixed USD rate. Usage is entered as s
 
 The page reads stored results on refresh. There is no push update or button that starts Workato. The read function returns the latest 200 events and 100 activity records. The overview compares the stored invoice with the calibration baseline plus accepted usage at the demo rate. It is not a general pricing engine.
 
-Broader sandbox tests for duplicate and invalid events are still deferred. Local checks covered access restrictions and retry behavior, including keeping a submission ID after a lost response. That does not replace testing the whole system under load. There are no failure alerts yet, and the draft invoice is not a payment collection flow.
+The duplicate-intake and negative-usage checks now pass in Supabase. [The recipe notes](billing-recipe-tests.md) have the two SQL calls for Workato. The invalid check leaves one named exception in the ledger with no delivery attempt. A duplicate request sent all the way to Metronome still needs a separate test. Local checks also covered access restrictions and retry behavior, including keeping a submission ID after a lost response. That does not replace testing the whole system under load. There are no failure alerts yet, and the draft invoice is not a payment collection flow.
 
 Scheduled runs and failure alerts are the next ideas. The current priority is understanding this version well enough to explain it and debug it.
 
@@ -70,6 +70,7 @@ Files I need to remember
 - [004_invoice_readback.sql](../database/billing/004_invoice_readback.sql) saves and checks the API invoice response.
 - [006_dashboard_access.sql](../database/billing/006_dashboard_access.sql) adds authenticated dashboard reads.
 - [007_dashboard_actions.sql](../database/billing/007_dashboard_actions.sql) adds approved submission and retry actions without the deferred fixtures.
+- [008_recipe_tests.sql](../database/billing/008_recipe_tests.sql) adds the duplicate-intake and negative-usage test functions. Both passed in the connected database; Workato jobs use the calls in the recipe notes.
 
 Those scripts describe the configured sandbox. SQL changes are applied separately in Supabase. A website deployment does not run them or send usage.
 

@@ -141,7 +141,7 @@ What is still work to do?
 
 There is one demo customer and region, with a fixed rate. I am entering usage instead of collecting storage telemetry. The invoice import expects a single invoice response with no remaining pages. The dashboard only loads recent history and updates on refresh.
 
-I still need broader sandbox testing for duplicate and invalid events. Scheduled runs and failure alerts are ideas for the next version. The worker's database permissions need narrowing. There is no payment collection or claim of production readiness.
+The duplicate-intake and negative-usage checks now pass in the connected database. [Recipe notes](billing-recipe-tests.md) show how to run them from Workato. The negative test leaves one expected invalid event with no delivery attempt. Vendor-side duplicate handling still needs a separate end-to-end test. Scheduled runs and failure alerts are ideas for the next version. The worker's database permissions need narrowing. There is no payment collection or claim of production readiness.
 
 If he asks about scaling
 
