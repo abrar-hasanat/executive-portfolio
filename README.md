@@ -8,7 +8,8 @@ A Next.js portfolio that presents work history, credentials, and interactive fin
 - `app/dashboards/`: Client-side dashboard routes for valuation, delivery forecasting, tender tracking, migration support, and an economic valuation demonstration.
 - `components/`: Reusable portfolio sections and navigation.
 - `lib/data.ts`: Resume-aligned portfolio content.
-- `public/`: Static assets.
+- `public/`: Static assets, including the isolated usage-billing dashboard.
+- `database/billing/`: PostgreSQL billing schema and processing functions.
 
 ## Dependencies
 
@@ -35,3 +36,9 @@ npm run build
 Ticker lookup combines a market-price response with preset demonstration financials through 2024. Those presets include estimates and are not verified current statements. If the quote request fails, the response explicitly identifies its static reference price. Unsupported symbols return an error; the route does not invent financial statements. Upload a CSV with verified financials to supply a different scenario.
 
 The browser DCF is a separate implementation from the Python valuation repository. Its assumptions appear beside the inputs and in the scenario memo.
+
+## Usage billing
+
+Open `/dashboards/usage-billing` for the Northstar storage-usage billing demo. The dashboard includes event delivery history and invoice readback. It opens with verified sandbox results and supports an authenticated read-only connection to Supabase.
+
+See [the usage-billing guide](docs/usage-billing.md) for architecture, data scope, and connection setup. Existing billing database users only need the read-access script; do not rerun the foundation or event fixtures.
