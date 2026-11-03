@@ -39,6 +39,6 @@ The browser DCF is a separate implementation from the Python valuation repositor
 
 ## Usage billing
 
-Open `/dashboards/usage-billing` for the Northstar storage-usage billing demo. The dashboard includes event delivery history and invoice readback. It opens with verified sandbox results and supports an authenticated read-only connection to Supabase.
+Open `/dashboards/usage-billing` for the Northstar storage-usage billing demo. The dashboard includes event delivery history and invoice readback. It opens with verified sandbox results and supports authenticated Supabase reads plus approved operator submission and retry controls.
 
-See [the usage-billing guide](docs/usage-billing.md) for architecture, data scope, and connection setup. Existing billing database users only need the read-access script; do not rerun the foundation or event fixtures.
+See [the usage-billing guide](docs/usage-billing.md) for architecture, data scope, and connection setup. Existing billing database users apply the read-access and operator-action scripts separately; do not rerun the foundation or event fixtures.
