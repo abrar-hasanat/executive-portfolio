@@ -1,7 +1,6 @@
--- Run in Supabase SQL Editor with the Workato recipe STOPPED.
--- Queues one synthetic 250 GB-hour event. Makes no external API requests.
--- Re-running preserves the existing event and its original values/status.
--- Use only for the controlled HTTP rejection and recovery test.
+-- Billing lab 03: the 250 GB-hour recovery test.
+-- Keep the Workato recipe stopped while queuing it.
+-- This file makes no API request. Re-running leaves the original event intact.
 
 begin;
 
@@ -39,8 +38,8 @@ select id, 'usage_received', '{"source":"controlled_failure_test"}' from inserte
 
 commit;
 
--- First-run expected: recovery-001, received, 250, zero attempts.
--- Stop and inspect before testing if an existing row has a different status.
+-- First run should show recovery-001 as received, with 250 GB-hours and no attempts.
+-- If the row already has another status, inspect it before the next test.
 select e.transaction_id, e.status, e.gb_hours,
   (select count(*) from public.billing_delivery_attempts a where a.usage_event_id = e.id)
     as delivery_attempts

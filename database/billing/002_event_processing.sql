@@ -1,9 +1,8 @@
--- Billing Lab migration 02. Run ONCE after migration 01 in Supabase SQL Editor.
--- Installs processing helpers and queues ONE synthetic 500 GB-hour event.
--- No external requests are made. The Metronome invoice remains unchanged here.
--- A successful ingest is tracked separately from invoice reconciliation.
--- Workato must use an HTTP timeout below the 15-minute claim lease.
--- Functions are restricted to the SQL owner until a worker role is granted access.
+-- Billing lab 02: processing and retry functions, after file 001.
+-- Apply once. This also queues the original 500 GB-hour test event.
+-- Workato sends it later; queuing it does not change the invoice.
+-- Keep the HTTP timeout shorter than the 15-minute claim lease.
+-- The functions currently use the database owner's Workato connection.
 
 begin;
 
@@ -115,7 +114,7 @@ begin
       where a.usage_event_id = v_event.id and a.outcome in ('uncertain', 'accepted')
         and a.metronome_customer_id <> v_customer.metronome_customer_id
     ) then
-      -- Replaying an uncertain delivery to a DIFFERENT customer could bill twice.
+      -- A different customer after an unclear delivery could create a second charge.
       v_reason := 'Mapping changed after a possible delivery. Reconcile vendor usage before retrying.';
     end if;
 

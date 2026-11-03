@@ -1,9 +1,7 @@
--- Billing Lab: database foundation, migration 01
--- Run ONCE in the consumption-billing-lab Supabase SQL Editor as postgres.
--- Contains no credentials. Creates four new tables and the Northstar mapping.
--- Does not send usage, change Metronome objects, or charge a payment method.
--- The $1 snapshot below is a manually verified sandbox draft invoice baseline.
--- Future processing functions and dashboard access policies are separate steps.
+-- Billing lab 01: tables and the Northstar customer mapping.
+-- Apply once as postgres in the consumption-billing-lab SQL Editor.
+-- The $1 baseline is from the earlier sandbox test. This file does not send usage.
+-- Dashboard access comes later, in file 006.
 
 begin;
 
@@ -65,7 +63,7 @@ create table public.billing_usage_events (
 );
 
 -- customer_code deliberately has no foreign key: an unknown customer must be
--- retained as an exception, then resolved using the CURRENT mapping on retry.
+-- kept for review, then checked against the current mapping on retry.
 -- transaction_id must stay stable for all retries of the same logical event.
 -- accepted means the ingest API accepted it; it does not mean invoicing is verified.
 create index billing_usage_queue_idx

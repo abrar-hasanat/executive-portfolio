@@ -1,6 +1,6 @@
--- Run this complete file once in Supabase SQL Editor.
--- Defines the recorder only. Workato supplies the actual API response later.
--- This first version requires one invoice and a complete, unpaginated response.
+-- Billing lab 04: save the invoice response supplied by Workato.
+-- Apply once in SQL Editor. No invoice is fetched by this script.
+-- For now, the response needs exactly one invoice and no remaining pages.
 begin;
 
 create or replace function public.billing_store_invoice_page(

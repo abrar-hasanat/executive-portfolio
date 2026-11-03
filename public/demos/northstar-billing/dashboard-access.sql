@@ -1,7 +1,6 @@
--- Billing Lab 06: dashboard READ access only. File 05 is NOT required.
--- Run the COMPLETE file in Supabase SQL Editor.
--- Default viewer: hasanata@carleton.edu. Change the email below if needed.
--- Create the matching Supabase Auth user separately; no passwords go in SQL.
+-- Billing lab 06: authenticated dashboard reads. File 005 is not needed.
+-- Apply this file in SQL Editor; the default viewer is hasanata@carleton.edu.
+-- The matching Supabase Auth user is created separately, with its own password.
 begin;
 create table if not exists public.billing_dashboard_viewers (
   email text primary key check(email = lower(btrim(email))),
@@ -106,7 +105,7 @@ end;
 $$;
 revoke all on function public.billing_dashboard_data() from public,anon,authenticated;
 grant execute on function public.billing_dashboard_data() to authenticated;
--- No table access or write functions are granted to browser users.
+-- This file grants the read function only; table access stays closed.
 notify pgrst,'reload schema';
 commit;
 select 'Read-only dashboard access ready' as result;

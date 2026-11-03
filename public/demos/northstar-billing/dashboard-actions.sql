@@ -1,6 +1,6 @@
--- Billing Lab 07: approved dashboard operator actions.
--- File 05 and its test fixtures are NOT required. This script queues NO events.
--- Run after 006_dashboard_access.sql. Only the approved email below gets write controls.
+-- Billing lab 07: dashboard submission and retry, after file 006.
+-- The approved active email below gets operator permission.
+-- No events are queued by this script. File 005 and its fixtures are not needed.
 begin;
 alter table public.billing_dashboard_viewers
   add column if not exists can_manage_usage boolean not null default false;
@@ -38,8 +38,8 @@ begin
     raise exception 'A customer code is required.' using errcode = '22023';
   end if;
 
-  -- Keep malformed usage values as NULL in typed columns, preserving the
-  -- complete original object for the worker to classify as an exception.
+  -- Keep the original payload even if parsing fails. The worker can then
+  -- mark the bad values as an exception instead of losing the record.
   v_type := case when jsonb_typeof(p_payload->'event_type') = 'string'
     then p_payload->>'event_type' else '' end;
   v_timestamp_text := p_payload->>'timestamp';

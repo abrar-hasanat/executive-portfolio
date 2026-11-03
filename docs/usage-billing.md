@@ -1,62 +1,76 @@
-# Usage Billing & Recovery
+# Billing lab notes
 
-A storage-usage billing demo built around a durable PostgreSQL event ledger. Workato delivers usage to Metronome and records delivery outcomes. A separate recipe reads the resulting invoice back into Supabase.
+Basically, this is a small storage-usage billing demo. Supabase keeps the usage records and delivery history. Workato sends usage to Metronome, then a separate recipe reads the draft invoice back. The website shows what was stored.
 
-## Open the dashboard
+I built it to get hands-on Workato practice before the externship. It uses synthetic data. Metronome is the billing sandbox for this project; this setup is not a description of Qumulo's internal systems.
 
-The portfolio route is `/dashboards/usage-billing`. Its assets live in `public/demos/northstar-billing/`. The Next.js page isolates the dashboard in a same-origin frame, keeping its styles separate from the portfolio. No additional Vercel project or build dependency is needed.
+[Dashboard](https://www.abrarhasanat.com/dashboards/usage-billing) · [Plain-language walkthrough](billing-walkthrough.md)
 
-The dashboard is listed on the portfolio home page and dashboard collection. Its overview and invoice view show the most recent dataset; the ledger supports search, status filters, and CSV export. Select an event to inspect its delivery attempts.
+What opens by default
 
-## Data sources
+The public page starts with a saved view of an earlier test: $1.75 for 1,750 GB-hours. That includes the original 1,000 GB-hour calibration test, which happened before the ledger existed. The ledger then recorded a 500 GB-hour event and a separate 250 GB-hour recovery test.
 
-**Verified snapshot** is the default. It records observed sandbox results from November 3, 2026: a $1.75 draft invoice for 1,750 GB-hours, two accepted ledger events totaling 750 GB-hours, and a recovered delivery failure. The original 1,000 GB-hour calibration charge predates the ledger and is labeled separately. Event timestamps and audit entries that were not supplied are not invented.
+The calibration charge has its own baseline record. There are no invented delivery attempts for it. The snapshot also leaves out event timestamps and activity records that were not captured for that view.
 
-**Live Supabase** is available through the connection panel. It reads stored invoice snapshots and event history through one authenticated RPC. Refreshing the page's data does not execute Workato or call Metronome. Workato must run first to import newer usage or invoice totals. Live access still requires the project setup below.
+After signing in, the page reads the current Supabase records. Now the numbers can differ from that saved view. Refresh reads the database; it does not run Workato or ask Metronome to recalculate an invoice.
 
-## Connect an existing billing database
+Connecting it
 
-1. Run [006_dashboard_access.sql](../database/billing/006_dashboard_access.sql) in Supabase SQL Editor. It grants read access only. The default approved email is `hasanata@carleton.edu`; change the email in the script before running if desired.
-2. In the project's Supabase Authentication Users page, create a confirmed user with that email and a separate password. This is distinct from the Supabase dashboard account.
-3. Copy the project's publishable key from Settings → API Keys. Open **Connect live data** in the dashboard and enter the key with the project user's credentials.
-4. Confirm that the data badge changes to **Live · Supabase**. The invoice should match the latest successful Workato invoice import.
+The existing database already has its setup. For a fresh dashboard connection, [006_dashboard_access.sql](../database/billing/006_dashboard_access.sql) adds the approved viewer and the read function. The default email is `hasanata@carleton.edu`. A matching confirmed user also needs to exist in Supabase Authentication. That user's password is separate from the Supabase account login.
 
-Never use a service-role key, database password, or Metronome token in the browser. The dashboard rejects secret/service-role keys. Passwords and session tokens remain in memory; only the public project key may be retained in local storage. Reloading requires signing in again.
+The connection panel takes the project's publishable key and the Auth user's login. The badge changes to `Live · Supabase` after a successful read. Passwords and session tokens stay in memory, so a page reload needs another sign-in. The public project key can stay in local storage.
 
-The dashboard's read function checks the authenticated user against a server-side allowlist. Browser users cannot query the original billing tables or invoke the worker functions. Separate operator RPCs check both the authenticated identity and an explicit write permission before accepting a submission or retry. The public demonstration snapshot contains synthetic customer data; live records remain protected by Supabase authentication.
+Database passwords and service-role keys do not belong in this form. The browser rejects secret/service-role keys. Metronome's token stays in the Workato connection.
 
-## Submit usage and request retries
+Submitting usage
 
-Run [007_dashboard_actions.sql](../database/billing/007_dashboard_actions.sql) once after the read-access setup. It grants operator permission to the active `hasanata@carleton.edu` viewer. Other viewers remain read-only. The script queues no events; file 05 and its test fixtures are not required.
+[007_dashboard_actions.sql](../database/billing/007_dashboard_actions.sql) adds the operator actions after file 006. It lets the active default viewer submit or retry usage. Other approved viewers stay read-only. File 005 is not needed, and file 007 does not queue test events.
 
-Select **Submit usage** while connected. The form supports positive usage up to 1,000,000 GB-hours for Northstar in `us-west-2`. The database assigns the timestamp and customer mapping. The browser retains a pending submission ID and its usage values in local storage until confirmation, so retrying after a lost response uses the same ID. Passwords and session tokens are never included in that saved draft.
+The form is limited to Northstar in `us-west-2`, with positive usage up to 1,000,000 GB-hours. The server assigns the timestamp. The browser gives the event a transaction ID and saves a pending submission until the database confirms it. If a response is lost, the same submission can be sent again with that ID. Its original usage values stay attached to it.
 
-For a single manual check with the current sandbox:
+A submission starts as `received`, which means queued. Workato still has to deliver it. A failed or blocked event has a retry button in its details. That queues the original event again; an accepted event cannot be requeued through that button.
 
-1. Queue **100 GB-hours** once. The ledger should show a new queued event; this does not change the stored invoice yet.
-2. Test **01 - Process usage events** in Workato. It claims the queued event and records its delivery outcome.
-3. Test **02 - Sync invoice totals** in Workato after the usage has appeared in Metronome.
-4. Refresh the dashboard. From the verified $1.75 baseline, the expected result is **$1.85**, **1,850 GB-hours**, and **three accepted ledger events**.
+The two Workato recipes
 
-Select a failed or blocked event in the ledger to use **Retry delivery**. This requeues its original event without changing its transaction ID or usage values. Accepted events cannot be requeued. Workato still performs delivery and invoice import; dashboard buttons do not invoke either recipe. Keep recipes inactive when using manual tests.
+`01 - Process usage events` calls `billing_claim_next_event()`. The database checks a queued event and creates a delivery attempt. Workato posts the returned array to `/v1/ingest`, then records the outcome with `billing_finish_attempt()`. The error branch records the failure and stops the job for review.
 
-## Backend source
+`02 - Sync invoice totals` reads the customer's draft invoice from Metronome. It passes the response to `billing_store_invoice_page()`. That checks the customer and contract before saving the result. Metronome returns USD cents here, so 175 becomes $1.75.
 
-- [001_foundation.sql](../database/billing/001_foundation.sql): customer mappings, immutable usage events, delivery attempts, and invoice snapshots.
-- [002_event_processing.sql](../database/billing/002_event_processing.sql): claim, finish, expiry recovery, and retry functions.
-- [003_recovery_fixture.sql](../database/billing/003_recovery_fixture.sql): the controlled rejection and recovery fixture.
-- [004_invoice_readback.sql](../database/billing/004_invoice_readback.sql): invoice validation and USD-cent conversion.
-- [006_dashboard_access.sql](../database/billing/006_dashboard_access.sql): the authenticated read-only dashboard projection.
-- [007_dashboard_actions.sql](../database/billing/007_dashboard_actions.sql): approved operator submission and retry RPCs, without test fixtures.
+The recipes have scheduler steps, but they are currently tested manually. The website does not start either recipe. For a walkthrough, submit once, test delivery, then test invoice sync after Metronome reflects the usage. Refresh the dashboard afterward.
 
-These scripts document the configured sandbox. Existing installations should not rerun foundation scripts or test fixtures. A new environment requires its own customer and contract identifiers. SQL changes are run separately in Supabase; deploying the website does not run migrations or send billable usage.
+The small numeric check
 
-## Verified behavior and current limits
+At the fixed rate of $0.001 per GB-hour, another 100 GB-hours adds $0.10. Starting from the saved $1.75 test, that would make $1.85. Repeating invoice sync should read the same total, not add another charge. Use the connected view for the current result.
 
-Usage delivery and a failed-then-successful retry were observed in the sandbox. The recovered 250 GB-hour event added $0.25 once. The invoice readback returned the actual invoice ID and $1.75 total. The original failure remains attached to the accepted event.
+What has worked so far
 
-Submission and retry controls require migration 007 in the connected database. The broader sandbox duplicate and invalid-input acceptance test batches remain deferred. The read projection returns up to 200 recent events and 100 audit entries. The reconciliation display uses the fixed $0.001/GB-hour demo rate and the separately verified $1 calibration baseline. It is not a general pricing engine.
+Usage delivery worked in the sandbox. The 250 GB-hour recovery event failed first, then succeeded with the same transaction ID and added $0.25 once. Its original error remains in the attempt history. The invoice API returned the actual invoice ID and $1.75 total for that test. Dashboard submission has also been exercised after the operator setup.
 
-## Deployment
+One early issue was a hidden tab before `gb_hours` in the original metric. The event had the normal key, so the metric did not match it. A corrected metric replaced it on the product. A separate HTTP error happened when the ingest request sent an object where an array was expected.
 
-The dashboard ships with the existing Next.js portfolio through its GitHub-to-Vercel connection. No billing secrets are required for the website build. The browser connection panel supplies the public project key and an approved user's session at runtime.
+Access notes
+
+The read function checks the signed-in user against the viewer list. Submission and retry also require an operator flag. Browser users do not get direct table access or the worker functions. RLS is enabled on the billing tables. Workato currently uses the existing PostgreSQL owner connection; narrowing that worker's permissions is still work to do.
+
+What is still limited
+
+This is one customer with one region and a fixed USD rate. Usage is entered as synthetic data, rather than measured from a storage system. The invoice reader expects exactly one matching invoice and a complete response with no next page. It needs more work for larger invoice histories.
+
+The page reads stored results on refresh. There is no push update or button that starts Workato. The read function returns the latest 200 events and 100 activity records. The overview compares the stored invoice with the calibration baseline plus accepted usage at the demo rate. It is not a general pricing engine.
+
+Broader sandbox tests for duplicate and invalid events are still deferred. Local checks covered access restrictions and retry behavior, including keeping a submission ID after a lost response. That does not replace testing the whole system under load. There are no failure alerts yet, and the draft invoice is not a payment collection flow.
+
+Scheduled runs and failure alerts are the next ideas. The current priority is understanding this version well enough to explain it and debug it.
+
+Files I need to remember
+
+- [001_foundation.sql](../database/billing/001_foundation.sql) creates the tables and customer mapping. It also saves the old $1 calibration baseline.
+- [002_event_processing.sql](../database/billing/002_event_processing.sql) adds processing and retry functions. It queues the original 500 GB-hour test event.
+- [003_recovery_fixture.sql](../database/billing/003_recovery_fixture.sql) queues the 250 GB-hour recovery test.
+- [004_invoice_readback.sql](../database/billing/004_invoice_readback.sql) saves and checks the API invoice response.
+- [006_dashboard_access.sql](../database/billing/006_dashboard_access.sql) adds authenticated dashboard reads.
+- [007_dashboard_actions.sql](../database/billing/007_dashboard_actions.sql) adds approved submission and retry actions without the deferred fixtures.
+
+Those scripts describe the configured sandbox. SQL changes are applied separately in Supabase. A website deployment does not run them or send usage.
+
+The frontend is plain HTML/CSS/JavaScript under `public/demos/northstar-billing/`. A Next.js page shows it in a same-origin iframe so its styles stay separate from the rest of the portfolio. It uses the existing GitHub-to-Vercel deployment. Website builds do not need billing secrets.

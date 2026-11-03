@@ -1,44 +1,34 @@
-# Executive Portfolio
+# Portfolio notes
 
-A Next.js portfolio that presents work history, credentials, and interactive finance and operations dashboards.
+This is my portfolio site. It uses Next.js and React, with the page content mostly in `lib/data.ts`. GitHub holds the source and Vercel builds the site when changes reach the main branch.
 
-## Architecture
-
-- `app/`: App Router pages and the ticker API route.
-- `app/dashboards/`: Client-side dashboard routes for valuation, delivery forecasting, tender tracking, migration support, and an economic valuation demonstration.
-- `components/`: Reusable portfolio sections and navigation.
-- `lib/data.ts`: Resume-aligned portfolio content.
-- `public/`: Static assets, including the isolated usage-billing dashboard.
-- `database/billing/`: PostgreSQL billing schema and processing functions.
-
-## Dependencies
-
-The application uses Next.js, React, TypeScript, Tailwind CSS, Recharts, Papa Parse, jsPDF, and Lucide React. The valuation dashboard uses the local `/api/ticker` route for ticker data and supports CSV uploads.
-
-## Setup
+To run it locally:
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open `http://localhost:3000`.
+Then open `http://localhost:3000`. `npm run build` checks the production build. `npm run lint` runs ESLint.
 
-## Checks
+Where things are
 
-```bash
-npm run lint
-npm run build
-```
+- `app/` has the pages and API routes.
+- `components/` has the shared page sections.
+- `lib/data.ts` has the portfolio copy and project links.
+- `public/` has the static files, including the billing demo.
+- `database/billing/` has the SQL used for the billing lab.
 
-## Valuation data
+Billing lab
 
-Ticker lookup combines a market-price response with preset demonstration financials through 2024. Those presets include estimates and are not verified current statements. If the quote request fails, the response explicitly identifies its static reference price. Unsupported symbols return an error; the route does not invent financial statements. Upload a CSV with verified financials to supply a different scenario.
+The demo is at `/dashboards/usage-billing`. Basically, usage goes into Supabase, Workato sends it to Metronome, and a separate Workato recipe brings the invoice back. The dashboard reads the stored results. Approved operators can also submit usage or request a retry.
 
-The browser DCF is a separate implementation from the Python valuation repository. Its assumptions appear beside the inputs and in the scenario memo.
+It opens with saved sandbox results. A live connection needs an approved Supabase Auth user. The customer and usage are synthetic, and the Workato recipes are currently tested manually.
 
-## Usage billing
+[Billing notes](docs/usage-billing.md) cover the setup and current limits. [Walkthrough notes](docs/billing-walkthrough.md) explain the flow in plain language. Existing databases use the access and action scripts separately; the older setup files also contain test data, so they are not a reset button.
 
-Open `/dashboards/usage-billing` for the Northstar storage-usage billing demo. The dashboard includes event delivery history and invoice readback. It opens with verified sandbox results and supports authenticated Supabase reads plus approved operator submission and retry controls.
+Valuation data
 
-See [the usage-billing guide](docs/usage-billing.md) for architecture, data scope, and connection setup. Existing billing database users apply the read-access and operator-action scripts separately; do not rerun the foundation or event fixtures.
+The ticker route uses a market-price response alongside preset demo financials through 2024. Some preset figures are estimates. If the price request fails, the response labels the fallback price. A CSV upload can supply verified financials instead.
+
+The browser DCF and the separate Python valuation repository are different implementations. The browser inputs and scenario memo show its assumptions.
