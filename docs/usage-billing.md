@@ -60,7 +60,7 @@ The page reads stored results on refresh. There is no push update or button that
 
 The duplicate-intake and negative-usage checks now pass in Supabase. [The recipe notes](billing-recipe-tests.md) have the two SQL calls for Workato. The invalid check leaves one named exception in the ledger with no delivery attempt. A duplicate request sent all the way to Metronome still needs a separate test. Local checks also covered access restrictions and retry behavior, including keeping a submission ID after a lost response. That does not replace testing the whole system under load. There are no failure alerts yet, and the draft invoice is not a payment collection flow.
 
-Scheduled runs and failure alerts are the next ideas. The current priority is understanding this version well enough to explain it and debug it.
+[Scheduled-run and email-alert notes](billing-alert-recipe.md) now describe how to activate the main recipes and wire an alert with visible Workato actions. The query is prepared; schedule activation and email delivery still need verification in Workato.
 
 Files I need to remember
 
